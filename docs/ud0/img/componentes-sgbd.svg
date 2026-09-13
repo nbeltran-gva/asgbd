@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Componentes de un sistema gestor de bases de datos</title>
+  <desc id="desc">Diagrama con los cuatro componentes principales de un SGBD: lenguajes, diccionario de datos, seguridad e integridad y factor humano.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: bold 26px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .center { fill: #0f766e; stroke: #115e59; stroke-width: 3; }
+      .center-text { font: bold 21px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .label { font: bold 18px 'Segoe UI', Arial, sans-serif; fill: #172033; }
+      .body { font: 15px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .box1 { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .box2 { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+      .box3 { fill: #fef3c7; stroke: #d97706; stroke-width: 2; }
+      .box4 { fill: #fce7f3; stroke: #db2777; stroke-width: 2; }
+      .line { stroke: #64748b; stroke-width: 3; fill: none; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="960" height="520"/>
+  <text x="480" y="42" text-anchor="middle" class="title">Componentes de un SGBD</text>
+
+  <rect class="center" x="360" y="205" width="240" height="100" rx="18"/>
+  <text x="480" y="248" text-anchor="middle" class="center-text">Sistema Gestor</text>
+  <text x="480" y="276" text-anchor="middle" class="center-text">de Bases de Datos</text>
+
+  <rect class="box1" x="55" y="95" width="260" height="125" rx="14"/>
+  <text x="185" y="130" text-anchor="middle" class="label">Lenguajes</text>
+  <text x="185" y="162" text-anchor="middle" class="body">DDL, DML, DQL, DCL y TCL</text>
+  <text x="185" y="188" text-anchor="middle" class="body">Definir, consultar y gestionar datos</text>
+
+  <rect class="box2" x="645" y="95" width="260" height="125" rx="14"/>
+  <text x="775" y="130" text-anchor="middle" class="label">Diccionario de datos</text>
+  <text x="775" y="162" text-anchor="middle" class="body">Metadatos de la base de datos</text>
+  <text x="775" y="188" text-anchor="middle" class="body">Objetos, usuarios y restricciones</text>
+
+  <rect class="box3" x="55" y="350" width="260" height="125" rx="14"/>
+  <text x="185" y="385" text-anchor="middle" class="label">Seguridad e integridad</text>
+  <text x="185" y="417" text-anchor="middle" class="body">Permisos, copias y recuperación</text>
+  <text x="185" y="443" text-anchor="middle" class="body">Datos consistentes y protegidos</text>
+
+  <rect class="box4" x="645" y="350" width="260" height="125" rx="14"/>
+  <text x="775" y="385" text-anchor="middle" class="label">Factor humano</text>
+  <text x="775" y="417" text-anchor="middle" class="body">Usuarios, programadores y DBAs</text>
+  <text x="775" y="443" text-anchor="middle" class="body">Personas que administran y utilizan</text>
+
+  <path class="line" d="M315 158 L360 220"/>
+  <path class="line" d="M645 158 L600 220"/>
+  <path class="line" d="M315 412 L360 290"/>
+  <path class="line" d="M645 412 L600 290"/>
+</svg>

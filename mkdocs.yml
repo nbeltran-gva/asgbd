@@ -10,28 +10,35 @@ nav:
   - Inicio: index.md
 
   - UD0:
-      - 0. Introducción: ud0/index.md
+      - Contenido: ud0/index.md
+      - 0. Introducción: ud0/00-introduccion.md
       - 1. Arquitectura: ud0/01-arquitectura-niveles.md
       - 2. Componentes: ud0/02-componentes-sgbd.md
       - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
       - 4. Tareas del DBA: ud0/04-tareas-dba.md
       - 5. Actividades: ud0/actividades.md
 
-  - UD1:
-      - 0. Introducción: ud1/index.md
+#  - UD1:
+#      - Inicio: ud1/index.md
+#      - 0. Introducción: ud1/00-introduccion.md
 
-  - UD2:
-      - 0. Introducción: ud2/index.md
+#  - UD2:
+#      - Inicio: ud2/index.md
+#      - 0. Introducción: ud2/00-introduccion.md
 
-  - UD3:
-      - 0. Introducción: ud3/index.md
-      
-  - UD4:
-      - 0. Introducción: ud4/index.md
+#  - UD3:
+#      - Inicio: ud3/index.md
+#      - 0. Introducción: ud3/00-introduccion.md
 
-  - UD5:
-      - 0. Introducción: ud5/index.md
-      
-  - UD6:
-      - 0. Introducción: ud6/index.md
+#  - UD4:
+#      - Inicio: ud4/index.md
+#      - 0. Introducción: ud4/00-introduccion.md
+
+#  - UD5:
+#      - Inicio: ud5/index.md
+#      - 0. Introducción: ud5/00-introduccion.md
+
+#  - UD6:
+#      - Inicio: ud6/index.md
+#      - 0. Introducción: ud6/00-introduccion.md
 

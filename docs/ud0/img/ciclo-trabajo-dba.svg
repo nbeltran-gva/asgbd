@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Ciclo de trabajo de un administrador de bases de datos</title>
+  <desc id="desc">Infografía con las cuatro áreas principales de trabajo de un DBA: diseño e instalación, seguridad, disponibilidad y rendimiento.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: bold 26px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .center { fill: #0f766e; stroke: #115e59; stroke-width: 3; }
+      .center-text { font: bold 23px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .label { font: bold 18px 'Segoe UI', Arial, sans-serif; fill: #172033; }
+      .body { font: 15px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .icon { fill: none; stroke: #334155; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .person { fill: #ffffff; stroke: #ffffff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .box1 { fill: #dbeafe; stroke: #2563eb; stroke-width: 2.5; }
+      .box2 { fill: #dcfce7; stroke: #16a34a; stroke-width: 2.5; }
+      .box3 { fill: #fef3c7; stroke: #d97706; stroke-width: 2.5; }
+      .box4 { fill: #fce7f3; stroke: #db2777; stroke-width: 2.5; }
+      .line { stroke: #64748b; stroke-width: 3; fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="960" height="560"/>
+  <text x="480" y="40" text-anchor="middle" class="title">Ciclo de trabajo del DBA</text>
+
+  <circle class="center" cx="480" cy="300" r="92"/>
+  <circle class="person" cx="480" cy="267" r="17"/>
+  <path class="person" d="M447 318 Q447 286 480 286 Q513 286 513 318 M460 318 L460 333 M500 318 L500 333"/>
+  <text x="480" y="357" text-anchor="middle" class="center-text">DBA</text>
+
+  <rect class="box1" x="55" y="95" width="285" height="125" rx="14"/>
+  <path class="icon" d="M181 108 H213 M181 118 H213 M181 128 H213 M176 103 H218 V133 H176 Z"/>
+  <text x="197" y="157" text-anchor="middle" class="label">Diseño e instalación</text>
+  <text x="197" y="184" text-anchor="middle" class="body">Seleccionar, instalar y configurar</text>
+  <text x="197" y="207" text-anchor="middle" class="body">el SGBD y su almacenamiento</text>
+
+  <rect class="box2" x="620" y="95" width="285" height="125" rx="14"/>
+  <path class="icon" d="M762 103 L782 111 V123 Q782 137 762 144 Q742 137 742 123 V111 Z M754 123 L760 129 L771 116"/>
+  <text x="762" y="157" text-anchor="middle" class="label">Seguridad y usuarios</text>
+  <text x="762" y="184" text-anchor="middle" class="body">Roles, permisos y auditoría</text>
+  <text x="762" y="207" text-anchor="middle" class="body">Principio de mínimo privilegio</text>
+
+  <rect class="box3" x="55" y="395" width="285" height="125" rx="14"/>
+  <path class="icon" d="M197 407 A25 25 0 1 0 218 447 M218 407 V425 H200 M176 447 H194 V429"/>
+  <text x="197" y="468" text-anchor="middle" class="label">Disponibilidad y recuperación</text>
+  <text x="197" y="493" text-anchor="middle" class="body">Copias y restauración</text>
+  <text x="197" y="512" text-anchor="middle" class="body">Continuidad ante fallos</text>
+
+  <rect class="box4" x="620" y="395" width="285" height="125" rx="14"/>
+  <path class="icon" d="M738 444 V421 H750 V444 H762 V411 H774 V444 H786 V402 M735 444 H790"/>
+  <text x="762" y="468" text-anchor="middle" class="label">Rendimiento y mantenimiento</text>
+  <text x="762" y="493" text-anchor="middle" class="body">Monitorización y optimización</text>
+  <text x="762" y="512" text-anchor="middle" class="body">Migraciones y documentación</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M340 158 L415 240"/>
+  <path class="line" marker-end="url(#arrow)" d="M620 158 L545 240"/>
+  <path class="line" marker-end="url(#arrow)" d="M340 458 L415 360"/>
+  <path class="line" marker-end="url(#arrow)" d="M620 458 L545 360"/>
+</svg>

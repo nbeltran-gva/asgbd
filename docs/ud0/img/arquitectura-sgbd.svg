@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitectura ANSI/SPARC</title>
+  <desc id="desc">Diagrama con los tres niveles de una base de datos: externo, conceptual e interno.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f5f7fb; }
+      .title { font: bold 24px 'Segoe UI', Arial, sans-serif; fill: #1f2937; }
+      .label { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .body { font: 16px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .box1 { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .box2 { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+      .box3 { fill: #fef3c7; stroke: #d97706; stroke-width: 2; }
+      .arrow { stroke: #475569; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="420"/>
+
+  <text x="450" y="36" text-anchor="middle" class="title">Arquitectura ANSI/SPARC</text>
+
+  <rect class="box1" x="60" y="120" width="220" height="180" rx="12"/>
+  <text x="170" y="160" text-anchor="middle" class="label">Nivel externo</text>
+  <text x="170" y="195" text-anchor="middle" class="body">Vistas</text>
+  <text x="170" y="220" text-anchor="middle" class="body">Formas de ver</text>
+  <text x="170" y="245" text-anchor="middle" class="body">los datos</text>
+  <text x="170" y="270" text-anchor="middle" class="body">Usuarios y apps</text>
+
+  <rect class="box2" x="340" y="120" width="220" height="180" rx="12"/>
+  <text x="450" y="160" text-anchor="middle" class="label">Nivel conceptual</text>
+  <text x="450" y="195" text-anchor="middle" class="body">Tablas</text>
+  <text x="450" y="220" text-anchor="middle" class="body">Relaciones</text>
+  <text x="450" y="245" text-anchor="middle" class="body">Claves</text>
+  <text x="450" y="270" text-anchor="middle" class="body">Restricciones</text>
+
+  <rect class="box3" x="620" y="120" width="220" height="180" rx="12"/>
+  <text x="730" y="160" text-anchor="middle" class="label">Nivel interno</text>
+  <text x="730" y="195" text-anchor="middle" class="body">Almacenamiento</text>
+  <text x="730" y="220" text-anchor="middle" class="body">Discos y archivos</text>
+  <text x="730" y="245" text-anchor="middle" class="body">Índices</text>
+  <text x="730" y="270" text-anchor="middle" class="body">Administración</text>
+
+  <path class="arrow" d="M280 210 L340 210"/>
+  <path class="arrow" d="M560 210 L620 210"/>
+
+  <text x="450" y="340" text-anchor="middle" class="body">Separación entre visión del usuario, estructura lógica y almacenamiento físico</text>
+</svg>

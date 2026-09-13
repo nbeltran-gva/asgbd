@@ -1,62 +1,67 @@
-# 2. Componentes de una base de datos
+# 2. Componentes de un SGBD
 
-Generalmente los SGBD se componen de varios elementos bien diferenciados entre ellos:
+Generalmente, un SGBD se compone de varios elementos relacionados entre sí:
 
-1. Lenguajes
-2. El diccionario de datos
-3. Mecanismos de seguridad e integridad
-4. Factor humano
+- Lenguajes
+- El diccionario de datos
+- Mecanismos de seguridad e integridad
+- Factor humano
 
----
-
-## 2.1. Lenguajes
-
-Los lenguajes del SGBD nos permiten crear las tablas, realizar las consultas sobre los datos, crear diferentes restricciones y en general permiten realizar todas las operaciones posibles sobre el sistema gestor. Entre otras tareas deben permitir:
-
-* **DDL (Data Definition Language / Lenguaje de Definición de Datos):** Crear la estructura de la base de datos, incluyendo todos los objetos que puede incluir la misma (tablas, vistas, usuarios, procedimientos, funciones, triggers, etc.).
-* **DML (Data Manipulation Language / Lenguaje de Manipulación de Datos):** Consultar y manipular la información almacenada en la base de datos. Sentencias `SELECT`, `UPDATE`, `INSERT`, `DELETE`, etc.
-* **DCL (Data Control Language / Lenguaje de Control de Datos):** Asignar privilegios a usuarios, confirmar o abortar transacciones, etc.
-
-!!! info "Lenguajes de Cuarta Generación (4GL)"
-    En algunos casos, los SGBD también incluyen un lenguaje de cuarta generación (4GL) para RAD (Desarrollo Rápido de Aplicaciones).  
-    *Ejemplos:* Asistentes de Access, Oracle Developer Suite, etc.
+![Componentes principales de un sistema gestor de bases de datos](img/componentes-sgbd.svg)
 
 ---
 
-## 2.2. El Diccionario de Datos
+## Lenguajes
+
+Los lenguajes de un SGBD permiten definir la estructura de los datos, consultarlos y modificarlos, establecer restricciones y gestionar las operaciones del sistema gestor. Estas funciones pueden implementarse de forma diferente según el modelo de datos.
+
+Entre otras tareas, estos lenguajes deben permitir:
+
+* **Definir la estructura de la base de datos:** Crear y modificar objetos como tablas, vistas, usuarios, procedimientos, funciones y triggers. En los SGBD relacionales, estas operaciones se realizan habitualmente mediante sentencias **DDL** (*Data Definition Language* o Lenguaje de Definición de Datos), como `CREATE`, `ALTER` y `DROP`.
+* **Manipular la información:** Insertar, modificar y eliminar datos almacenados. En los SGBD relacionales, estas operaciones se realizan mediante sentencias **DML** (*Data Manipulation Language* o Lenguaje de Manipulación de Datos), como `INSERT`, `UPDATE` y `DELETE`.
+* **Consultar la información:** Recuperar datos almacenados. En los SGBD relacionales, la sentencia principal es `SELECT`, que puede combinarse con `WHERE`, `ORDER BY`, `GROUP BY` y `HAVING`. Estas consultas se suelen agrupar bajo el concepto **DQL** (*Data Query Language* o Lenguaje de Consulta de Datos).
+* **Gestionar permisos:** Controlar los privilegios de los usuarios. En los SGBD relacionales que utilizan SQL, se emplean sentencias **DCL** (*Data Control Language* o Lenguaje de Control de Datos), como `GRANT` y `REVOKE`.
+* **Gestionar transacciones:** Confirmar o deshacer operaciones relacionadas entre sí. En los SGBD relacionales que utilizan SQL, se emplean sentencias **TCL** (*Transaction Control Language* o Lenguaje de Control de Transacciones), como `COMMIT`, `ROLLBACK` y `SAVEPOINT`.
+
+!!! info "Lenguajes de cuarta generación (4GL)"
+    Algunos SGBD incorporan herramientas o lenguajes de cuarta generación (4GL) para facilitar el desarrollo rápido de aplicaciones (RAD). Por ejemplo, permiten generar formularios, informes o consultas mediante asistentes y componentes visuales.
+
+---
+
+## El diccionario de datos
 
 El diccionario de datos contiene toda la información sobre los datos de la BD, es decir, los **metadatos** (datos acerca de los datos) de la base de datos. Esto incluye:
 
 * La definición de todos los objetos existentes en la base de datos: tablas con sus columnas, vistas, procedimientos, triggers, índices, etc.
-* La ubicación física de los objetos y el espacio asignado a los mismos.
+* La ubicación física de los objetos y el espacio asignado a estos.
 * Los privilegios y roles asignados a los usuarios.
 * Las restricciones de las tablas.
 * Estadísticas de uso de la base de datos.
 * Información del consumo de recursos actual.
 * Información de los usuarios.
-* Y un larguísimo etcétera...
+* Y otra información necesaria para administrar la base de datos.
 
 ---
 
-## 2.3. Mecanismos de Seguridad e Integridad
+## Mecanismos de seguridad, integridad y recuperación
 
-Un SGBD debe proporcionar utilidades que permitan:
+Un SGBD debe proporcionar mecanismos y utilidades que permitan:
 
-* La realización de copias de seguridad de los datos y la restauración de las mismas.
-* Garantizar la protección de los datos ante accesos no autorizados.
-* Implantar restricciones de integridad de los datos para evitar daños accidentales de los datos.
-* Recuperar la base de datos hasta un estado consistente en caso de error del sistema o cualquier otro imprevisto.
-* Controlar el acceso concurrente de los usuarios para evitar errores de integridad.
+* Realizar copias de seguridad y restaurar los datos cuando sea necesario.
+* Proteger los datos frente a accesos no autorizados mediante usuarios, roles y permisos.
+* Aplicar restricciones de integridad para evitar datos incorrectos o inconsistentes.
+* Recuperar la base de datos hasta un estado consistente después de un fallo.
+* Controlar el acceso concurrente de los usuarios para evitar conflictos entre transacciones.
 
 ---
 
-## 2.4. El Factor Humano
+## El factor humano
 
 Un SGBD siempre va a tener distintas categorías de usuarios:
 
-* **Usuarios finales:** Podrán acceder a la información sobre la que le hayan sido concedidos privilegios.
-* **Programadores:** Realizan aplicaciones sobre los objetos de la base de datos para facilitar su trabajo a los usuarios finales.
-* **Administradores o DBAs:** Garantizan el correcto funcionamiento de la base de datos y gestionan todos sus recursos. Tienen el nivel más alto de privilegios y responsabilidades legales en caso de que los datos tengan algún tipo de protección. Su objetivo es que la base de datos esté siempre disponible y con un rendimiento óptimo.
+* **Usuarios finales:** Acceden a la información y a las aplicaciones para las que tienen permisos.
+* **Programadores:** Desarrollan aplicaciones que utilizan la base de datos y facilitan el trabajo de los usuarios finales.
+* **Administradores o DBAs:** Garantizan el funcionamiento correcto del sistema, gestionan sus recursos y controlan su seguridad, disponibilidad y rendimiento. Sus responsabilidades concretas dependen de la organización y de la normativa aplicable.
 
-!!! tip "Enfoque del módulo"
+!!! note "Enfoque del módulo"
     En este módulo nos vamos a centrar en realizar tareas propias del **DBA**.

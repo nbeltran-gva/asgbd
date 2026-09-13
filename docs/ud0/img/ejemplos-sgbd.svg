@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Ejemplos de sistemas gestores de bases de datos</title>
+  <desc id="desc">Infografía que relaciona ejemplos de SGBD con sus modelos de datos principales.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: bold 25px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .label { font: bold 18px 'Segoe UI', Arial, sans-serif; fill: #172033; }
+      .body { font: 15px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .tag { font: bold 15px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .mark { font: bold 11px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .rel { fill: #dbeafe; stroke: #2563eb; stroke-width: 2.5; }
+      .doc { fill: #dcfce7; stroke: #16a34a; stroke-width: 2.5; }
+      .graph { fill: #fce7f3; stroke: #db2777; stroke-width: 2.5; }
+      .memory { fill: #fef3c7; stroke: #d97706; stroke-width: 2.5; }
+      .line { stroke: #94a3b8; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="900" height="520"/>
+  <text x="450" y="40" text-anchor="middle" class="title">Ejemplos de SGBD según el modelo de datos</text>
+
+  <rect class="rel" x="45" y="80" width="390" height="170" rx="16"/>
+  <circle cx="92" cy="125" r="27" fill="#2563eb"/>
+  <path d="M75 118 Q92 105 109 118 L109 135 Q92 148 75 135 Z M75 118 Q92 131 109 118" fill="none" stroke="#fff" stroke-width="3"/>
+  <text x="135" y="120" class="label">Relacionales</text>
+  <text x="135" y="148" class="body">Tablas, filas, columnas y SQL</text>
+  <rect x="75" y="180" width="110" height="30" rx="15" fill="#2563eb"/>
+  <circle cx="91" cy="195" r="10" fill="#ffffff"/><text x="91" y="199" text-anchor="middle" class="mark">PG</text>
+  <text x="140" y="201" text-anchor="middle" class="tag">PostgreSQL</text>
+  <rect x="200" y="180" width="80" height="30" rx="15" fill="#2563eb"/>
+  <circle cx="216" cy="195" r="10" fill="#ffffff"/><text x="216" y="199" text-anchor="middle" class="mark">MY</text>
+  <text x="249" y="201" text-anchor="middle" class="tag">MySQL</text>
+  <rect x="295" y="180" width="85" height="30" rx="15" fill="#2563eb"/>
+  <circle cx="311" cy="195" r="10" fill="#ffffff"/><text x="311" y="199" text-anchor="middle" class="mark">O</text>
+  <text x="346" y="201" text-anchor="middle" class="tag">Oracle</text>
+
+  <rect class="doc" x="465" y="80" width="390" height="170" rx="16"/>
+  <path d="M505 103 H555 V151 H505 Z M513 113 H547 M513 125 H547 M513 137 H538" fill="none" stroke="#16a34a" stroke-width="3"/>
+  <text x="580" y="120" class="label">Documentales</text>
+  <text x="580" y="148" class="body">Documentos JSON o BSON</text>
+  <rect x="515" y="180" width="100" height="30" rx="15" fill="#16a34a"/>
+  <circle cx="531" cy="195" r="10" fill="#ffffff"/><text x="531" y="199" text-anchor="middle" class="mark">M</text>
+  <text x="570" y="201" text-anchor="middle" class="tag">MongoDB</text>
+  <rect x="630" y="180" width="90" height="30" rx="15" fill="#16a34a"/>
+  <circle cx="646" cy="195" r="10" fill="#ffffff"/><text x="646" y="199" text-anchor="middle" class="mark">C</text>
+  <text x="681" y="201" text-anchor="middle" class="tag">CouchDB</text>
+
+  <rect class="graph" x="45" y="285" width="390" height="170" rx="16"/>
+  <circle cx="91" cy="350" r="10" fill="#db2777"/>
+  <circle cx="125" cy="325" r="10" fill="#db2777"/>
+  <circle cx="132" cy="375" r="10" fill="#db2777"/>
+  <path d="M99 344 L117 331 M99 356 L123 369 M125 335 L130 365" fill="none" stroke="#db2777" stroke-width="4"/>
+  <text x="170" y="335" class="label">De grafos</text>
+  <text x="170" y="363" class="body">Nodos, relaciones y recorridos</text>
+  <rect x="75" y="405" width="85" height="30" rx="15" fill="#db2777"/>
+  <circle cx="91" cy="420" r="10" fill="#ffffff"/><text x="91" y="424" text-anchor="middle" class="mark">N</text>
+  <text x="126" y="426" text-anchor="middle" class="tag">Neo4j</text>
+
+  <rect class="memory" x="465" y="285" width="390" height="170" rx="16"/>
+  <path d="M525 327 H570 V375 H525 Z M535 315 V327 M547 315 V327 M559 315 V327 M535 375 V387 M547 375 V387 M559 375 V387 M513 339 H525 M513 351 H525 M570 339 H582 M570 351 H582" fill="none" stroke="#d97706" stroke-width="3"/>
+  <text x="610" y="335" class="label">En memoria</text>
+  <text x="610" y="363" class="body">Datos almacenados en RAM</text>
+  <rect x="515" y="405" width="75" height="30" rx="15" fill="#d97706"/>
+  <circle cx="531" cy="420" r="10" fill="#ffffff"/><text x="531" y="424" text-anchor="middle" class="mark">R</text>
+  <text x="558" y="426" text-anchor="middle" class="tag">Redis</text>
+  <rect x="605" y="405" width="100" height="30" rx="15" fill="#d97706"/>
+  <circle cx="621" cy="420" r="10" fill="#ffffff"/><text x="621" y="424" text-anchor="middle" class="mark">M</text>
+  <text x="667" y="426" text-anchor="middle" class="tag">Memcached</text>
+</svg>

@@ -1,67 +1,52 @@
 # 1. Arquitectura en niveles de las bases de datos
 
-El comité **ANSI/SPARC** definió en **1975** una arquitectura de tres niveles para los sistemas gestores de bases de datos.
+El comité **ANSI/SPARC** definió en **1975** una arquitectura de tres niveles para organizar los datos de una base de datos y separar la forma en que los usuarios la ven de cómo realmente se almacenan.
 
-## Nivelación de la Arquitectura
+Esta arquitectura es fundamental porque permite que los sistemas sean más flexibles, seguros y fáciles de mantener.
 
-```mermaid
-graph TD
-    subgraph Usuarios
-        U1[Usuario 1]
-        U2[Usuario 2]
-        U3[Usuario 3]
-        U4[Usuario 4]
-    end
+## Introducción
 
-    subgraph Nivel Externo o de Visión
-        V1[Vista 1]
-        V2[Vista 2]
-        Vn[Vista n]
-    end
+Una base de datos no puede tratarse como un único bloque de información. Para facilitar su gestión, se divide en varios niveles de abstracción:
 
-    subgraph Nivel Conceptual / Lógico
-        T1[Tabla 1]
-        T2[Tabla 2]
-        T3[Tabla 3]
-        Tn[Tabla n]
-    end
+- nivel externo o de visión
+- nivel conceptual o lógico
+- nivel interno o físico
 
-    subgraph Nivel Interno o Físico
-        D1[(Disco 1)]
-        D2[(Disco 2)]
-        D3[(Disco 3)]
-    end
+Esta separación permite que los usuarios trabajen con una representación sencilla del contenido, mientras el sistema gestiona los detalles técnicos del almacenamiento.
 
-    U1 --> V1
-    U2 --> V2
-    U3 --> V2
-    U4 --> Vn
+![Arquitectura](img/arquitectura-sgbd.svg)
 
-    V1 --> T1
-    V1 --> T2
-    V2 --> T2
-    V2 --> T3
-    Vn --> T3
-    Vn --> Tn
 
-    T1 --> D1
-    T1 --> D2
-    T2 --> D2
-    T3 --> D3
-    Tn --> D3
-```
+## Arquitectura en tres niveles
 
-### Definición de los Niveles
+| Nivel | Función principal | Elementos que describe | Ejemplos de uso |
+| :--- | :--- | :--- | :--- |
+| **Externo o de visión** | Representa la información que necesita cada usuario o aplicación. | Vistas y subconjuntos de datos relevantes para cada perfil. | Un cliente ve sus pedidos; un administrador ve usuarios, permisos y estadísticas; un empleado ve su horario o nómina. |
+| **Conceptual o lógico** | Define la estructura general de la base de datos y las relaciones entre los datos. | Tablas, atributos, relaciones, claves primarias y foráneas y restricciones de integridad. | Diseñadores y programadores definen cómo se organiza la información. |
+| **Interno o físico** | Describe cómo y dónde se almacenan realmente los datos. | Archivos, ubicación física, índices y estructuras de almacenamiento. | Los administradores gestionan el almacenamiento y la organización física del sistema. |
 
-* **Nivel externo o de visión:** Se compone de las distintas aplicaciones basadas en vistas de la base de datos. Es lo que ven los usuarios finales.
-* **Nivel conceptual:** Se compone de las distintas tablas con sus atributos. Es el nivel que conocen los programadores.
-* **Nivel interno o físico:** Define qué discos y archivos componen la base de datos y qué hay en cada uno de ellos. Sólo acceden a este nivel los administradores.
+### Ventajas de la arquitectura en niveles
+
+La principal ventaja de esta arquitectura es que proporciona **independencia lógica y física**.
+
+- **Independencia lógica** : Permite cambiar la estructura lógica de la base de datos sin que se tengan que reescribir todas las aplicaciones que la utilizan. Por ejemplo se puede añadir un nuevo atributo a una tabla y la aplicación puede seguir funcionando si la vista sigue siendo compatible.
+
+- **Independencia física** : Permite cambiar la forma en que se almacenan los datos físicamente, por ejemplo moviéndolos a otro disco o cambiando el formato de almacenamiento, sin afectar a las aplicaciones.
+
+### Importancia de esta arquitectura
+
+La arquitectura en niveles hace que la base de datos sea:
+
+- más flexible
+- más mantenible
+- más segura
+- más fácil de adaptar a cambios
+- más independiente de la tecnología concreta del almacenamiento
+
+En resumen, gracias a esta separación de niveles, los datos pueden gestionarse de forma ordenada y sin depender de detalles internos que no interesan a las aplicaciones.
 
 ---
 
-## Ventajas de la Arquitectura en Niveles
+!!! note "Actividad propuesta"
+	Realiza la actividad **Arquitectura ANSI/SPARC** disponible en [Actividades de la UD0](actividades.md#actividad-2-arquitectura-ansisparc).
 
-La principal ventaja de esta arquitectura en niveles es que proporciona **independencia lógica y física** de los datos respecto a las aplicaciones:
-
-* **Independencia lógica:** Se pueden realizar cambios en el nivel conceptual (como añadir tablas o atributos) sin que sea necesario reescribir todas las aplicaciones.
-* **Independencia física:** Es posible modificar la ubicación de los ficheros que contienen los datos sin que se vean afectadas las aplicaciones.

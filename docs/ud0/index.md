@@ -1,17 +1,30 @@
 # UD 0: Arquitectura de un Sistema Gestor de Bases de Datos
 
-
-
 ## Índice de contenidos
 
+0. [Introducción: ¿Qué es un SGBD?](00-introduccion.md)
+    * Funciones principales de un SGBD
+    * Clasificaciones de los SGBD
+    * Factores para la elección del SGBD
+    * Tipos de conexión a una base de datos
 1. [Arquitectura en niveles de las bases de datos](01-arquitectura-niveles.md)
-2. [Componentes de una base de datos](02-componentes-sgbd.md)
-    * 2.1. Lenguajes
-    * 2.2. El diccionario de datos
-    * 2.3. Mecanismos de seguridad e integridad
-    * 2.4. El factor humano
+    * Introducción
+    * Arquitectura en tres niveles
+    * Ventajas de la arquitectura en niveles
+    * Importancia de esta arquitectura
+2. [Componentes de un SGBD](02-componentes-sgbd.md)
+    * Lenguajes
+    * El diccionario de datos
+    * Mecanismos de seguridad, integridad y recuperación
+    * El factor humano
 3. [Modelos de explotación de las bases de datos](03-modelos-explotacion.md)
+    * Criterios para elegir un modelo
+    * Ejemplo de combinación de modelos
 4. [Tareas de un DBA](04-tareas-dba.md)
+    * Diseño e instalación
+    * Seguridad y administración de usuarios
+    * Disponibilidad y recuperación
+    * Rendimiento y mantenimiento
 5. [Actividades](actividades.md)
 
 ---
@@ -25,3 +38,5 @@
 ---
 
 ## Criterios de evaluación
+
+Esta unidad se presenta correctamente como una unidad introductoria y transversal. Los RAs no se atribuyen como completamente desarrollados, sino como relacionados y trabajados inicialmente.

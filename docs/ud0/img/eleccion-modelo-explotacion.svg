@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo elegir un modelo de explotación</title>
+  <desc id="desc">Árbol de decisión para elegir entre monopuesto, cliente servidor, tres capas y base de datos distribuida.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: bold 27px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .question { fill: #e0f2fe; stroke: #0284c7; stroke-width: 2.5; }
+      .result1 { fill: #dbeafe; stroke: #2563eb; stroke-width: 2.5; }
+      .result2 { fill: #dcfce7; stroke: #16a34a; stroke-width: 2.5; }
+      .result3 { fill: #fce7f3; stroke: #db2777; stroke-width: 2.5; }
+      .result4 { fill: #fef3c7; stroke: #d97706; stroke-width: 2.5; }
+      .label { font: bold 17px 'Segoe UI', Arial, sans-serif; fill: #172033; }
+      .body { font: 15px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .answer { font: bold 14px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .line { stroke: #64748b; stroke-width: 2.5; fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1000" height="760"/>
+  <text x="500" y="42" text-anchor="middle" class="title">¿Qué modelo de explotación elegir?</text>
+
+  <rect class="question" x="350" y="75" width="300" height="70" rx="14"/>
+  <text x="500" y="105" text-anchor="middle" class="label">¿Se utilizará localmente</text>
+  <text x="500" y="128" text-anchor="middle" class="body">por una sola persona?</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M350 110 L210 110 L210 205"/>
+  <text x="270" y="101" text-anchor="middle" class="answer">Sí</text>
+  <rect class="result1" x="85" y="205" width="250" height="80" rx="14"/>
+  <text x="210" y="238" text-anchor="middle" class="label">Modelo monopuesto</text>
+  <text x="210" y="263" text-anchor="middle" class="body">Aplicación y datos locales</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M650 110 L790 110 L790 205"/>
+  <text x="730" y="101" text-anchor="middle" class="answer">No</text>
+  <rect class="question" x="640" y="205" width="300" height="70" rx="14"/>
+  <text x="790" y="235" text-anchor="middle" class="label">¿Acceden varias aplicaciones</text>
+  <text x="790" y="258" text-anchor="middle" class="body">a un servidor central?</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M640 240 L500 240 L500 350"/>
+  <text x="565" y="231" text-anchor="middle" class="answer">Sí</text>
+  <rect class="result2" x="375" y="350" width="250" height="80" rx="14"/>
+  <text x="500" y="383" text-anchor="middle" class="label">Cliente/servidor</text>
+  <text x="500" y="408" text-anchor="middle" class="body">Clientes y SGBD en servidor</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M940 240 L960 240 L960 480 L790 480"/>
+  <text x="958" y="365" text-anchor="middle" class="answer">No</text>
+  <rect class="question" x="640" y="445" width="300" height="70" rx="14"/>
+  <text x="790" y="475" text-anchor="middle" class="label">¿Se necesita separar</text>
+  <text x="790" y="498" text-anchor="middle" class="body">cliente, aplicación y BD?</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M640 480 L500 480 L500 600"/>
+  <text x="565" y="471" text-anchor="middle" class="answer">Sí</text>
+  <rect class="result3" x="375" y="600" width="250" height="80" rx="14"/>
+  <text x="500" y="633" text-anchor="middle" class="label">Arquitectura de tres capas</text>
+  <text x="500" y="658" text-anchor="middle" class="body">Cliente, servidor web y BD</text>
+
+  <path class="line" marker-end="url(#arrow)" d="M940 480 L960 480 L960 690 L790 690"/>
+  <text x="958" y="590" text-anchor="middle" class="answer">No</text>
+  <rect class="result4" x="665" y="650" width="275" height="80" rx="14"/>
+  <text x="802" y="683" text-anchor="middle" class="label">Base de datos distribuida</text>
+  <text x="802" y="708" text-anchor="middle" class="body">Datos repartidos entre nodos</text>
+</svg>

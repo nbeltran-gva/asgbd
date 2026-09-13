@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Modelos de explotación de bases de datos</title>
+  <desc id="desc">Comparación visual de los modelos monopuesto, cliente servidor, base de datos distribuida y tres capas.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: bold 25px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .label { font: bold 18px 'Segoe UI', Arial, sans-serif; fill: #172033; }
+      .body { font: 15px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .blue { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .green { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+      .yellow { fill: #fef3c7; stroke: #d97706; stroke-width: 2; }
+      .pink { fill: #fce7f3; stroke: #db2777; stroke-width: 2; }
+      .node { fill: #ffffff; stroke: #475569; stroke-width: 2; }
+      .line { stroke: #64748b; stroke-width: 3; fill: none; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="960" height="600"/>
+  <text x="480" y="38" text-anchor="middle" class="title">Modelos de explotación</text>
+
+  <rect class="panel" x="35" y="70" width="430" height="230" rx="14"/>
+  <rect class="blue" x="50" y="85" width="400" height="45" rx="9"/>
+  <text x="250" y="114" text-anchor="middle" class="label">Monopuesto</text>
+  <rect class="node" x="115" y="170" width="115" height="65" rx="8"/>
+  <text x="172" y="198" text-anchor="middle" class="body">Aplicación</text>
+  <text x="172" y="220" text-anchor="middle" class="body">+ datos</text>
+  <path class="line" d="M230 202 L300 202"/>
+  <rect class="node" x="300" y="170" width="115" height="65" rx="8"/>
+  <text x="357" y="198" text-anchor="middle" class="body">Un equipo</text>
+  <text x="357" y="220" text-anchor="middle" class="body">un usuario</text>
+
+  <rect class="panel" x="495" y="70" width="430" height="230" rx="14"/>
+  <rect class="green" x="510" y="85" width="400" height="45" rx="9"/>
+  <text x="710" y="114" text-anchor="middle" class="label">Cliente/servidor</text>
+  <rect class="node" x="530" y="170" width="110" height="65" rx="8"/>
+  <text x="585" y="198" text-anchor="middle" class="body">Cliente</text>
+  <text x="585" y="220" text-anchor="middle" class="body">Aplicación</text>
+  <path class="line" d="M640 202 L690 202"/>
+  <rect class="node" x="690" y="170" width="110" height="65" rx="8"/>
+  <text x="745" y="198" text-anchor="middle" class="body">Servidor</text>
+  <text x="745" y="220" text-anchor="middle" class="body">SGBD</text>
+  <path class="line" d="M800 202 L850 202"/>
+  <rect class="node" x="850" y="170" width="55" height="65" rx="8"/>
+  <text x="877" y="198" text-anchor="middle" class="body">BD</text>
+  <text x="877" y="220" text-anchor="middle" class="body">datos</text>
+
+  <rect class="panel" x="35" y="335" width="430" height="230" rx="14"/>
+  <rect class="yellow" x="50" y="350" width="400" height="45" rx="9"/>
+  <text x="250" y="379" text-anchor="middle" class="label">Base de datos distribuida</text>
+  <rect class="node" x="70" y="450" width="90" height="65" rx="8"/>
+  <text x="115" y="478" text-anchor="middle" class="body">Nodo 1</text>
+  <text x="115" y="500" text-anchor="middle" class="body">Datos</text>
+  <rect class="node" x="205" y="450" width="90" height="65" rx="8"/>
+  <text x="250" y="478" text-anchor="middle" class="body">Nodo 2</text>
+  <text x="250" y="500" text-anchor="middle" class="body">Datos</text>
+  <rect class="node" x="340" y="450" width="90" height="65" rx="8"/>
+  <text x="385" y="478" text-anchor="middle" class="body">Nodo 3</text>
+  <text x="385" y="500" text-anchor="middle" class="body">Datos</text>
+  <path class="line" d="M160 482 L205 482"/>
+  <path class="line" d="M295 482 L340 482"/>
+
+  <rect class="panel" x="495" y="335" width="430" height="230" rx="14"/>
+  <rect class="pink" x="510" y="350" width="400" height="45" rx="9"/>
+  <text x="710" y="379" text-anchor="middle" class="label">Tres capas</text>
+  <rect class="node" x="525" y="450" width="105" height="65" rx="8"/>
+  <text x="577" y="478" text-anchor="middle" class="body">Cliente</text>
+  <text x="577" y="500" text-anchor="middle" class="body">Navegador</text>
+  <path class="line" d="M630 482 L680 482"/>
+  <rect class="node" x="680" y="450" width="105" height="65" rx="8"/>
+  <text x="732" y="478" text-anchor="middle" class="body">Aplicación</text>
+  <text x="732" y="500" text-anchor="middle" class="body">Servidor web</text>
+  <path class="line" d="M785 482 L835 482"/>
+  <rect class="node" x="835" y="450" width="70" height="65" rx="8"/>
+  <text x="870" y="478" text-anchor="middle" class="body">BD</text>
+  <text x="870" y="500" text-anchor="middle" class="body">SGBD</text>
+</svg>
