@@ -1,11 +1,6 @@
-# Tema 0: Arquitectura de un Sistema Gestor de Bases de Datos
+# UD 0: Arquitectura de un Sistema Gestor de Bases de Datos
 
-!!! info "Información del Módulo"
-    * **Módulo:** Administración de Sistemas Gestores de Bases de Datos
-    * **Curso:** 2º ASIX (CFGS Administración de Sistemas Informáticos en Red)
-    * **Centro:** I.E.S. El Caminàs
 
----
 
 ## Índice de contenidos
 
