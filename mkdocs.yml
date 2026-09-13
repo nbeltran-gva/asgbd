@@ -12,7 +12,12 @@ nav:
   - UD1:
       - Introducción: ud1/index.md
       - Contenidos: ud1/contenidos.md
+      - Arquitectura: ud1/01-arquitectura-niveles.md
+      - Componentes: ud1/02-componentes-sgbd.md
+      - Modelos de explotación: ud1/03-modelos-explotacion.md
+      - Tareas del DBA: ud1/04-tareas-dba.md
       - Actividades: ud1/actividades.md
+
 
   - UD2:
       - Introducción: ud2/index.md
