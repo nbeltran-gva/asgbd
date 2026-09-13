@@ -1,0 +1,25 @@
+site_name: ASGBD
+site_description: Administración de Sistemas Gestores de Bases de Datos
+site_author: IES EL CAMINÀS
+
+theme:
+  name: material
+  language: es
+
+nav:
+  - Inicio: index.md
+
+  - UD1:
+      - Introducción: ud1/index.md
+      - Contenidos: ud1/contenidos.md
+      - Actividades: ud1/actividades.md
+
+  - UD2:
+      - Introducción: ud2/index.md
+
+  - UD3:
+      - Introducción: ud3/index.md
+
+  - Prácticas: practicas/index.md
+
+  - Ejercicios: ejercicios/index.md
