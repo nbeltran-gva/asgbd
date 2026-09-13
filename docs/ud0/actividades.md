@@ -1,4 +1,4 @@
-# Actividades recomendadas
+# Actividad
 
 ## Trabajo práctico
 
@@ -9,6 +9,4 @@
 
 ## Recursos
 
-- [Inicio de la unidad](index.md)
-- [Contenidos de la unidad](contenidos.md)
-- [Tema 1: Arquitectura de un SGBD](01-arquitectura-niveles.md)
+Crea un documento de presentación en el que completes la información de los apartados de la actividad. 

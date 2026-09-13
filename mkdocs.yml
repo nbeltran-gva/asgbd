@@ -9,22 +9,29 @@ theme:
 nav:
   - Inicio: index.md
 
-  - UD1:
-      - Introducción: ud1/index.md
-      - Contenidos: ud1/contenidos.md
-      - Arquitectura: ud1/01-arquitectura-niveles.md
-      - Componentes: ud1/02-componentes-sgbd.md
-      - Modelos de explotación: ud1/03-modelos-explotacion.md
-      - Tareas del DBA: ud1/04-tareas-dba.md
-      - Actividades: ud1/actividades.md
+  - UD0:
+      - 0. Introducción: ud0/index.md
+      - 1. Arquitectura: ud0/01-arquitectura-niveles.md
+      - 2. Componentes: ud0/02-componentes-sgbd.md
+      - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
+      - 4. Tareas del DBA: ud0/04-tareas-dba.md
+      - 5. Actividades: ud0/actividades.md
 
+  - UD1:
+      - 0. Introducción: ud1/index.md
 
   - UD2:
-      - Introducción: ud2/index.md
+      - 0. Introducción: ud2/index.md
 
   - UD3:
-      - Introducción: ud3/index.md
+      - 0. Introducción: ud3/index.md
+      
+  - UD4:
+      - 0. Introducción: ud4/index.md
 
-  - Prácticas: practicas/index.md
+  - UD5:
+      - 0. Introducción: ud5/index.md
+      
+  - UD6:
+      - 0. Introducción: ud6/index.md
 
-  - Ejercicios: ejercicios/index.md
