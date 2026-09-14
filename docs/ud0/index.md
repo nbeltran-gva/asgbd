@@ -1,4 +1,4 @@
-# UD 0: Arquitectura de un Sistema Gestor de Bases de Datos
+# UD 0: Introducción a los Sistemas Gestores de Bases de Datos
 
 ## Índice de contenidos
 

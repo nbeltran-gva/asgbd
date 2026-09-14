@@ -37,6 +37,15 @@
   visibility: visible;
 }
 
+.md-typeset :is(h1, h2, h3) {
+  color: #0c5a51;
+}
+
+.md-typeset h2 {
+  border-bottom: 2px solid #80cbc4;
+  padding-bottom: 0.2rem;
+}
+
 @media screen and (min-width: 76.25em) {
   [data-md-color-scheme="slate"] .md-sidebar--primary {
     border-right-color: #2b6666;
