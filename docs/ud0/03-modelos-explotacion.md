@@ -2,6 +2,7 @@
 
 Los SGBD pueden instalarse y utilizarse siguiendo diferentes modelos de explotación, según el número de usuarios, la ubicación de los datos y la forma de acceder al sistema. Estos modelos describen cómo se organiza el acceso a la base de datos; no deben confundirse con los modelos de datos, como el relacional, el documental o el de grafos.
 
+![Comparación de los modelos de explotación de bases de datos](img/modelos-explotacion.svg)
 
 | Modelo | Descripción | Ejemplos / Notas |
 | :--- | :--- | :--- |
@@ -10,8 +11,8 @@ Los SGBD pueden instalarse y utilizarse siguiendo diferentes modelos de explotac
 | **Base de datos distribuida** | Los datos se almacenan en varios equipos o nodos que cooperan para ofrecer el servicio. | Puede mejorar la disponibilidad, la escalabilidad o el rendimiento, aunque aumenta la complejidad de gestión. |
 | **Tres capas** | La aplicación se organiza en cliente, servidor de aplicaciones o web y servidor de bases de datos. | Es una arquitectura de aplicaciones que suele utilizarse junto con el modelo cliente/servidor. |
 
-![Comparación de los modelos de explotación de bases de datos](img/modelos-explotacion.svg)
-
+!!! note "Uso en el módulo"
+    En este módulo utilizaremos principalmente el **modelo cliente/servidor**. También veremos algunas características de los **SGBD distribuidos** en el tema correspondiente.
 
 ## Criterios para elegir un modelo
 
@@ -26,11 +27,7 @@ La elección del modelo de explotación depende de las necesidades de la organiz
 Esta infografía resumen el árbol de decisión para elegir un modelo de explotación.
 ![Árbol de decisión para elegir un modelo de explotación](img/eleccion-modelo-explotacion.svg)
 
-
 !!! example "Ejemplo de combinación de modelos"
     Una tienda en línea puede utilizar una arquitectura de **tres capas**: el navegador del cliente se comunica con un servidor web o de aplicaciones, y este accede al servidor de bases de datos. Si la base de datos se replica en varios servidores para mejorar la disponibilidad, también se está utilizando un modelo de **base de datos distribuida**.
 
     Esto muestra que los modelos no siempre son excluyentes: una misma solución puede ser cliente/servidor, estar organizada en tres capas y utilizar una base de datos distribuida al mismo tiempo.
-
-!!! note "Uso en el módulo"
-    En este módulo utilizaremos principalmente el **modelo cliente/servidor**. También veremos algunas características de los **SGBD distribuidos** en el tema correspondiente.

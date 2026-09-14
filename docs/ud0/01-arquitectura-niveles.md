@@ -44,9 +44,3 @@ La arquitectura en niveles hace que la base de datos sea:
 - más independiente de la tecnología concreta del almacenamiento
 
 En resumen, gracias a esta separación de niveles, los datos pueden gestionarse de forma ordenada y sin depender de detalles internos que no interesan a las aplicaciones.
-
----
-
-!!! note "Actividad propuesta"
-	Realiza la actividad **Arquitectura ANSI/SPARC** disponible en [Actividades de la UD0](actividades.md#actividad-2-arquitectura-ansisparc).
-

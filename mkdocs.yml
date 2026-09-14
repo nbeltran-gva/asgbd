@@ -1,44 +1,73 @@
 site_name: ASGBD
 site_description: Administración de Sistemas Gestores de Bases de Datos
-site_author: IES EL CAMINÀS
+site_author: Noelia Beltrán - IES EL CAMINÀS
 
 theme:
   name: material
   language: es
+  logo: img/logo-ies-el-caminas-2.webp
+  extra_css:
+    - stylesheets/extra.css
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar al modo noche
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Cambiar al modo día
+  features:
+    - navigation.footer
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+
+copyright: >-
+  IES EL CAMINÀS<br>
+  © 2026 Noelia Beltrán — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia CC BY-NC-SA 4.0</a>
 
 nav:
   - Inicio: index.md
 
-  - UD0:
+  - "UD0: Introducción":
       - Contenido: ud0/index.md
       - 0. Introducción: ud0/00-introduccion.md
       - 1. Arquitectura: ud0/01-arquitectura-niveles.md
       - 2. Componentes: ud0/02-componentes-sgbd.md
       - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
       - 4. Tareas del DBA: ud0/04-tareas-dba.md
-      - 5. Actividades: ud0/actividades.md
+      #- 5. Actividades: ud0/actividades.md
 
-#  - UD1:
-#      - Inicio: ud1/index.md
-#      - 0. Introducción: ud1/00-introduccion.md
+  #  - "UD1: Implantación":
+  #      - Inicio: ud1/index.md
+  #      - 0. Introducción: ud1/00-introduccion.md
 
-#  - UD2:
-#      - Inicio: ud2/index.md
-#      - 0. Introducción: ud2/00-introduccion.md
+  #  - "UD2: Configuración":
+  #      - Inicio: ud2/index.md
+  #      - 0. Introducción: ud2/00-introduccion.md
 
-#  - UD3:
-#      - Inicio: ud3/index.md
-#      - 0. Introducción: ud3/00-introduccion.md
+  #  - "UD3: Seguridad":
+  #      - Inicio: ud3/index.md
+  #      - 0. Introducción: ud3/00-introduccion.md
 
-#  - UD4:
-#      - Inicio: ud4/index.md
-#      - 0. Introducción: ud4/00-introduccion.md
+  #  - "UD4: Automación":
+  #      - Inicio: ud4/index.md
+  #      - 0. Introducción: ud4/00-introduccion.md
 
-#  - UD5:
-#      - Inicio: ud5/index.md
-#      - 0. Introducción: ud5/00-introduccion.md
+  #  - "UD5: Monitoreo":
+  #      - Inicio: ud5/index.md
+  #      - 0. Introducción: ud5/00-introduccion.md
 
-#  - UD6:
-#      - Inicio: ud6/index.md
-#      - 0. Introducción: ud6/00-introduccion.md
+  #  - "UD6: BDD":
+  #      - Inicio: ud6/index.md
+  #      - 0. Introducción: ud6/00-introduccion.md
 
