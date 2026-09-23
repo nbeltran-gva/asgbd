@@ -1,4 +1,4 @@
-# 3. Instalación del servidor
+# 2. Instalación del servidor
 
 PostgreSQL se puede instalar en Linux, Windows y otros sistemas operativos. En esta unidad se utiliza Ubuntu Server.
 
@@ -263,7 +263,7 @@ El análisis de la causa raíz es esencial: un arreglo rápido sin comprender la
 
 ---
 
-## Actividad 2. Instalación del Servidor PostgreSQL
+## Actividad. Instalación del Servidor PostgreSQL
 
 **Objetivo:**
 

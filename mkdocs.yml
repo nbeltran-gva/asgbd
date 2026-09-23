@@ -48,7 +48,8 @@ nav:
       - 2. Componentes: ud0/02-componentes-sgbd.md
       - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
       - 4. Tareas del DBA: ud0/04-tareas-dba.md
-      - 5. Actividades: ud0/actividades.md
+      - "5. Actividades":
+          - Actividades: ud0/actividades.md
   #    - 6. Soluciones: ud0/actividades_sol.md
 
   - "UD1: Implantación":
@@ -56,7 +57,7 @@ nav:
       - 0. Antes de implantar: ud1/00-introduccion.md
       - 1. PostgreSQL como SGBD base: ud1/01-postgresql.md
       - 2. Instalación del servidor: ud1/02-instalacion-servidor.md
-     # - 3. Instalación de clientes: ud1/04-instalacion-clientes.md
+     # - 3. Instalación de clientes: ud1/03-instalacion-clientes.md
      # - 4. Actividades: ud1/actividades.md
      #    - 5. Soluciones: ud1/actividades_sol.md
 

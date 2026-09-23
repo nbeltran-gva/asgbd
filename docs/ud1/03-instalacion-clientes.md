@@ -1,4 +1,4 @@
-# 4. Instalación de clientes
+# 3. Instalación de clientes
 
 Un cliente de PostgreSQL es una aplicación que permite conectarse al servidor y trabajar con sus bases de datos. El cliente no almacena la información principal: envía las solicitudes al servidor y muestra los resultados recibidos.
 

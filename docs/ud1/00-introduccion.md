@@ -138,7 +138,7 @@ Antes de cambiar cualquier parámetro o fichero de configuración, se debe reali
 
 ---
 
-## Actividad 1: Selección de un SGBD para implantación
+## Actividad: Selección de un SGBD para implantación
 
 Una empresa necesita desplegar una base de datos para una aplicación web con cientos de usuarios simultáneos, requisitos de seguridad, almacenamiento de información crítica y necesidad de disponibilidad razonable. El alumnado debe comparar al menos cuatro SGBD relacionales y decidir cuál es el más adecuado para ese escenario, teniendo en cuenta no solo el rendimiento, sino también la implantación real del sistema.
 
