@@ -42,27 +42,51 @@ nav:
   - Inicio: index.md
 
   - "UD0: Introducción":
-      - Contenido: ud0/index.md
+      - Inicio: ud0/index.md
       - 0. Introducción: ud0/00-introduccion.md
       - 1. Arquitectura: ud0/01-arquitectura-niveles.md
       - 2. Componentes: ud0/02-componentes-sgbd.md
       - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
       - 4. Tareas del DBA: ud0/04-tareas-dba.md
-      #- 5. Actividades: ud0/actividades.md
+      - 5. Actividades: ud0/actividades.md
+  #    - 6. Soluciones: ud0/actividades_sol.md
 
-  #  - "UD1: Implantación":
-  #      - Inicio: ud1/index.md
-  #      - 0. Introducción: ud1/00-introduccion.md
+  - "UD1: Implantación":
+      - Inicio: ud1/index.md
+      - 0. Antes de implantar: ud1/00-introduccion.md
+      - 1. PostgreSQL como SGBD base: ud1/01-postgresql.md
+      - 2. Instalación del servidor: ud1/02-instalacion-servidor.md
+     # - 3. Instalación de clientes: ud1/04-instalacion-clientes.md
+     # - 4. Actividades: ud1/actividades.md
+     #    - 5. Soluciones: ud1/actividades_sol.md
 
-  #  - "UD2: Configuración":
-  #      - Inicio: ud2/index.md
-  #      - 0. Introducción: ud2/00-introduccion.md
+ # - "UD2: Configuración":
+ #     - Inicio: ud2/index.md
+ #     - 0. Introducción: ud2/00-introduccion.md
+ #     - 1. Configuración de conexiones: ud2/01-configuracion-conexiones.md
+ #     - 2. Puesta en marcha y comprobación: ud2/02-puesta-en-marcha.md
+ #     - 3. Actividades: ud2/actividades.md
+ #     - 4. Soluciones: ud2/actividades_sol.md
 
-  #  - "UD3: Seguridad":
-  #      - Inicio: ud3/index.md
-  #      - 0. Introducción: ud3/00-introduccion.md
+ # - "UD3: Usuarios y permisos":
+ #     - Inicio: ud3/index.md
+ #     - 0. Introducción: ud3/00-introduccion.md
+ #     - 1. Usuarios, roles y permisos: ud3/01-usuarios-permisos.md
+ #     - 2. Bases de datos, esquemas y tablespaces: ud3/02-bases-datos.md
+ #     - 3. Copias de seguridad y restauración: ud3/03-copias-restauracion.md
+ #     - 4. Vistas: ud3/04-vistas.md
+ #     - 5. Actividades: ud3/actividades.md
 
-  #  - "UD4: Automación":
+  #- "UD4: Automatización":
+  #    - Inicio: ud4/index.md
+  #    - 0. Introducción: ud4/00-introduccion.md
+  #    - 1. PL/pgSQL y fundamentos: ud4/01-plpgsql-fundamentos.md
+  #    - 2. Procedimientos y funciones: ud4/02-procedimientos-funciones.md
+  #    - 3. Cursores y excepciones: ud4/03-cursores-excepciones.md
+  #    - 4. Triggers y aplicaciones: ud4/04-triggers-aplicaciones.md
+  #    - 5. Actividades: ud4/actividades.md
+
+  # - "UD4: Automación":
   #      - Inicio: ud4/index.md
   #      - 0. Introducción: ud4/00-introduccion.md
 
@@ -70,7 +94,7 @@ nav:
   #      - Inicio: ud5/index.md
   #      - 0. Introducción: ud5/00-introduccion.md
 
-  #  - "UD6: BDD":
+  #  - "UD6: BDD": (FE)
   #      - Inicio: ud6/index.md
   #      - 0. Introducción: ud6/00-introduccion.md
 

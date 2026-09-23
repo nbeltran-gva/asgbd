@@ -1,28 +1,46 @@
 # UD 1: Implantación de un SGBD
 
-## Introducción a la unidad
+Esta versión de la unidad se centra únicamente en planificar, instalar, configurar y comprobar la puesta en funcionamiento de un SGBD como es PostgreSQL.
 
-En esta unidad se estudia el proceso de implantación de un sistema gestor de bases de datos, desde la elección del producto hasta su instalación y puesta en funcionamiento.
+---
 
-## Índice de contenidos
+## Contenidos
 
-0. [Introducción a la implantación de un SGBD](00-introduccion.md)
-	* Requisitos del sistema y del entorno.
-	* Selección del SGBD.
-	* Instalación del servidor y de las herramientas cliente.
-	* Configuración inicial del servicio.
-	* Creación de la primera base de datos.
-	* Comprobación del funcionamiento.
+1. [Antes de implantar un SGBD](00-introduccion.md)
+2. [PostgreSQL como SGBD base](01-postgresql.md)
+3. [Instalación del servidor](02-instalacion-servidor.md)
+4. [Instalación de clientes](04-instalacion-clientes.md)
+5. [Prácticas de implantación](actividades.md)
+---
 
 ## Objetivos
 
-- Identificar los requisitos necesarios para implantar un SGBD.
-- Comparar distintas soluciones según las necesidades del proyecto.
-- Instalar y configurar un SGBD en un entorno de trabajo.
-- Verificar la conexión entre clientes y servidor.
-- Documentar la puesta en marcha del sistema.
+- Identificar los requisitos del sistema y del entorno antes de instalar.
+- Seleccionar una solución adecuada a las necesidades del proyecto.
+- Instalar PostgreSQL en Ubuntu Server y preparar clientes.
+- Configurar el acceso local y remoto de forma controlada.
+- Verificar el servicio, la autenticación y la conexión desde los clientes.
+- Documentar la instalación y conservar copias de los ficheros modificados.
+---
 
 ## Criterios de evaluación
 
-Se valorará la correcta selección, instalación, configuración inicial y comprobación del funcionamiento del SGBD.
+La unidad desarrolla el RA1 : «Implanta sistemas gestores de bases de datos analizando sus características y ajustándose a los requerimientos del sistema».
 
+Se considera que la actividad se ha desarrollado de forma satisfactoria cuando se han cumplido los siguientes criterios:
+
+- a) Se ha reconocido la utilidad y función de cada uno de los elementos de un sistema gestor de bases de datos.
+- b) Se han analizado las características de los principales sistemas gestores de bases de datos.
+- c) Se ha seleccionado el sistema gestor de bases de datos.
+- d) Se ha identificado el software necesario para llevar a cabo la instalación.
+- e) Se ha verificado el cumplimiento de los requisitos hardware.
+- f) Se han instalado sistemas gestores de bases de datos.
+- g) Se ha documentado el proceso de instalación.
+- h) Se ha interpretado la información suministrada por los mensajes de error y ficheros de registro.
+- i) Se han resuelto las incidencias de la instalación.
+- j) Se ha verificado el funcionamiento del sistema gestor de bases de datos.
+---
+
+## Planificación 
+
+La unidad se desarrolla en un tiempo estimado de 8 horas, distribuidas entre el análisis del entorno, la instalación del sistema gestor, la configuración básica y la comprobación del funcionamiento del servicio.

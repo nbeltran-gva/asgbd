@@ -1,6 +1,10 @@
 # UD 0: Introducción a los Sistemas Gestores de Bases de Datos
 
-## Índice de contenidos
+Esta unidad presenta los fundamentos del diseño y funcionamiento de los sistemas gestores de bases de datos, con especial atención a su arquitectura, componentes, modelos de explotación y papel del administrador de bases de datos.
+
+---
+
+## Contenidos
 
 0. [Introducción: ¿Qué es un SGBD?](00-introduccion.md)
     * Funciones principales de un SGBD
@@ -39,4 +43,12 @@
 
 ## Criterios de evaluación
 
-Esta unidad se presenta correctamente como una unidad introductoria y transversal. Los RAs no se atribuyen como completamente desarrollados, sino como relacionados y trabajados inicialmente.
+La unidad desarrolla el RA1 : «Implanta sistemas gestores de bases de datos analizando sus características y ajustándose a los requerimientos del sistema».
+
+---
+
+## Planificación 
+
+La unidad se desarrolla en un tiempo estimado de 2 horas, distribuidas entre la introducción conceptual, la explicación de la arquitectura y componentes, y la revisión de los modelos de explotación y las tareas del DBA.
+
+---

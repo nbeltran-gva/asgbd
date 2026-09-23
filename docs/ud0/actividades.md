@@ -1,4 +1,4 @@
-# Actividades de la UD0
+# Actividades
 
 ## Actividad 1. Ranking DBMS
 
