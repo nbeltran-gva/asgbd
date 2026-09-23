@@ -47,10 +47,8 @@ nav:
       - 1. Arquitectura: ud0/01-arquitectura-niveles.md
       - 2. Componentes: ud0/02-componentes-sgbd.md
       - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
-      - "4. Tareas del DBA":
-          - Tareas del DBA: ud0/04-tareas-dba.md
-          - "5. Actividades":
-              - Actividades: ud0/actividades.md
+      - 4. Tareas del DBA: ud0/04-tareas-dba.md
+      - Actividades: ud0/actividades.md
   #   - Soluciones: ud0/actividades_sol.md
 
   - "UD1: Implantación":
