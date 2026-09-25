@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1030" viewBox="0 0 1000 1030" role="img" aria-labelledby="title desc">
+  <title id="title">Antes de terminar tu práctica en AWS</title>
+  <desc id="desc">Lista visual de ocho comprobaciones para cerrar una práctica de AWS.</desc>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#202b3c}.title{font-size:38px;font-weight:700}.intro{font-size:18px;fill:#526174}.item{font-size:21px;font-weight:600}.detail{font-size:15px;fill:#687789}.n{font-size:16px;font-weight:700;fill:#202b3c}.foot{font-size:15px;fill:#526174}
+  </style>
+  <text x="52" y="68" class="title">Antes de terminar tu práctica</text>
+  <text x="54" y="103" class="intro">8 comprobaciones rápidas para cerrar tu entorno AWS.</text>
+  <line x1="54" y1="132" x2="946" y2="132" stroke="#aab4c1" stroke-width="1.5"/>
+  <g fill="none" stroke="#56677c" stroke-width="2">
+    <circle cx="86" cy="190" r="22"/><circle cx="86" cy="290" r="22"/><circle cx="86" cy="390" r="22"/><circle cx="86" cy="490" r="22"/>
+    <circle cx="86" cy="590" r="22"/><circle cx="86" cy="690" r="22"/><circle cx="86" cy="790" r="22"/><circle cx="86" cy="890" r="22"/>
+  </g>
+  <g class="n" text-anchor="middle">
+    <text x="86" y="196">1</text><text x="86" y="296">2</text><text x="86" y="396">3</text><text x="86" y="496">4</text>
+    <text x="86" y="596">5</text><text x="86" y="696">6</text><text x="86" y="796">7</text><text x="86" y="896">8</text>
+  </g>
+  <g class="item">
+    <text x="132" y="187">Región</text><text x="132" y="287">Sistema y credenciales</text>
+    <text x="132" y="387">Seguridad</text><text x="132" y="487">IP pública</text>
+    <text x="132" y="587">Acceso remoto</text><text x="132" y="687">Servicio y puerto</text>
+    <text x="132" y="787">Recursos</text><text x="132" y="887">Laboratorio</text>
+  </g>
+  <g class="detail">
+    <text x="132" y="212">Confirma dónde está creada la instancia.</text>
+    <text x="132" y="312">Ten claro el sistema operativo, usuario y clave.</text>
+    <text x="132" y="412">Deja abiertos solo los puertos necesarios.</text>
+    <text x="132" y="512">Comprueba la dirección actual antes de conectar.</text>
+    <text x="132" y="612">Prueba la conexión por SSH o RDP.</text>
+    <text x="132" y="712">Verifica que está iniciado y escucha en el puerto previsto.</text>
+    <text x="132" y="812">Detén o termina lo que ya no necesitas.</text>
+    <text x="132" y="912">Finaliza el laboratorio de AWS Academy.</text>
+  </g>
+  <line x1="54" y1="965" x2="946" y2="965" stroke="#aab4c1" stroke-width="1.5"/>
+  <text x="54" y="997" class="foot">Revisa · Conecta · Cierra</text>
+</svg>
