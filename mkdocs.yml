@@ -41,6 +41,17 @@ markdown_extensions:
 nav:
   - Inicio: index.md
 
+  - "AWS Academy":
+      - Introducción a AWS Academy: ud0_aws/ud0_aws.md
+        #    - ¿Qué es AWS Academy?
+        #    - ¿Cómo crearemos nuestras máquinas virtuales en AWS Academy?
+       #     - ¿Cómo nos conectaremos por SSH a nuestras máquinas virtuales en AWS Academy?
+       #     - ¿Cómo usa AWS el cifrado asimétrico?
+      - Servidor Linux en AWS Academy: ud0_aws/P0_1.md
+    # - Servidor Windows Server en AWS Academy: ud0_aws/P0_2.md
+         #    P0.3. Conceder acceso a un segundo administrador : ud0_aws/P0_3.md
+         #    P0.4. Comandos básicos Linux : ud0_aws/P0_4.md
+
   - "UD0: Introducción":
       - Inicio: ud0/index.md
       - 0. Introducción: ud0/00-introduccion.md
