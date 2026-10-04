@@ -6,11 +6,13 @@ Esta unidad se centra en configurar PostgreSQL después de su instalación, prep
 
 ## Contenidos
 
-1. [Introducción a la configuración](00-introduccion.md)
-2. [Configuración de conexiones](01-configuracion-conexiones.md)
-3. [Puesta en marcha y comprobación](02-puesta-en-marcha.md)
-4. [Actividades de configuración](actividades.md)
-5. [Soluciones de las actividades](actividades_sol.md)
+1. [Configuración inicial del SGBD](01-configuracion-sgbd.md)
+2. [Configuración `postgresql.conf`](02-conf-postgresql.md)
+3. [Configuración `pg_hba.conf`](03-conf-pg_hba.md)
+4. [Puesta en marcha y comprobación](04-puesta-en-marcha.md)
+5. [Actividades de configuración](00-actividades.md)
+6. [Soluciones de las actividades](00-actividades_sol.md)
+
 
 ---
 
@@ -25,7 +27,7 @@ Esta unidad se centra en configurar PostgreSQL después de su instalación, prep
 
 ## Criterios de trabajo
 
-La unidad desarrolla el RA2: «Configura el sistema gestor de bases de datos interpretando las especificaciones técnicas y los requisitos de explotación».
+La unidad desarrolla el **RA2: «Configura el sistema gestor de bases de datos interpretando las especificaciones técnicas y los requisitos de explotación».**
 
 Se considera que la actividad se ha desarrollado de forma satisfactoria cuando se han cumplido los siguientes criterios:
 

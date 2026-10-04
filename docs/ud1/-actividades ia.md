@@ -101,6 +101,8 @@ A partir de la infraestructura creada, deberéis demostrar que un administrador 
 Consola (psql).
 pgAdmin Desktop.
 pgAdmin Web.
+
+
 Producto final
 
 Informe técnico que incluya:

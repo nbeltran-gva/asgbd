@@ -30,6 +30,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
     - search.highlight
+    - content.code.copy
 
 copyright: >-
   IES EL CAMINÀS<br>
@@ -42,43 +43,45 @@ nav:
   - Inicio: index.md
 
   - "AWS Academy":
-      - Introducción a AWS Academy: ud0_aws/ud0_aws.md
+      - Introducción a AWS Academy: ud0_aws/01-intro-aws.md
         #    - ¿Qué es AWS Academy?
         #    - ¿Cómo crearemos nuestras máquinas virtuales en AWS Academy?
        #     - ¿Cómo nos conectaremos por SSH a nuestras máquinas virtuales en AWS Academy?
        #     - ¿Cómo usa AWS el cifrado asimétrico?
-      - Servidor Linux en AWS Academy: ud0_aws/P0_1.md
-    # - Servidor Windows Server en AWS Academy: ud0_aws/P0_2.md
-         #    P0.3. Conceder acceso a un segundo administrador : ud0_aws/P0_3.md
-         #    P0.4. Comandos básicos Linux : ud0_aws/P0_4.md
+      - Servidor Linux en AWS Academy: ud0_aws/02-servidor-linux.md
+      - IP Elástica: ud0_aws/03-ip-elastica.md
+
+    # - Servidor Windows Server en AWS Academy: ud0_aws/04-servidor-windows.md
+
+         #    P0.3. Conceder acceso a un segundo administrador : ud0_aws/05-conceder-acceso.md
+         #    P0.4. Comandos básicos Linux : ud0_aws/06-comandos-basicos.md
 
   - "UD0: Introducción":
       - Inicio: ud0/index.md
-      - 0. Introducción: ud0/00-introduccion.md
-      - 1. Arquitectura: ud0/01-arquitectura-niveles.md
-      - 2. Componentes: ud0/02-componentes-sgbd.md
-      - 3. Modelos de explotación: ud0/03-modelos-explotacion.md
-      - 4. Tareas del DBA: ud0/04-tareas-dba.md
-      - Actividades: ud0/actividades.md
-  #   - Soluciones: ud0/actividades_sol.md
+      - 1. ¿Qué es un SGBD?: ud0/01-sgbd.md
+      - 2. Arquitectura: ud0/02-arquitectura-niveles.md
+      - 3. Componentes: ud0/03-componentes-sgbd.md
+      - 4. Modelos de explotación: ud0/04-modelos-explotacion.md
+      - 5. Tareas del DBA: ud0/05-tareas-dba.md
+      - Actividades: ud0/00-actividades.md      
 
   - "UD1: Implantación":
       - Inicio: ud1/index.md
-      - 0. Antes de implantar: ud1/00-introduccion.md
-      - 1. PostgreSQL como SGBD base: ud1/01-postgresql.md
-      - 2. Instalación del servidor: ud1/02-instalacion-servidor.md
-     # - 3. Instalación de clientes: ud1/03-instalacion-clientes.md
-     # - Actividades: ud1/actividades.md
-     #    - 5. Soluciones: ud1/actividades_sol.md
+      - 1. Antes de implantar: ud1/01-antes-implantar.md
+      - 2. PostgreSQL como SGBD base: ud1/02-sgbd-postgresql.md
+      - 3. Instalación del servidor: ud1/03-instalacion-servidor.md
+      - 4. Instalación de clientes: ud1/04-instalacion-clientes.md
+      - Actividades: ud1/00-actividades.md
 
- # - "UD2: Configuración":
- #     - Inicio: ud2/index.md
- #     - 0. Introducción: ud2/00-introduccion.md
- #     - 1. Configuración de conexiones: ud2/01-configuracion-conexiones.md
- #     - 2. Puesta en marcha y comprobación: ud2/02-puesta-en-marcha.md
- #     - 3. Actividades: ud2/actividades.md
- #     - 4. Soluciones: ud2/actividades_sol.md
-
+  # - "UD2: Configuración":
+  #     - Inicio: ud2/index.md
+  #     - 1. Configuración del SGBD: ud2/01-configuracion-sgbd.md
+  #     - 2. postgresql.conf: ud2/02-conf-postgresql.md
+  #     - 3. pg_hba.conf: ud2/03-conf-pg_hba.md
+  #     - 4. Puesta en marcha y comprobación: ud2/04-puesta-en-marcha.md
+  #     - 5. Configuración de bases de datos: ud2/05-conf-bd.md
+  #     - Actividades: ud2/00-actividades.md
+      
  # - "UD3: Usuarios y permisos":
  #     - Inicio: ud3/index.md
  #     - 0. Introducción: ud3/00-introduccion.md
@@ -86,7 +89,7 @@ nav:
  #     - 2. Bases de datos, esquemas y tablespaces: ud3/02-bases-datos.md
  #     - 3. Copias de seguridad y restauración: ud3/03-copias-restauracion.md
  #     - 4. Vistas: ud3/04-vistas.md
- #     - 5. Actividades: ud3/actividades.md
+ #     - Actividades: ud3/00-actividades.md
 
   #- "UD4: Automatización":
   #    - Inicio: ud4/index.md
@@ -95,7 +98,7 @@ nav:
   #    - 2. Procedimientos y funciones: ud4/02-procedimientos-funciones.md
   #    - 3. Cursores y excepciones: ud4/03-cursores-excepciones.md
   #    - 4. Triggers y aplicaciones: ud4/04-triggers-aplicaciones.md
-  #    - 5. Actividades: ud4/actividades.md
+  #    - Actividades: ud4/00-actividades.md
 
   # - "UD4: Automación":
   #      - Inicio: ud4/index.md
@@ -108,4 +111,3 @@ nav:
   #  - "UD6: BDD": (FE)
   #      - Inicio: ud6/index.md
   #      - 0. Introducción: ud6/00-introduccion.md
-

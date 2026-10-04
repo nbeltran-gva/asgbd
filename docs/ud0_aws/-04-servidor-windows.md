@@ -13,63 +13,63 @@ Configura la máquina siguiendo las indicaciones del profesor y de las capturas.
 
 En las capturas se utiliza Windows Server 2016. Selecciona la versión que indique el profesor. **Windows Server 2016 dejará de recibir soporte extendido el 12 de enero de 2027**, por lo que esta imagen debe usarse solo para la práctica indicada y no para desplegar servicios reales.
 
-![WindowsServerInstallationAWS](P1_2/08.png)
+![WindowsServerInstallationAWS](img_03/08.png)
 
 Selecciona el tipo de instancia indicado por el profesor. La captura muestra `t2.large` (2 CPU virtuales y 8 GiB de memoria); comprueba que esté disponible en la región del laboratorio. Un tipo mayor puede consumir más créditos.
 
-![WindowsServerInstallationAWS](P1_2/09.png)
+![WindowsServerInstallationAWS](img_03/09.png)
 
 En **Par de claves (inicio de sesión)**, selecciona o crea el par de claves que se usará para recuperar la contraseña inicial de Windows. Puedes reutilizar el de la práctica anterior si aparece en la lista de esta región; los pares de claves pertenecen a una región concreta. Si creas uno nuevo, guarda su archivo privado de forma segura: AWS no permite descargarlo otra vez.
 
-![WindowsServerInstallationAWS](P1_2/10.png)
+![WindowsServerInstallationAWS](img_03/10.png)
 
 No compartas la clave privada ni la subas al repositorio. La necesitarás para descifrar la contraseña inicial.
 
-![WindowsServerInstallationAWS](P1_2/11.png)
+![WindowsServerInstallationAWS](img_03/11.png)
 
-![WindowsServerInstallationAWS](P1_2/12.png)
+![WindowsServerInstallationAWS](img_03/12.png)
 
 Si reutilizas un par de claves, continúa desde este punto.
 
 Configura el grupo de seguridad, que actúa como cortafuegos. Para administrar la máquina, permite RDP (TCP 3389) solo desde **Mi IP**; no lo abras a todo Internet (`0.0.0.0/0`). Abre HTTP (TCP 80) y HTTPS (TCP 443) únicamente cuando la práctica incluya un servicio web. Si ese servicio debe ser accesible desde fuera del aula, el profesor indicará el origen permitido; para pruebas privadas, limita también esos puertos a **Mi IP**.
 
-![WindowsServerInstallationAWS](P1_2/13.png)
+![WindowsServerInstallationAWS](img_03/13.png)
 
 Pon un nombre reconocible al grupo de seguridad para encontrarlo y eliminarlo al terminar, por ejemplo `ASGBD-Windows-SG`.
 
-![WindowsServerInstallationAWS](P1_2/13_2.png)
+![WindowsServerInstallationAWS](img_03/13_2.png)
 
 En **Configurar almacenamiento**, deja el tamaño indicado por el profesor (80 GiB en estas capturas). Revisa si el volumen raíz se eliminará al terminar la instancia.
 
-![WindowsServerInstallationAWS](P1_2/14.png)
+![WindowsServerInstallationAWS](img_03/14.png)
 
 Verifica todas las opciones seleccionadas y lanza la instancia.
 
-![WindowsServerInstallationAWS](P1_2/15.png)
+![WindowsServerInstallationAWS](img_03/15.png)
 
 Si todo va bien, la instancia se creará y podrás verla en la consola de EC2.
 
-![WindowsServerInstallationAWS](P1_2/16.png)
+![WindowsServerInstallationAWS](img_03/16.png)
 
 En EC2, comprueba que la instancia esté **En ejecución** y localiza su **Dirección IPv4 pública** o DNS público. Necesitarás ese dato para conectarte.
 
-![WindowsServerInstallationAWS](P1_2/17.png)
+![WindowsServerInstallationAWS](img_03/17.png)
 
 Para conectarte, selecciona la instancia y haz clic en **Conectar**. Abre la opción o pestaña **Cliente RDP**. A diferencia de Linux, Windows necesita una contraseña para el usuario `Administrator`.
 
-![WindowsServerInstallationAWS](P1_2/18.png)
+![WindowsServerInstallationAWS](img_03/18.png)
 
 Pulsa **Obtener contraseña** o **Cargar archivo de clave privada**, según la interfaz. Selecciona el archivo privado correspondiente al par de claves asociado a esta instancia.
 
-![WindowsServerInstallationAWS](P1_2/19.png)
+![WindowsServerInstallationAWS](img_03/19.png)
 
 Cuando AWS haya generado la contraseña, pulsa **Descifrar contraseña**.
 
-![WindowsServerInstallationAWS](P1_2/20.png)
+![WindowsServerInstallationAWS](img_03/20.png)
 
 La consola mostrará la contraseña inicial de `Administrator`. Cópiala para usarla en la conexión. No la guardes junto con la clave privada ni en apuntes o documentos compartidos. Una vez dentro, cámbiala si el profesor lo indica.
 
-![WindowsServerInstallationAWS](P1_2/21.png)
+![WindowsServerInstallationAWS](img_03/21.png)
 
 Para conectarte, necesitarás el DNS público o la IP actual, el usuario `Administrator` y la contraseña recién descifrada. Puedes usar un cliente RDP, como KRDC o Remmina en LliureX, o el cliente disponible en tu sistema operativo.
 
@@ -81,21 +81,21 @@ Estas capturas muestran una conexión con KRDC. Los nombres de algunas opciones 
 
 Selecciona el protocolo RDP e introduce el DNS público actual de la instancia (la imagen puede mostrar una IP antigua).
 
-![WindowsServerInstallation](P1_2/19_2.png)
+![WindowsServerInstallation](img_03/19_2.png)
 
 Puedes ajustar opciones como la resolución o el teclado. La carpeta compartida es opcional: úsala solo si necesitas transferir archivos y el equipo es de confianza.
 
-![WindowsServerInstallation](P1_2/20_2.png)
+![WindowsServerInstallation](img_03/20_2.png)
 
 Cuando el cliente lo solicite, introduce `Administrator` y la contraseña descifrada. Si aparece un aviso de certificado, comprueba que estás conectando a la dirección de tu instancia antes de continuar.
 
-![WindowsServerInstallation](P1_2/21_2.png)
+![WindowsServerInstallation](img_03/21_2.png)
 
-![WindowsServerInstallation](P1_2/22_2.png)
+![WindowsServerInstallation](img_03/22_2.png)
 
 Se establecerá la conexión.
 
-![WindowsServerInstallationAWS](P1_2/23.png)
+![WindowsServerInstallationAWS](img_03/23.png)
 
 ## Conexión usando Microsoft Remote Desktop
 
@@ -107,28 +107,28 @@ Si no tienes un cliente RDP instalado, consulta al profesor cuál debes utilizar
 
 AWS puede ofrecer la descarga de un archivo `.rdp` con los datos de conexión. Descárgalo solo en tu equipo y comprueba que corresponde a la instancia correcta antes de abrirlo. La contraseña se introduce aparte.
 
-![WindowsServerInstallationAWS](P1_2/19.png)
+![WindowsServerInstallationAWS](img_03/19.png)
 
 También puedes crear una conexión guardada desde tu cliente RDP. Los pasos y menús dependen de la aplicación.
 
 Introduce el DNS público actual como nombre del equipo y `Administrator` como usuario. Usa la contraseña obtenida en la consola.
 
-![WindowsServerInstallationAWS](P1_2/22.png)
+![WindowsServerInstallationAWS](img_03/22.png)
 
 Si necesitas compartir una carpeta, créala primero en tu equipo y selecciónala en las opciones de recursos locales del cliente RDP.
 
-![WindowsServerInstallation](P1_2/22-2.png)
+![WindowsServerInstallation](img_03/22-2.png)
 
 Al conectarte, la carpeta compartida puede aparecer como una unidad en Windows. Desactiva esta opción cuando ya no la necesites.
 
-![WindowsServerInstallation](P1_2/22-3.png)
+![WindowsServerInstallation](img_03/22-3.png)
 
 Cuando termines la configuración, la conexión guardada aparecerá en la página principal del cliente.
 
 !!! warning "La IP puede cambiar"
     Si detienes y vuelves a iniciar la instancia, AWS puede asignarle otra IP pública. Consulta la dirección actual y actualiza el cliente RDP antes de conectarte.
 
-![WindowsServerInstallation](P1_2/22-1.png)
+![WindowsServerInstallation](img_03/22-1.png)
 
 ## Elimina la instancia
 
@@ -140,4 +140,4 @@ Elimina el grupo de seguridad solo cuando ya no esté asociado a ninguna instanc
 
 Al acabar, vuelve a AWS Academy y pulsa **Finalizar laboratorio**. Finalizarlo cierra la sesión, pero no des por hecho que elimina la instancia o los demás recursos: comprueba que has detenido o terminado lo que ya no necesitas.
 
-![WindowsServerInstallationAWS](P1_2/24.png)
+![WindowsServerInstallationAWS](img_03/24.png)

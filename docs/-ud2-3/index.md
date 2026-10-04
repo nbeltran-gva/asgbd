@@ -9,7 +9,7 @@ Esta unidad desarrolla la gestión de usuarios, bases de datos, copias de seguri
 3. [Bases de datos, esquemas y tablespaces](02-bases-datos.md)
 4. [Copias de seguridad y restauración](03-copias-restauracion.md)
 5. [Vistas](04-vistas.md)
-6. [Ejercicios](actividades.md)
+6. [Ejercicios](00-actividades.md)
 
 ## Objetivos
 

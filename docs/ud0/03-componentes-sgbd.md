@@ -1,4 +1,4 @@
-# 2. Componentes de un SGBD
+# 3. Componentes de un SGBD
 
 Generalmente, un SGBD se compone de varios elementos relacionados entre sí:
 

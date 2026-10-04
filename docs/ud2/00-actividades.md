@@ -1,6 +1,6 @@
 # Actividades de Configuración
 
-Realiza un documento con explicaciones y capturas que demuestre cada resultado. Trabaja sobre las máquinas virtuales disponibles en Aules y conserva copias de seguridad de los ficheros de configuración modificados.
+Realiza un documento con explicaciones y capturas que demuestre cada resultado. Trabaja sobre las máquinas virtuales creadas en la unidad anterior  y conserva copias de seguridad de los ficheros de configuración modificados.
 
 ## Actividad 1. Configuración de una conexión local
 
@@ -40,7 +40,9 @@ Importa los datos y comprueba que las tablas se han creado correctamente. Docume
 
 ## Actividad 4. Configuración de herramientas cliente
 
-Instala o utiliza `psql` y la versión web de pgAdmin. Desde Ubuntu Mate, accede al servidor y crea una conexión en pgAdmin.
+Instala o utiliza `psql` y la versión web de pgAdmin. 
+
+Desde Ubuntu Mate, accede al servidor y crea una conexión en pgAdmin.
 
 Compara ambas herramientas y explica en qué situaciones utilizarías cada una. Comprueba que las dos permiten conectarse con el mismo usuario y consultar la base de datos `geo`.
 

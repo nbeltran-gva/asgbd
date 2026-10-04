@@ -1,10 +1,8 @@
-# 1. Arquitectura en niveles de las bases de datos
+# 2. Arquitectura en niveles de las bases de datos
 
-El comité **ANSI/SPARC** definió en **1975** una arquitectura de tres niveles para organizar los datos de una base de datos y separar la forma en que los usuarios la ven de cómo realmente se almacenan.
+El comité **ANSI/SPARC** definió en **1975** una arquitectura de tres niveles para organizar los datos de una base de datos y separar la forma en que los usuarios la ven de cómo realmente se almacenan. Esta arquitectura es fundamental porque permite que los sistemas sean más flexibles, seguros y fáciles de mantener.
 
-Esta arquitectura es fundamental porque permite que los sistemas sean más flexibles, seguros y fáciles de mantener.
-
-## Introducción
+## Arquitectura en tres niveles
 
 Una base de datos no puede tratarse como un único bloque de información. Para facilitar su gestión, se divide en varios niveles de abstracción:
 
@@ -16,8 +14,6 @@ Esta separación permite que los usuarios trabajen con una representación senci
 
 ![Arquitectura](img/arquitectura-sgbd.svg)
 
-
-## Arquitectura en tres niveles
 
 | Nivel | Función principal | Elementos que describe | Ejemplos de uso |
 | :--- | :--- | :--- | :--- |

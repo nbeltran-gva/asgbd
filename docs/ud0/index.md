@@ -6,30 +6,12 @@ Esta unidad presenta los fundamentos del diseño y funcionamiento de los sistema
 
 ## Contenidos
 
-0. [Introducción: ¿Qué es un SGBD?](00-introduccion.md)
-    * Funciones principales de un SGBD
-    * Clasificaciones de los SGBD
-    * Factores para la elección del SGBD
-    * Tipos de conexión a una base de datos
-1. [Arquitectura en niveles de las bases de datos](01-arquitectura-niveles.md)
-    * Introducción
-    * Arquitectura en tres niveles
-    * Ventajas de la arquitectura en niveles
-    * Importancia de esta arquitectura
-2. [Componentes de un SGBD](02-componentes-sgbd.md)
-    * Lenguajes
-    * El diccionario de datos
-    * Mecanismos de seguridad, integridad y recuperación
-    * El factor humano
-3. [Modelos de explotación de las bases de datos](03-modelos-explotacion.md)
-    * Criterios para elegir un modelo
-    * Ejemplo de combinación de modelos
-4. [Tareas de un DBA](04-tareas-dba.md)
-    * Diseño e instalación
-    * Seguridad y administración de usuarios
-    * Disponibilidad y recuperación
-    * Rendimiento y mantenimiento
-5. [Actividades](actividades.md)
+1. [Introducción: ¿Qué es un SGBD?](01-sgbd.md)
+2. [Arquitectura en niveles de las bases de datos](02-arquitectura-niveles.md)
+3. [Componentes de un SGBD](03-componentes-sgbd.md)
+4. [Modelos de explotación de las bases de datos](04-modelos-explotacion.md)
+5. [Tareas de un DBA](05-tareas-dba.md)
+6. [Actividades](00-actividades.md)
 
 ---
 

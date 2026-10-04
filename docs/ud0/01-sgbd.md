@@ -1,6 +1,4 @@
-# 0. Introducción
-
-## ¿Qué es un SGBD?
+# 1. ¿Qué es un SGBD?
 
 Un Sistema Gestor de Bases de Datos (SGBD) es un conjunto de programas que permiten almacenar, modificar, consultar y gestionar la información de una base de datos de forma segura, ordenada y eficiente.
 

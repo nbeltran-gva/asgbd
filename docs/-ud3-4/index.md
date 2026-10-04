@@ -9,7 +9,7 @@ Esta unidad introduce la programación procedimental en PostgreSQL para automati
 3. [Procedimientos y funciones](02-procedimientos-funciones.md)
 4. [Cursores y excepciones](03-cursores-excepciones.md)
 5. [Triggers y ejemplos de aplicación](04-triggers-aplicaciones.md)
-6. [Actividades](actividades.md)
+6. [Actividades](00-actividades.md)
 
 ## Objetivos
 

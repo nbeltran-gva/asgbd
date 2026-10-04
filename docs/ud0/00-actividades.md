@@ -1,8 +1,6 @@
-# Actividades
+# Actividades Introducción a SGBD
 
-## Actividad. Ranking DBMS
-
-### Reto: elegir un SGBD para una organización
+## Actividad 1. Ranking DBMS
 
 Trabajad en equipos de **3 o 4 personas** y consultad el ranking de sistemas gestores de bases de datos en: **[DB-Engines Ranking](https://db-engines.com/en/ranking)**.
 

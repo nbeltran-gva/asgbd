@@ -1,4 +1,4 @@
-# 2. Puesta en marcha y comprobación
+# 4. Puesta en marcha y comprobación
 
 ## Iniciar y detener PostgreSQL
 

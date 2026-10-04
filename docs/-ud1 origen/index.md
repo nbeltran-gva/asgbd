@@ -10,7 +10,7 @@ Esta unidad presenta la arquitectura de los sistemas gestores de bases de datos 
 4. [Instalación del servidor y del cliente](03-instalacion.md)
 5. [Configuración y administración del servicio](04-configuracion.md)
 6. [Entornos de trabajo](05-entornos-trabajo.md)
-7. [Ejercicios](actividades.md)
+7. [Ejercicios](00-actividades.md)
 
 ## Objetivos
 

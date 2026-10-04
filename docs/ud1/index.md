@@ -6,11 +6,11 @@ Esta versión de la unidad se centra únicamente en planificar, instalar, config
 
 ## Contenidos
 
-1. [Antes de implantar un SGBD](00-introduccion.md)
-2. [PostgreSQL como SGBD base](01-postgresql.md)
-3. [Instalación del servidor](02-instalacion-servidor.md)
-4. [Instalación de clientes](03-instalacion-clientes.md)
-5. [Prácticas de implantación](actividades.md)
+1. [Antes de implantar un SGBD](01-antes-implantar.md)
+2. [PostgreSQL como SGBD base](02-sgbd-postgresql.md)
+3. [Instalación del servidor](03-instalacion-servidor.md)
+4. [Instalación de clientes](04-instalacion-clientes.md)
+5. [Prácticas de implantación](00-actividades.md)
 ---
 
 ## Objetivos

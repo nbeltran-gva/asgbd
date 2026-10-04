@@ -1,8 +1,8 @@
 # 2. PostgreSQL: estructura y almacenamiento
 
-## 1. Introducción
-
 PostgreSQL es un sistema gestor de bases de datos relacional, muy utilizado en entornos profesionales por su estabilidad, seguridad y capacidad de gestión. Además, incorpora algunas características propias de los sistemas orientados a objetos, aunque no se trata de un SGBD puramente orientado a objetos.
+
+**Principal ventaja**
 
 Su principal ventaja es que combina un modelo relacional sólido con funcionalidades avanzadas, como:
 
@@ -13,19 +13,21 @@ Su principal ventaja es que combina un modelo relacional sólido con funcionalid
 - soporte del estándar SQL;
 - tipos de datos personalizados.
 
+**Evolución**
+
 PostgreSQL nació como un proyecto universitario en Berkeley y, con el paso del tiempo, se convirtió en un sistema open source muy importante. Su historia comenzó en 1986 con el proyecto Postgres, y en 1996 pasó a llamarse PostgreSQL. A lo largo de los años fue evolucionando hasta convertirse en una solución madura, estable y muy utilizada tanto en entornos pequeños como en instalaciones grandes y críticas.
 
 Su evolución se ha basado en mejorar la robustez, la seguridad, la integridad de los datos y la capacidad de gestión avanzada, factores que lo convierten en una opción muy sólida para la administración de bases de datos.
 
-## 2. Estructura y almacenamiento
+## Estructura y almacenamiento
 
-### 2.1. Arquitectura básica
+### 1. Arquitectura básica
 
 PostgreSQL sigue un modelo cliente-servidor. Esto significa que el servidor es el responsable de gestionar los datos, mientras que los clientes envían consultas y reciben los resultados.
 
 La comunicación entre cliente y servidor se realiza normalmente mediante TCP/IP. Además, PostgreSQL puede gestionar varias conexiones simultáneas desde distintos clientes. Para cada conexión, el sistema crea un proceso del sistema operativo que mantiene la sesión activa hasta que el cliente termina la operación.
 
-### 2.2. Subsistemas de PostgreSQL
+### 2. Subsistemas de PostgreSQL
 
 En términos generales, PostgreSQL puede dividirse en cuatro subsistemas principales:
 
@@ -36,7 +38,7 @@ En términos generales, PostgreSQL puede dividirse en cuatro subsistemas princip
 
 Cada uno de estos subsistemas tiene una función concreta dentro del funcionamiento global del SGBD.
 
-### 2.3. Componentes principales
+### 3. Componentes principales
 
 Entender la lógica de la organización de los componentes de PostgreSQL ayuda a comprender como son las relaciones e interacciones entre los objetos que componen una base de datos.
 
@@ -78,7 +80,15 @@ Su uso suele estar relacionado con dos objetivos principales:
 
 De este modo, el administrador tiene mayor flexibilidad para controlar el rendimiento y la organización del almacenamiento.
 
-## 3. Comparación breve con otro SGBD
+## Casos de uso reales en entornos profesionales
+
+PostgreSQL es utilizado en diversos casos de uso profesional, entre ellos:
+
+- Gestión de sistemas ERP: Muchas empresas utilizan PostgreSQL como base de datos para sus sistemas de planificación de recursos empresariales.
+- Analítica de datos: Permite realizar consultas complejas sobre grandes volúmenes de datos, ideal para analistas de datos y científicos de datos.
+- Geolocalización: Con extensiones como PostGIS, PostgreSQL se utiliza para almacenar y consultar datos geoespaciales.
+
+## Comparación breve con otro SGBD
 
 En el entorno del software libre, PostgreSQL y MySQL son dos de los sistemas más conocidos. 
 

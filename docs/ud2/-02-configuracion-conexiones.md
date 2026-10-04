@@ -1,22 +1,6 @@
-# 1. Configuración de conexiones
+# 2. Archivos de configuración de PostgreSQL
 
-Los ficheros principales de configuración se encuentran normalmente en `/etc/postgresql/16/main`. La ruta puede cambiar según la versión instalada.
-
-## Selección del motor y de las herramientas
-
-El motor de base de datos se selecciona según los requisitos de explotación: volumen de información, número de conexiones, compatibilidad, seguridad, disponibilidad de herramientas y experiencia del equipo administrador. 
-
-En esta unidad se utiliza PostgreSQL porque ofrece un motor relacional robusto, herramientas de consola y gráficas, buena documentación y una licencia adecuada para las prácticas.
-
-Las herramientas cliente se eligen según la tarea que se vaya a realizar:
-
-| Herramienta | Uso principal |
-|---|---|
-| `psql` | Ejecutar consultas, comprobar conexiones y automatizar tareas desde la terminal. |
-| pgAdmin | Administrar el servidor mediante una interfaz gráfica y consultar su configuración. |
-| `pg_isready` | Comprobar rápidamente si el servidor acepta conexiones. |
-
-La herramienta cliente debe utilizar una versión compatible con el servidor y disponer de los datos de conexión, el usuario y el método de autenticación previstos.
+Los ficheros principales de configuración se encuentran normalmente en `/etc/postgresql/<version>/main`. La ruta puede cambiar según la versión instalada.
 
 ## `postgresql.conf`
 

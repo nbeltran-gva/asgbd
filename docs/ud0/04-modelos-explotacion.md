@@ -1,4 +1,4 @@
-# 3. Modelos de explotación de las bases de datos
+# 4. Modelos de explotación de las bases de datos
 
 Los SGBD pueden instalarse y utilizarse siguiendo diferentes modelos de explotación, según el número de usuarios, la ubicación de los datos y la forma de acceder al sistema. Estos modelos describen cómo se organiza el acceso a la base de datos; no deben confundirse con los modelos de datos, como el relacional, el documental o el de grafos.
 

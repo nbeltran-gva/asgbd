@@ -4,7 +4,7 @@ title: 'Introducción a AWS Academy'
 
 En este apartado aprenderás a crear y administrar máquinas virtuales en **AWS Academy**. Las utilizaremos como servidores para instalar PostgreSQL, otros SGBD y los servicios necesarios para realiza las prácticas de este módulo.
 
-![AWS Academy](img/1.jpg)
+![AWS Academy](img_01/1.jpg)
 
 ## ¿Qué son AWS Academy y EC2?
 
@@ -32,6 +32,8 @@ La creación es parecida para Linux y Windows, pero el acceso cambia: en Linux u
 * Una **instancia** es la máquina virtual en ejecución.
 * La **IP privada** se utiliza dentro de la red de AWS.
 * La **IP pública** o el DNS público permiten conectarse desde Internet. Una IP pública puede cambiar al detener y volver a iniciar una instancia, por lo que hay que consultarla antes de conectar.
+
+Para una guía práctica sobre cómo mantener una dirección pública fija para un servidor, consulta [IP elástica para un servidor](03-ip-elastica.md).
 
 ### Grupo de seguridad
 
@@ -96,7 +98,7 @@ Para terminar una sesión SSH:
 exit
 ```
 
-![](img/ssh.webp)
+![](img_01/ssh.webp)
 
 ### Windows mediante RDP
 

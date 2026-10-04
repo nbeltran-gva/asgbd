@@ -1,4 +1,4 @@
-# 4. Tareas de un DBA
+# 5. Tareas de un DBA
 
 El **DBA** (*Database Administrator* o administrador de bases de datos) es el profesional responsable de planificar, configurar, proteger y mantener las bases de datos de una organización. Aunque suele disponer de privilegios elevados, sus permisos deben estar controlados y utilizarse siguiendo el principio de mínimo privilegio.
 
