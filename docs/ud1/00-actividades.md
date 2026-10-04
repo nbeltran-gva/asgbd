@@ -86,8 +86,8 @@ Objetivo: Instalar y probar un cliente PostgreSQL para conectar con un servidor 
 Tareas:
 
 1. Crear una máquina cliente **Ubuntu Mate** utilizando uno de los siguientes entornos:
-   - 1. una máquina virtual importada desde la plantilla OVA proporcionada en AULES;
-   - 2. una instancia EC2 de AWS creada en el laboratorio de clase.
+   1. una máquina virtual importada desde la plantilla OVA proporcionada en AULES;
+   2. una instancia EC2 de AWS creada en el laboratorio de clase.
 2. Instalar `pgAdmin` en la máquina cliente.
 3. Iniciar la aplicación.
 4. Configurar una conexión con el usuario `postgres` hacia el servidor PostgreSQL.
@@ -107,7 +107,7 @@ Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instala
 
 Objetivo: Implementar una solución de administración basada en navegador.
 
-Tareas: 
+Tareas:
 
 1. Instalar pgAdmin 4 en modo servidor (Web).
 2. Configurar los requisitos software necesarios.
@@ -128,7 +128,8 @@ Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instala
 
 Objetivo: Conocer las herramientas cliente disponibles para interactuar con PostgreSQL.
 
-Tareas
+Tareas:
+
 1. Utilizar Ubuntu Mate. (Utilizar máquina virtual de la actividad anterior).
 2. Instalar el cliente de línea de comandos `psql`.
 3. Comprobar la versión instalada con `psql --version`.
@@ -145,6 +146,5 @@ Evidencias:
 - Captura de la salida de al menos dos comandos internos, como `\l` y `\conninfo`.
 
 Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
-
 
 
