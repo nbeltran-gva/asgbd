@@ -103,28 +103,7 @@ Evidencias:
 
 Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
 
-## Actividad 4. Administración remota mediante pgAdmin Web
-
-Objetivo: Implementar una solución de administración basada en navegador.
-
-Tareas:
-
-1. Instalar pgAdmin 4 en modo servidor (Web).
-2. Configurar los requisitos software necesarios.
-3. Publicar el servicio web.
-4. Acceder desde un navegador remoto.
-5. Registrar una conexión con el servidor PostgreSQL.
-6. Comparar esta solución con pgAdmin Desktop.
-
-Evidencias:
-
-- Captura del acceso web.
-- Esquema de la arquitectura desplegada.
-- Tabla comparativa entre las dos modalidades de pgAdmin.
-
-Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
-
-## Actividad 5. Instalación de cliente `psql`
+## Actividad 4. Instalación de cliente `psql`
 
 Objetivo: Conocer las herramientas cliente disponibles para interactuar con PostgreSQL.
 
@@ -147,4 +126,27 @@ Evidencias:
 
 Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
 
+
+# OPCIONAL
+
+## Actividad 5. Administración remota mediante pgAdmin Web
+
+Objetivo: Implementar una solución de administración basada en navegador.
+
+Tareas:
+
+1. Instalar pgAdmin 4 en modo servidor (Web).
+2. Configurar los requisitos software necesarios.
+3. Publicar el servicio web.
+4. Acceder desde un navegador remoto.
+5. Registrar una conexión con el servidor PostgreSQL.
+6. Comparar esta solución con pgAdmin Desktop.
+
+Evidencias:
+
+- Captura del acceso web.
+- Esquema de la arquitectura desplegada.
+- Tabla comparativa entre las dos modalidades de pgAdmin.
+
+Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
 

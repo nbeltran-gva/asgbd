@@ -36,7 +36,7 @@ El trabajo se orientará principalmente a los SGBD **PostgreSQL** y **MySQL**, u
 
 - UD0 — Introducción
 - UD1 — Implantación de SGBD
-- UD2 - Configuración de SGBD
+- UD2 — Configuración de SGBD
 - UD3 — Usuarios y permisos
 - UD4 — Automatización de tareas
 - UD5 — Monitorización y Optimización

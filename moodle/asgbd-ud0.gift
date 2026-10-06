@@ -1,0 +1,252 @@
+// Cuestionario UD0: Fundamentos de los SGBD
+// Formato GIFT para importar en Moodle.
+
+::UD0-01::¿Qué es un SGBD? {
+=Un conjunto de programas que permite almacenar, modificar, consultar y gestionar los datos de una base de datos.
+~Un lenguaje de programación exclusivo para crear páginas web.
+~Un dispositivo físico destinado únicamente a realizar copias de seguridad.
+~Una aplicación que solo permite visualizar informes.
+}
+
+::UD0-02::¿Qué significan las siglas DBMS? {
+=Database Management System
+~Data Backup Management Service
+~Database Monitoring Security
+~Digital Base Management Software
+}
+
+::UD0-03::¿Qué función de un SGBD garantiza que los datos cumplan las reglas y restricciones definidas? {
+=La integridad
+~La presentación
+~La visualización
+~La compresión
+}
+
+::UD0-04::Un SGBD multiusuario permite que varias personas accedan simultáneamente al sistema. {T}
+
+::UD0-05::¿Qué tipo de SGBD organiza la información en tablas formadas por filas y columnas? {
+=Relacional
+~Documental
+~De grafos
+~En memoria
+}
+
+::UD0-06::¿Qué modelo de carga de trabajo está orientado al análisis de grandes volúmenes de datos y consultas complejas? {
+=OLAP
+~OLTP
+~DDL
+~DCL
+}
+
+::UD0-07::¿Cuál de los siguientes es un factor importante para elegir un SGBD? {
+=El volumen y crecimiento previsto de los datos
+~El color de la interfaz de usuario
+~La marca del teclado del administrador
+~El número de documentos de texto del proyecto
+}
+
+::UD0-08::En una conexión remota, el cliente y el servidor de la base de datos están en equipos diferentes. {T}
+
+::UD0-09::¿Qué organismo definió en 1975 la arquitectura de tres niveles de las bases de datos? {
+=ANSI/SPARC
+~ISO/HTML
+~W3C/SQL
+~IEEE/BIOS
+}
+
+::UD0-10::¿Qué nivel de la arquitectura de bases de datos representa la información que necesita cada usuario o aplicación? {
+=El nivel externo o de visión
+~El nivel conceptual o lógico
+~El nivel interno o físico
+~El nivel de red
+}
+
+::UD0-11::¿Qué elementos se definen principalmente en el nivel conceptual o lógico? {
+=Tablas, atributos, relaciones, claves y restricciones de integridad
+~Archivos, discos y ubicación física de los bloques
+~Solo las pantallas que utiliza cada usuario
+~Únicamente las copias de seguridad
+}
+
+::UD0-12::¿Qué describe el nivel interno o físico? {
+=Cómo y dónde se almacenan realmente los datos
+~Las vistas que utiliza cada usuario
+~Las reglas de negocio visibles en la interfaz
+~Los permisos de cada aplicación web
+}
+
+::UD0-13::La independencia lógica permite cambiar la estructura lógica de la base de datos sin tener que reescribir todas las aplicaciones que la utilizan. {T}
+
+::UD0-14::¿Qué independencia permite cambiar los discos o el formato de almacenamiento sin afectar a las aplicaciones? {
+=La independencia física
+~La independencia lógica
+~La independencia de usuario
+~La independencia de red
+}
+
+::UD0-15::¿Qué lenguaje se utiliza habitualmente para crear, modificar y eliminar objetos de una base de datos relacional? {
+=DDL
+~DML
+~DQL
+~TCL
+}
+
+::UD0-16::¿Qué sentencia pertenece normalmente al lenguaje DML? {
+=INSERT
+~CREATE
+~GRANT
+~COMMIT
+}
+
+::UD0-17::¿Qué sentencia SQL se utiliza principalmente para consultar información en una base de datos relacional? {
+=SELECT
+~DROP
+~REVOKE
+~ROLLBACK
+}
+
+::UD0-18::¿Qué lenguaje permite conceder y revocar privilegios a los usuarios? {
+=DCL
+~DDL
+~DML
+~DQL
+}
+
+::UD0-19::¿Qué lenguaje incluye operaciones como COMMIT, ROLLBACK y SAVEPOINT? {
+=TCL
+~DCL
+~DQL
+~DDL
+}
+
+::UD0-20::¿Qué contiene principalmente el diccionario de datos? {
+=Metadatos sobre los objetos, usuarios, permisos, restricciones y estadísticas de la base de datos
+~Únicamente los datos personales de los usuarios finales
+~Solo las copias físicas de las tablas
+~Los manuales de uso del sistema operativo
+}
+
+::UD0-21::El control de acceso concurrente ayuda a evitar conflictos entre transacciones ejecutadas por varios usuarios. {T}
+
+::UD0-22::¿En qué modelo la base de datos y la aplicación se ejecutan normalmente en el mismo equipo? {
+=Monopuesto
+~Cliente/servidor
+~Tres capas
+~Distribuido
+}
+
+::UD0-23::En el modelo cliente/servidor, ¿dónde se ejecuta normalmente el SGBD? {
+=En un servidor que recibe peticiones de las aplicaciones cliente
+~Siempre en el navegador del usuario
+~Únicamente en el sistema operativo del cliente
+~En todos los teclados conectados a la red
+}
+
+::UD0-24::¿Qué modelo organiza una aplicación en cliente, servidor de aplicaciones o web y servidor de bases de datos? {
+=Tres capas
+~Monopuesto
+~Solo almacenamiento local
+~Archivo compartido
+}
+
+::UD0-25::En una base de datos distribuida, los datos se almacenan en varios equipos o nodos que cooperan para ofrecer el servicio. {T}
+
+::UD0-26::¿Cuál es una responsabilidad propia del DBA durante la implantación de un sistema? {
+=Evaluar, instalar y configurar el SGBD adecuado
+~Diseñar exclusivamente el logotipo de la aplicación
+~Redactar todos los documentos de los usuarios finales
+~Sustituir el sistema operativo de cada cliente sin planificación
+}
+
+::UD0-27::¿Qué principio debe aplicar el DBA al asignar permisos? {
+=El principio de mínimo privilegio
+~El principio de acceso universal
+~El principio de permisos ilimitados
+~El principio de contraseña compartida
+}
+
+::UD0-28::¿Qué tarea corresponde al área de disponibilidad y recuperación? {
+=Planificar y verificar copias de seguridad y restauraciones
+~Cambiar el nombre de las tablas sin documentarlo
+~Crear únicamente informes de presentación
+~Eliminar los registros de actividad
+}
+
+::UD0-29::¿Qué actividad ayuda al DBA a mejorar el rendimiento del sistema? {
+=Monitorizar recursos y optimizar consultas, índices y parámetros
+~Desactivar todos los controles de seguridad
+~Eliminar las copias de seguridad antiguas sin revisarlas
+~Evitar cualquier actualización del sistema
+}
+
+::UD0-30::Además de administrar el sistema, el DBA debe documentar la configuración y los procedimientos de administración. {T}
+
+::UD0-31::¿Cómo se denomina un SGBD diseñado para que un solo usuario lo utilice a la vez? {
+=Monousuario
+~Multiusuario
+~Distribuido
+~Cliente/servidor
+}
+
+::UD0-32::¿Qué característica define a un SGBD distribuido? {
+=Los datos se reparten entre varios servidores o nodos
+~Solo puede utilizarlo una persona
+~Almacena todos los datos exclusivamente en la memoria RAM de un equipo
+~No permite conexiones remotas
+}
+
+::UD0-33::¿Cuál de los siguientes es un SGBD relacional? {
+=PostgreSQL
+~MongoDB
+~Redis
+~Neo4j
+}
+
+::UD0-34::¿Qué SGBD es un ejemplo de sistema documental que almacena documentos JSON o BSON? {
+=MongoDB
+~PostgreSQL
+~Redis
+~Oracle Database
+}
+
+::UD0-35::¿Qué sistema está orientado principalmente al almacenamiento de datos en memoria? {
+=Redis
+~MongoDB
+~Neo4j
+~SQL Server
+}
+
+::UD0-36::¿Qué tipo de carga de trabajo se caracteriza por transacciones rápidas y continuas? {
+=OLTP
+~OLAP
+~DDL
+~SSH
+}
+
+::UD0-37::¿Qué herramienta se utiliza para conectarse a PostgreSQL desde la línea de comandos? {
+=psql
+~mysql
+~sqlplus
+~pgAdmin
+}
+
+::UD0-38::¿Cuál de las siguientes es una herramienta gráfica para administrar bases de datos? {
+=DBeaver
+~psql
+~JDBC
+~TCP/IP
+}
+
+::UD0-39::¿Qué opción permite conectar una aplicación escrita en Java con una base de datos? {
+=JDBC
+~PDO
+~psycopg2
+~SQLPlus
+}
+
+::UD0-40::En una conexión remota a una base de datos, ¿qué elemento se utiliza normalmente para localizar el servidor? {
+=La dirección IP o el nombre del host, junto con el puerto
+~Únicamente el nombre del usuario
+~El color de la interfaz gráfica
+~El nombre del teclado del cliente
+}
