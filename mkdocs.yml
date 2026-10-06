@@ -82,14 +82,16 @@ nav:
   #     - 5. Configuración de bases de datos: ud2/05-conf-bd.md
   #     - Actividades: ud2/00-actividades.md
       
- # - "UD3: Usuarios y permisos":
- #     - Inicio: ud3/index.md
- #     - 0. Introducción: ud3/00-introduccion.md
- #     - 1. Usuarios, roles y permisos: ud3/01-usuarios-permisos.md
- #     - 2. Bases de datos, esquemas y tablespaces: ud3/02-bases-datos.md
- #     - 3. Copias de seguridad y restauración: ud3/03-copias-restauracion.md
- #     - 4. Vistas: ud3/04-vistas.md
- #     - Actividades: ud3/00-actividades.md
+  # - "UD3: Usuarios y permisos":
+  #    - Inicio: ud3/index.md
+  #     - 0. Introducción: ud3/00-introduccion.md
+  #    - 1. Usuarios, roles y permisos: ud3/01-usuarios-permisos.md
+  #    - 2. Bases de datos, esquemas y tablespaces: ud3/02-bases-datos.md
+  #    - 3. Copias de seguridad y restauración: ud3/03-copias-restauracion.md
+  #    - 4. Vistas: ud3/04-vistas.md
+  #    - Actividades: ud3/00-actividades.md
+
+# 2º evaluación
 
   #- "UD4: Automatización":
   #    - Inicio: ud4/index.md
