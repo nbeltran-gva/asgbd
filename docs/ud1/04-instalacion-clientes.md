@@ -133,28 +133,51 @@ En este caso, `psql` intenta conectarse al servidor `192.168.1.50`, usando el pu
 
 `psql` incluye varios comandos internos que facilitan el trabajo con la sesión actual:
 
+**Gestión de la sesión y conexión**
+
 | Comando | Descripción |
-|---|---|
-| `\e` | Abre el editor para modificar la última sentencia SQL. |
+|----------|-------------|
+| `\c base_datos [usuario]` | Cambia de base de datos y, opcionalmente, de usuario. |
+| `\conninfo` | Muestra la información de la conexión actual (base de datos, usuario, host y puerto). |
+| `\password [usuario]` | Cambia la contraseña de un rol de forma interactiva. |
+| `\q` | Sale de `psql`. |
+
+**Exploración de bases de datos y objetos**
+
+| Comando | Descripción |
+|----------|-------------|
 | `\l` | Muestra las bases de datos disponibles. |
-| `\d` | Muestra las tablas de la base de datos actual. |
-| `\d nombre_tabla` | Muestra la descripción de una tabla concreta. |
-| `\g [archivo]` | Ejecuta la última sentencia y la envía a un archivo. |
-| `\i archivo` | Ejecuta sentencias SQL desde un archivo. |
-| `\w archivo` | Guarda la sentencia actual del buffer en un archivo. |
-| `\c base_datos [usuario]` | Cambia de base de datos y, si se indica, de usuario. |
-| `\conninfo` | Muestra la información del usuario y la base de datos actuales. |
-| `\password [usuario]` | Cambia la contraseña de un rol solicitándola de forma interactiva, sin mostrarla en pantalla. |
-| `\du` | Lista los roles (usuarios) existentes. |
-| `\dn` | Lista los esquemas de la base de datos actual. |
-| `\dt` | Lista solo las tablas de la base de datos actual. |
+| `\d` | Lista tablas, vistas, secuencias y otros objetos de la base de datos actual. |
+| `\d nombre_tabla` | Muestra la estructura de una tabla concreta, incluyendo columnas, tipos de datos, índices y restricciones. |
+| `\dt` | Lista únicamente las tablas de la base de datos actual. |
 | `\dt *.*` | Lista las tablas de todos los esquemas. |
+| `\dn` | Lista los esquemas de la base de datos actual. |
 | `\db` | Lista los tablespaces. |
-| `\x` | Activa o desactiva la visualización ampliada (un campo por línea). |
-| `\timing` | Activa o desactiva la medición del tiempo de ejecución de cada sentencia. |
+| `\du` | Lista los roles (usuarios) existentes. |
+
+**Ejecución de consultas y archivos**
+
+| Comando | Descripción |
+|----------|-------------|
+| `\e` | Abre el editor para modificar la consulta actual o la última consulta enviada. |
+| `\g [archivo]` | Ejecuta la consulta actual y, opcionalmente, guarda el resultado en un archivo. |
+| `\i archivo` | Ejecuta sentencias SQL desde un archivo. |
+| `\w archivo` | Guarda la consulta actual del buffer en un archivo. |
+
+**Formato y rendimiento**
+
+| Comando | Descripción |
+|----------|-------------|
+| `\x` | Activa o desactiva el formato de salida ampliado (un campo por línea). |
+| `\timing` | Activa o desactiva la medición del tiempo de ejecución de las sentencias. |
+
+**Ayuda**
+
+| Comando | Descripción |
+|----------|-------------|
 | `\?` | Muestra la ayuda de los comandos internos de `psql`. |
 | `\h sentencia` | Muestra la ayuda de una sentencia SQL, por ejemplo `\h CREATE TABLE`. |
-| `\q` | Sale de `psql`. |
+
 
 !!! tip
     Si se quiere comprobar rápidamente la conexión, basta con ejecutar:
