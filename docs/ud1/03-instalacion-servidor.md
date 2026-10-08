@@ -49,11 +49,16 @@ sudo -i -u postgres
 psql
 ```
 
+- `sudo -i -u postgres` abre una shell de login como el usuario `postgres` (`-u` indica el usuario y `-i` carga su entorno y su directorio personal).
+- `psql` abre la consola interactiva de PostgreSQL con el rol `postgres`.
+
 También se puede hacer directamente desde la línea de comandos:
 
 ```bash
 sudo -u postgres psql
 ```
+
+Este comando ejecuta solo `psql` como `postgres`. No necesita `-i` porque no se abre una shell de login, sino que se lanza un único programa y se vuelve a la sesión original al salir.
 
 Al iniciar una sesión de PostgreSQL mediante `psql`, el indicador de la consola cambiará a:
  
@@ -69,10 +74,10 @@ Para salir del entorno interactivo, se escribe:
 postgres=# \q
 ```
 
-!!! info
-    El usuario del sistema `postgres` tiene permisos para administrar el servicio y el clúster de PostgreSQL.
+!!! info "Importante"
+    El **usuario del sistema operativo** `postgres` tiene permisos para administrar el servicio y el clúster de PostgreSQL.
 
-    Sin embargo, dentro de PostgreSQL también existe un rol inicial llamado `postgres`, que actúa como usuario administrador del SGBD y es responsable de gestionar las bases de datos y sus objetos durante la configuración inicial.
+    Sin embargo, dentro de PostgreSQL también existe un **rol inicial** llamado `postgres`, que actúa como usuario administrador del SGBD y es responsable de gestionar las bases de datos y sus objetos durante la configuración inicial.
 
     Aunque ambos compartan el mismo nombre, pertenecen a ámbitos distintos: el sistema operativo y el propio SGBD.
 

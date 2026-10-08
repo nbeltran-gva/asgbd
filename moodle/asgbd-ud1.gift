@@ -1,327 +1,402 @@
 // Cuestionario UD1: Implantación de un SGBD
 // Formato GIFT para importar en Moodle.
 
-::UD1-01::¿Cuál es la función principal del servidor PostgreSQL en una arquitectura cliente-servidor? {
+$CATEGORY: $course$/UD1 - Teóricas
+
+::UD1-T01::¿Cuál es la función principal del servidor PostgreSQL en una arquitectura cliente-servidor? {
 =Gestionar las bases de datos y atender las consultas de los clientes.
 ~Almacenar únicamente la interfaz gráfica de cada cliente.
 ~Sustituir el sistema operativo de los equipos conectados.
 ~Mostrar resultados sin acceder a los datos.
 }
 
-::UD1-02::Antes de elegir un SGBD, ¿qué información ayuda a determinar si la solución se ajusta al proyecto? {
+::UD1-T02::Antes de elegir un SGBD, ¿qué información ayuda a determinar si la solución se ajusta al proyecto? {
 =El tipo y volumen de datos, los usuarios, la concurrencia y los requisitos de disponibilidad.
 ~El modelo de teclado que utiliza el administrador.
 ~El color de los equipos cliente.
 ~El número de iconos que muestra la aplicación.
 }
 
-::UD1-03::¿Qué conjunto de elementos conviene revisar en el entorno antes de instalar PostgreSQL? {
-=Sistema operativo, memoria, espacio en disco, red, puertos y permisos de administración.
-~Únicamente el fondo de escritorio y el navegador web.
-~Solo el nombre de las bases de datos que se crearán.
-~El contenido de las tablas antes de instalar el servidor.
-}
-
-::UD1-04::¿Cuál es un criterio razonable para seleccionar un SGBD? {
+::UD1-T03::¿Cuál es un criterio razonable para seleccionar un SGBD? {
 =Comparar requisitos de seguridad, concurrencia, coste, escalabilidad y administración.
 ~Elegir siempre el sistema más conocido, sin analizar el proyecto.
 ~Escoger el que tenga el instalador más pequeño, con independencia de sus funciones.
 ~Usar el mismo SGBD en todos los proyectos aunque sus requisitos sean distintos.
 }
 
-::UD1-05::Al planificar los accesos, ¿qué principio debe aplicarse a los permisos de usuarios y aplicaciones? {
+::UD1-T04::Al planificar los accesos, ¿qué principio debe aplicarse a los permisos de usuarios y aplicaciones? {
 =Conceder únicamente los permisos necesarios para cada función.
 ~Conceder privilegios de administrador a todos los usuarios.
 ~Compartir una única cuenta con permisos ilimitados.
 ~Permitir conexiones desde cualquier equipo sin revisar su necesidad.
 }
 
-::UD1-06::¿Qué decisión forma parte de la planificación del almacenamiento? {
+::UD1-T05::¿Qué decisión forma parte de la planificación del almacenamiento? {
 =Valorar la capacidad, el rendimiento, el crecimiento previsto y las copias de seguridad.
 ~Decidir el color de las ventanas de pgAdmin.
 ~Elegir el nombre de los usuarios del sistema operativo cliente.
 ~Desactivar los registros para liberar espacio sin evaluar sus necesidades.
 }
 
-::UD1-07::¿Qué es recomendable hacer antes de modificar un fichero de configuración? {
-=Crear una copia de seguridad y registrar los cambios previstos.
-~Borrar el directorio de datos para evitar conflictos.
-~Cambiar todos los permisos del sistema sin documentarlo.
-~Detener y desinstalar el servidor.
-}
+::UD1-T06::PostgreSQL es un SGBD relacional de código abierto. {T}
 
-::UD1-08::Tras instalar PostgreSQL, ¿qué comprobación conviene realizar antes de preparar el acceso remoto? {
-=Verificar que el servicio funciona y que es posible conectarse localmente.
-~Instalar primero todos los clientes en equipos remotos.
-~Cambiar el puerto por defecto sin comprobar la instalación.
-~Crear cuentas con privilegios máximos para todos los usuarios.
-}
-
-::UD1-09::PostgreSQL es un SGBD relacional de código abierto. {T}
-
-::UD1-10::¿Qué característica permite a PostgreSQL controlar la concurrencia mediante versiones de los datos? {
+::UD1-T07::¿Qué característica permite a PostgreSQL controlar la concurrencia mediante versiones de los datos? {
 =MVCC
 ~HTML
 ~SSH
 ~DNS
 }
 
-::UD1-11::¿Cómo se comunican normalmente los clientes con el servidor PostgreSQL en una red? {
+::UD1-T08::¿Cómo se comunican normalmente los clientes con el servidor PostgreSQL en una red? {
 =Mediante conexiones TCP/IP.
 ~Mediante archivos de imagen compartidos.
 ~Exclusivamente mediante una conexión Bluetooth.
 ~Mediante el protocolo HTTP, que sustituye a SQL para todas las consultas.
 }
 
-::UD1-12::Según la descripción general de la arquitectura de PostgreSQL, ¿qué ocurre normalmente cuando un cliente establece una conexión? {
+::UD1-T09::Según la descripción general de la arquitectura de PostgreSQL, ¿qué ocurre normalmente cuando un cliente establece una conexión? {
 =PostgreSQL crea un proceso del sistema operativo para atender esa sesión.
 ~El cliente se convierte en el propietario de los archivos de datos del servidor.
 ~El servidor copia toda la base de datos al equipo cliente.
 ~PostgreSQL detiene las conexiones de los demás clientes.
 }
 
-::UD1-13::¿Qué tarea realiza principalmente el procesador de consultas de PostgreSQL? {
+::UD1-T10::¿Qué tarea realiza principalmente el procesador de consultas de PostgreSQL? {
 =Analiza las sentencias SQL, genera un plan de ejecución y devuelve resultados.
 ~Asigna direcciones IP a los equipos de la red.
 ~Instala actualizaciones del sistema operativo.
 ~Administra las ventanas de la interfaz gráfica de pgAdmin.
 }
 
-::UD1-14::¿Qué comando permite listar los clústeres de PostgreSQL instalados en Ubuntu? {
-=pg_lsclusters
-~pg_dump
-~pg_isready
-~systemctl
-}
-
-::UD1-15::¿Qué comando actualiza la información de paquetes en Ubuntu antes de instalar PostgreSQL? {
-=sudo apt update
-~sudo systemctl update postgresql
-~psql --upgrade
-~pg_lsclusters update
-}
-
-::UD1-16::¿Qué comando instala PostgreSQL y las utilidades complementarias indicadas en la unidad? {
-=sudo apt install postgresql postgresql-contrib -y
-~sudo apt install pgAdmin psql-server-only -y
-~sudo systemctl install postgresql
-~psql install postgresql-contrib
-}
-
-::UD1-17::En Ubuntu, ¿qué identifica el nombre `main` que aparece normalmente al listar los clústeres instalados? {
+::UD1-T11::En Ubuntu, ¿qué identifica el nombre `main` que aparece normalmente al listar los clústeres instalados? {
 =El nombre del clúster PostgreSQL creado durante la instalación.
 ~El nombre obligatorio de la base de datos de cada usuario.
 ~El usuario administrador del sistema operativo.
 ~El puerto TCP asignado a PostgreSQL.
 }
 
-::UD1-18::El usuario del sistema operativo `postgres` y el rol `postgres` de PostgreSQL pertenecen al mismo ámbito y son exactamente la misma cuenta. {F}
+::UD1-T12::El usuario del sistema operativo `postgres` y el rol `postgres` de PostgreSQL pertenecen al mismo ámbito y son exactamente la misma cuenta. {F}
 
-::UD1-19::¿En qué directorio se encuentran normalmente los ficheros de configuración de PostgreSQL en Ubuntu? {
-=/etc/postgresql/<versión>/main/
-~/var/lib/postgresql/<versión>/main/
-~/var/log/postgresql/
-~/usr/share/postgresql/data/
-}
-
-::UD1-20::¿Cuál es la ubicación típica de los archivos de datos del clúster en Ubuntu? {
-=/var/lib/postgresql/<versión>/main/
-~/etc/postgresql/<versión>/main/
-~/var/log/postgresql/
-~/usr/bin/
-}
-
-::UD1-21::¿Qué utilidad permite verificar rápidamente si PostgreSQL acepta conexiones de clientes? {
-=pg_isready
-~pg_lsclusters
-~pg_dump
-~pg_restore
-}
-
-::UD1-22::¿Qué comando comprueba el estado del servicio PostgreSQL en Ubuntu? {
-=sudo systemctl status postgresql
-~sudo apt status postgresql
-~psql --status postgresql
-~pg_dump --status
-}
-
-::UD1-23::¿Qué significa que `sudo systemctl is-enabled postgresql` devuelva `enabled`? {
-=Que PostgreSQL está configurado para iniciarse automáticamente al arrancar el sistema.
-~Que todos los usuarios tienen permisos de administrador en PostgreSQL.
-~Que el servidor acepta conexiones remotas desde cualquier red.
-~Que el cliente `psql` tiene la misma versión que el servidor.
-}
-
-::UD1-24::¿Qué diferencia hay entre `psql --version` y `sudo -u postgres psql -c "SELECT version();"`? {
-=El primero muestra la versión del cliente; el segundo consulta la versión del servidor.
-~El primero muestra la versión del servidor y el segundo instala una versión nueva.
-~Ambos muestran siempre la versión del sistema operativo.
-~El primero comprueba el puerto y el segundo inicia el servicio.
-}
-
-::UD1-25::¿Qué puerto TCP utiliza PostgreSQL por defecto? {
+::UD1-T13::¿Qué puerto TCP utiliza PostgreSQL por defecto? {
 =5432
 ~3306
 ~8080
 ~22
 }
 
-::UD1-26::¿Qué sentencia SQL permite consultar el puerto configurado en el servidor PostgreSQL? {
-=SHOW port;
-~SELECT port FROM servers;
-~LIST port;
-~DESCRIBE port;
-}
-
-::UD1-27::¿Cuál es el propósito principal de pgAdmin? {
+::UD1-T14::¿Cuál es el propósito principal de pgAdmin? {
 =Administrar PostgreSQL mediante una interfaz gráfica.
 ~Sustituir el motor PostgreSQL y almacenar los datos en el cliente.
 ~Actualizar los paquetes del sistema operativo.
 ~Mostrar únicamente el estado del servicio desde una terminal.
 }
 
-::UD1-28::En `psql -h 192.168.1.50 -p 5432 -U alumno -d practicas -W`, ¿qué especifica `-h`? {
-=La dirección o el nombre del servidor al que se conecta el cliente.
-~El nombre de la base de datos.
-~El usuario de PostgreSQL.
-~La solicitud de contraseña.
-}
-
-::UD1-29::¿Qué muestra el comando interno `\l` dentro de `psql`? {
-=Las bases de datos disponibles.
-~Las conexiones de red del sistema operativo.
-~La versión del servidor.
-~El contenido de una copia de seguridad.
-}
-
-::UD1-30::Para que un cliente remoto se conecte a PostgreSQL, ¿qué condiciones deben cumplirse además de instalar el cliente? {
-=El servidor debe aceptar conexiones externas, existir una regla de acceso adecuada y estar permitido el tráfico de red al puerto.
-~El cliente y el servidor deben utilizar la misma dirección IP.
-~El servicio PostgreSQL debe estar detenido para liberar el puerto.
-~Es suficiente con conocer el nombre de usuario, sin configurar el servidor ni la red.
-}
-
-::UD1-31::¿Qué es un esquema en PostgreSQL? {
+::UD1-T15::¿Qué es un esquema en PostgreSQL? {
 =Un contenedor dentro de una base de datos donde se organizan tablas, vistas, funciones, índices y otros objetos.
 ~Un fichero de configuración que define las reglas de autenticación.
 ~Un disco o partición donde se almacenan los datos.
 ~Un usuario con permisos de administrador.
 }
 
-::UD1-32::¿Cómo se llama el esquema que incluye por defecto cada base de datos PostgreSQL? {
+::UD1-T16::¿Cómo se llama el esquema que incluye por defecto cada base de datos PostgreSQL? {
 =public
 ~main
 ~default
 ~admin
 }
 
-::UD1-33::¿Para qué sirven los tablespaces en PostgreSQL? {
+::UD1-T17::¿Para qué sirven los tablespaces en PostgreSQL? {
 =Para ubicar físicamente los datos en discos o particiones distintos del principal.
 ~Para definir los usuarios que pueden conectarse al servidor.
 ~Para cifrar las contraseñas de los roles.
 ~Para cambiar el puerto de escucha del servidor.
 }
 
-::UD1-34::Los roles de PostgreSQL se gestionan a nivel de instancia del SGBD y no dentro de una base de datos concreta. {T}
+::UD1-T18::Los roles de PostgreSQL se gestionan a nivel de instancia del SGBD y no dentro de una base de datos concreta. {T}
 
-::UD1-35::¿Cuál es el nombre del superusuario por defecto en PostgreSQL? {
+::UD1-T19::¿Cuál es el nombre del superusuario por defecto en PostgreSQL? {
 =postgres
 ~root
 ~admin
 ~sa
 }
 
-::UD1-36::¿Cuál de estos subsistemas de PostgreSQL controla la caché, los buffers y el espacio físico en disco? {
+::UD1-T20::¿Cuál de estos subsistemas de PostgreSQL controla la caché, los buffers y el espacio físico en disco? {
 =El gestor de almacenamiento
 ~El gestor de procesos
 ~El procesador de consultas
 ~Las utilidades
 }
 
-::UD1-37::¿En qué año pasó a llamarse PostgreSQL el proyecto Postgres, nacido en la Universidad de Berkeley? {
+::UD1-T21::¿En qué año pasó a llamarse PostgreSQL el proyecto Postgres, nacido en la Universidad de Berkeley? {
 =1996
 ~1986
 ~2006
 ~1976
 }
 
-::UD1-38::PostgreSQL y MySQL son siempre equivalentes, por lo que no es necesario analizar los requisitos del proyecto para elegir entre ellos. {F}
+::UD1-T22::PostgreSQL y MySQL son siempre equivalentes, por lo que no es necesario analizar los requisitos del proyecto para elegir entre ellos. {F}
 
-::UD1-39::¿Qué comando abre la consola interactiva `psql` con el usuario del sistema `postgres` en una sola línea? {
-=sudo -u postgres psql
-~sudo psql --root
-~psql -u postgres sudo
-~sudo systemctl psql postgres
-}
+::UD1-T23::Los archivos del directorio de datos de PostgreSQL no deben modificarse manualmente. {T}
 
-::UD1-40::¿Qué indica el prompt `postgres=#` en la terminal? {
-=Que se está dentro de la consola interactiva de PostgreSQL y no en la shell de Linux.
-~Que el servicio PostgreSQL está detenido.
-~Que se ha iniciado sesión como root en el sistema operativo.
-~Que la última sentencia SQL ha producido un error.
-}
-
-::UD1-41::¿Qué se escribe en `psql` para salir de la consola interactiva? {
-=\q
-~\l
-~\d
-~\c
-}
-
-::UD1-42::¿Qué comando de `psql` muestra la información del usuario y la base de datos de la conexión actual? {
-=\conninfo
-~\conn
-~\whoami
-~\info
-}
-
-::UD1-43::¿Qué comando permite listar las tablas de la base de datos actual en `psql`? {
-=\d
-~\l
-~\q
-~\g
-}
-
-::UD1-44::¿Qué comando sirve para localizar la ruta de los ejecutables `psql`, `pg_dump` y `pg_restore` sin listar todo `/usr/bin/`? {
-=command -v psql pg_dump pg_restore
-~sudo tree /etc/postgresql
-~pg_lsclusters --paths
-~sudo systemctl is-active postgresql
-}
-
-::UD1-45::¿Qué comando de red permite comprobar si hay un proceso escuchando en el puerto 5432? {
-=sudo ss -ltnp | grep 5432
-~sudo apt list 5432
-~psql --port-check
-~pg_dump -p 5432
-}
-
-::UD1-46::¿Dónde se encuentran normalmente los archivos de registro de PostgreSQL en Ubuntu? {
-=/var/log/postgresql/
-~/etc/postgresql/
-~/var/lib/postgresql/
-~/usr/bin/
-}
-
-::UD1-47::Los archivos del directorio de datos de PostgreSQL no deben modificarse manualmente. {T}
-
-::UD1-48::¿Qué opción de `psql` solicita la contraseña antes de conectar? {
-=-W
-~-U
-~-p
-~-d
-}
-
-::UD1-49::¿Cuál es una diferencia entre pgAdmin Desktop y pgAdmin Web? {
+::UD1-T24::¿Cuál es una diferencia entre pgAdmin Desktop y pgAdmin Web? {
 =pgAdmin Web se instala en modo servidor y se accede a él desde un navegador.
 ~pgAdmin Web no permite registrar conexiones a servidores PostgreSQL.
 ~pgAdmin Desktop solo funciona desde un navegador remoto.
 ~pgAdmin Web sustituye al servidor PostgreSQL.
 }
 
-::UD1-50::Al configurar una conexión en pgAdmin, ¿qué datos se indican normalmente? {
-=Nombre, servidor o dirección, puerto, base de datos, usuario y contraseña.
+::UD1-T25::En Ubuntu, ¿qué contiene el directorio `/var/lib/postgresql/<versión>/main`? {
+=El directorio de datos del clúster, con las bases de datos, los registros de transacciones y otros archivos internos de PostgreSQL.
+~Los ficheros de configuración como `postgresql.conf` y `pg_hba.conf`.
+~Los archivos de registro del servidor.
+~Los ejecutables `psql`, `pg_dump` y `pg_restore`.
+}
+
+::UD1-T26::¿Cuál es la función del usuario del sistema operativo `postgres` que se crea al instalar PostgreSQL en Ubuntu? {
+=Es el propietario del servicio y del clúster, y permite administrar el servidor desde el sistema operativo.
+~Es el rol administrador interno del SGBD que gestiona las bases de datos y sus objetos.
+~Es una cuenta que solo existe dentro de PostgreSQL y no se puede usar desde la shell de Linux.
+~Es el usuario que deben utilizar todas las aplicaciones cliente para conectarse.
+}
+
+::UD1-T27::¿Cuál es la función del rol `postgres` dentro de PostgreSQL? {
+=Es el rol inicial que actúa como administrador del SGBD y gestiona las bases de datos y sus objetos durante la configuración inicial.
+~Es el propietario del servicio y del clúster a nivel del sistema operativo.
+~Es un rol sin privilegios que solo permite consultar datos.
+~Es la base de datos donde se almacenan las contraseñas del sistema operativo.
+}
+
+::UD1-T28::¿Qué es un clúster en PostgreSQL? {
+=El conjunto de archivos y procesos que gestionan una o varias bases de datos de PostgreSQL.
+~Un grupo de servidores físicos que se reparten las consultas de los clientes.
+~Una copia de seguridad completa de todas las bases de datos.
+~Una herramienta gráfica para administrar bases de datos.
+}
+
+::UD1-T29::¿Qué ventaja ofrece el uso de esquemas dentro de una base de datos PostgreSQL? {
+=Permiten separar los objetos y mantener una estructura más ordenada de la información.
+~Permiten almacenar los datos en discos distintos del principal.
+~Permiten crear usuarios con privilegios de administrador.
+~Permiten sustituir el archivo de configuración del servidor.
+}
+
+::UD1-T30::¿Cuáles son los dos objetivos principales del uso de tablespaces en PostgreSQL? {
+=Mantenimiento, por ejemplo ampliando el espacio en otro disco o partición, y optimización, ubicando los datos más críticos en discos más rápidos.
+~Seguridad, cifrando los datos, y autenticación, validando a los usuarios.
+~Replicación de los datos y balanceo de carga entre servidores.
+~Cambiar la lógica de la base de datos y modificar el puerto del servidor.
+}
+
+
+$CATEGORY: $course$/UD1 - Prácticas
+
+::UD1-P01::¿Qué conjunto de elementos conviene revisar en el entorno antes de instalar PostgreSQL? {
+=Sistema operativo, memoria, espacio en disco, red, puertos y permisos de administración.
+~Únicamente el fondo de escritorio y el navegador web.
+~Solo el nombre de las bases de datos que se crearán.
+~El contenido de las tablas antes de instalar el servidor.
+}
+
+::UD1-P02::¿Qué es recomendable hacer antes de modificar un fichero de configuración? {
+=Crear una copia de seguridad y registrar los cambios previstos.
+~Borrar el directorio de datos para evitar conflictos.
+~Cambiar todos los permisos del sistema sin documentarlo.
+~Detener y desinstalar el servidor.
+}
+
+::UD1-P03::Tras instalar PostgreSQL, ¿qué comprobación conviene realizar antes de preparar el acceso remoto? {
+=Verificar que el servicio funciona y que es posible conectarse localmente.
+~Instalar primero todos los clientes en equipos remotos.
+~Cambiar el puerto por defecto sin comprobar la instalación.
+~Crear cuentas con privilegios máximos para todos los usuarios.
+}
+
+::UD1-P04::¿Qué comando permite listar los clústeres de PostgreSQL instalados en Ubuntu? {
+=pg_lsclusters
+~pg_dump
+~pg_isready
+~systemctl
+}
+
+::UD1-P05::¿Qué comando actualiza la información de paquetes en Ubuntu antes de instalar PostgreSQL? {
+=sudo apt update
+~sudo systemctl update postgresql
+~psql --upgrade
+~pg_lsclusters update
+}
+
+::UD1-P06::¿Qué comando instala PostgreSQL y las utilidades complementarias indicadas en la unidad? {
+=sudo apt install postgresql postgresql-contrib -y
+~sudo apt install pgAdmin psql-server-only -y
+~sudo systemctl install postgresql
+~psql install postgresql-contrib
+}
+
+::UD1-P07::¿En qué directorio se encuentran normalmente los ficheros de configuración de PostgreSQL en Ubuntu? {
+=/etc/postgresql/<versión>/main/
+~/var/lib/postgresql/<versión>/main/
+~/var/log/postgresql/
+~/usr/share/postgresql/data/
+}
+
+::UD1-P08::¿Cuál es la ubicación típica de los archivos de datos del clúster en Ubuntu? {
+=/var/lib/postgresql/<versión>/main/
+~/etc/postgresql/<versión>/main/
+~/var/log/postgresql/
+~/usr/bin/
+}
+
+::UD1-P09::¿Qué utilidad permite verificar rápidamente si PostgreSQL acepta conexiones de clientes? {
+=pg_isready
+~pg_lsclusters
+~pg_dump
+~pg_restore
+}
+
+::UD1-P10::¿Qué comando comprueba el estado del servicio PostgreSQL en Ubuntu? {
+=sudo systemctl status postgresql
+~sudo apt status postgresql
+~psql --status postgresql
+~pg_dump --status
+}
+
+::UD1-P11::¿Qué significa que `sudo systemctl is-enabled postgresql` devuelva `enabled`? {
+=Que PostgreSQL está configurado para iniciarse automáticamente al arrancar el sistema.
+~Que todos los usuarios tienen permisos de administrador en PostgreSQL.
+~Que el servidor acepta conexiones remotas desde cualquier red.
+~Que el cliente `psql` tiene la misma versión que el servidor.
+}
+
+::UD1-P12::¿Qué diferencia hay entre `psql --version` y `sudo -u postgres psql -c "SELECT version();"`? {
+=El primero muestra la versión del cliente; el segundo consulta la versión del servidor.
+~El primero muestra la versión del servidor y el segundo instala una versión nueva.
+~Ambos muestran siempre la versión del sistema operativo.
+~El primero comprueba el puerto y el segundo inicia el servicio.
+}
+
+::UD1-P13::¿Qué sentencia SQL permite consultar el puerto configurado en el servidor PostgreSQL? {
+=SHOW port;
+~SELECT port FROM servers;
+~LIST port;
+~DESCRIBE port;
+}
+
+::UD1-P14::En `psql -h 192.168.1.50 -p 5432 -U alumno -d practicas -W`, ¿qué especifica `-h`? {
+=La dirección o el nombre del servidor al que se conecta el cliente.
+~El nombre de la base de datos.
+~El usuario de PostgreSQL.
+~La solicitud de contraseña.
+}
+
+::UD1-P15::¿Qué muestra el comando interno `\l` dentro de `psql`? {
+=Las bases de datos disponibles.
+~Las conexiones de red del sistema operativo.
+~La versión del servidor.
+~El contenido de una copia de seguridad.
+}
+
+::UD1-P16::Para que un cliente remoto se conecte a PostgreSQL, ¿qué condiciones deben cumplirse además de instalar el cliente? {
+=El servidor debe aceptar conexiones externas, existir una regla de acceso adecuada y estar permitido el tráfico de red al puerto.
+~El cliente y el servidor deben utilizar la misma dirección IP.
+~El servicio PostgreSQL debe estar detenido para liberar el puerto.
+~Es suficiente con conocer el nombre de usuario, sin configurar el servidor ni la red.
+}
+
+::UD1-P17::¿Qué comando abre la consola interactiva `psql` con el usuario del sistema operativo `postgres` en una sola línea? {
+=sudo -u postgres psql
+~sudo psql --root
+~psql -u postgres sudo
+~sudo systemctl psql postgres
+}
+
+::UD1-P18::¿Qué indica el prompt `postgres=#` en la terminal? {
+=Que se está dentro de la consola interactiva de PostgreSQL y no en la shell de Linux.
+~Que el servicio PostgreSQL está detenido.
+~Que se ha iniciado sesión como root en el sistema operativo.
+~Que la última sentencia SQL ha producido un error.
+}
+
+::UD1-P19::¿Qué se escribe en `psql` para salir de la consola interactiva? {
+=\q
+~\l
+~\d
+~\c
+}
+
+::UD1-P20::¿Qué comando de `psql` muestra la información del usuario y la base de datos de la conexión actual? {
+=\conninfo
+~\conn
+~\whoami
+~\info
+}
+
+::UD1-P21::¿Qué comando permite listar las tablas de la base de datos actual en `psql`? {
+=\d
+~\l
+~\q
+~\g
+}
+
+::UD1-P22::¿Qué comando sirve para localizar la ruta de los ejecutables `psql`, `pg_dump` y `pg_restore` sin listar todo `/usr/bin/`? {
+=command -v psql pg_dump pg_restore
+~sudo tree /etc/postgresql
+~pg_lsclusters --paths
+~sudo systemctl is-active postgresql
+}
+
+::UD1-P23::¿Qué comando de red permite comprobar si hay un proceso escuchando en el puerto 5432? {
+=sudo ss -ltnp | grep 5432
+~sudo apt list 5432
+~psql --port-check
+~pg_dump -p 5432
+}
+
+::UD1-P24::¿Dónde se encuentran normalmente los archivos de registro de PostgreSQL en Ubuntu? {
+=/var/log/postgresql/
+~/etc/postgresql/
+~/var/lib/postgresql/
+~/usr/bin/
+}
+
+::UD1-P25::¿Qué opción de `psql` solicita la contraseña antes de conectar? {
+=-W
+~-U
+~-p
+~-d
+}
+
+::UD1-P26::Al configurar una conexión en pgAdmin, ¿qué datos se indican normalmente? {
+=Nombre, servidor o dirección, puerto, base de datos, usuario y el contraseña.
 ~Solo el nombre del servidor y el color del tema.
 ~La versión del sistema operativo y el tamaño del disco.
 ~Únicamente el nombre del clúster y la ruta de los logs.
+}
+
+::UD1-P27::¿Qué sentencia SQL permite cambiar la contraseña del rol `postgres` desde `psql`? {
+=ALTER USER postgres WITH PASSWORD 'nueva_contraseña';
+~UPDATE postgres SET PASSWORD = 'nueva_contraseña';
+~SET PASSWORD FOR postgres = 'nueva_contraseña';
+~CREATE PASSWORD 'nueva_contraseña' FOR postgres;
+}
+
+::UD1-P28::¿Qué comando interno de `psql` permite cambiar la contraseña del rol `postgres` solicitándola de forma interactiva, sin mostrarla en pantalla? {
+=\password postgres
+~\passwd postgres
+~\alter postgres password
+~\setpass postgres
+}
+
+::UD1-P29::En el comando `sudo -i -u postgres`, ¿qué efecto tiene la opción `-i`? {
+=Inicia una shell de login como el usuario indicado, cargando su entorno y su directorio personal.
+~Indica que el usuario `postgres` se ejecutará de forma interactiva en `psql`.
+~Instala PostgreSQL para el usuario indicado.
+~Ignora la contraseña del usuario `postgres`.
+}
+
+::UD1-P30::¿Qué comando instala pgAdmin 4 en Ubuntu una vez configurado el repositorio de paquetes? {
+=sudo apt install pgadmin4
+~sudo systemctl install pgadmin4
+~psql --install pgadmin4
+~sudo apt update pgadmin4 --remove-server
 }
