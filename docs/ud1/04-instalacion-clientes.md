@@ -144,6 +144,16 @@ En este caso, `psql` intenta conectarse al servidor `192.168.1.50`, usando el pu
 | `\w archivo` | Guarda la sentencia actual del buffer en un archivo. |
 | `\c base_datos [usuario]` | Cambia de base de datos y, si se indica, de usuario. |
 | `\conninfo` | Muestra la información del usuario y la base de datos actuales. |
+| `\password [usuario]` | Cambia la contraseña de un rol solicitándola de forma interactiva, sin mostrarla en pantalla. |
+| `\du` | Lista los roles (usuarios) existentes. |
+| `\dn` | Lista los esquemas de la base de datos actual. |
+| `\dt` | Lista solo las tablas de la base de datos actual. |
+| `\dt *.*` | Lista las tablas de todos los esquemas. |
+| `\db` | Lista los tablespaces. |
+| `\x` | Activa o desactiva la visualización ampliada (un campo por línea). |
+| `\timing` | Activa o desactiva la medición del tiempo de ejecución de cada sentencia. |
+| `\?` | Muestra la ayuda de los comandos internos de `psql`. |
+| `\h sentencia` | Muestra la ayuda de una sentencia SQL, por ejemplo `\h CREATE TABLE`. |
 | `\q` | Sale de `psql`. |
 
 !!! tip
