@@ -48,7 +48,9 @@ Plantilla de comparación:
 | Oracle Database |  |  |  |  |  |  |  |  |
 
 	
-Entrega: Documento PDF bien explicado con los puntos que se piden en Tareas después de realizar el ánalisis.
+Entrega: 
+
+Documento PDF bien explicado con los puntos que se piden en Tareas después de realizar el ánalisis.
 
 ---
 
@@ -93,102 +95,117 @@ Evidencias:
 - Tabla identificando los principales directorios de PostgreSQL: configuración, datos y logs.
 - Registro de incidencias, si las hubiera.
 
-Entrega: Breve informe técnico (2-6 páginas) describiendo el proceso de implantación en ambos entornos, adjuntando las evidencias solicitadas.
+Entrega: 
+
+Breve informe técnico (2-6 páginas) describiendo el proceso de implantación en ambos entornos, adjuntando las evidencias solicitadas.
 
 ---
 
-## Actividad 3. Instalación y Conexión al servidor mediante cliente gráfico.
+## Actividad 3. Instalación del cliente pgAdmin 4.
 
 Objetivo: 
 
-Instalar y utilizar un cliente gráfico PostgreSQL para conectar con los servidores PostgreSQL instalados previamente.
+Instalar y verificar el funcionamiento de pgAdmin 4 como herramienta gráfica de administración para PostgreSQL.
 
 Situación: 
 
-El servidor PostgreSQL ya está implantado. Ahora se necesita acceder a él desde una máquina cliente mediante una herramienta gráfica. Se utilizarán:
-
-- a. **pgAdmin 4**, instalar en la máquina cliente Ubuntu MATE.
-- b. **DBeaver**, disponible en los equipos del aula.
-
-Importante: En esta actividad no se crearán ni modificarán bases de datos, usuarios ni objetos.
+En esta actividad nos centraremos únicamente en la instalación y puesta en marcha de la herramienta cliente **pgAdmin 4**. La conexión con servidores PostgreSQL se trabajará en la siguiente unidad didáctica.
 
 Tareas:
 
-1. Preparación del Cliente: 
-    1. Crear una máquina cliente **Ubuntu MATE Desktop** importada desde la plantilla OVA proporcionada en AULES. Instalar `pgAdmin` en esta máquina cliente.
-    2. Utilizar cliente **DBeaver** ya instalado en los equipos.
-2. Iniciar la aplicación cliente.
-3. Configurar una conexión con el usuario `postgres` hacia los servidores PostgreSQL creados anteriormente, Local y Cloud.
-4. Comprobar que la conexión se muestra correctamente en el árbol de objetos.
-5. Registrar los datos de conexión: nombre del servidor, dirección, puerto, usuario y base de datos.
+1. Crear una máquina cliente **Ubuntu MATE Desktop** importada desde la plantilla OVA proporcionada en AULES. 
+2. Instalar pgAdmin 4 en la máquina cliente.
+3. Iniciar la aplicación cliente y comprobar que se abre correctamente.
+4. Explorar las principales opciones de la interfaz gráfica (panel de navegación, menús y preferencias).
+5. Identificar la versión instalada de pgAdmin 4.
 
 Evidencias:
 
-- Captura de la instalación de `pgAdmin`.
-- Captura de la configuración de la conexión a los servidores PostgreSQL -local y cloud- desde los clientes utilizados.
-- Captura del árbol de objetos con el servidor conectado correctamente.
-- Captura de los datos de conexión registrados: servidor, puerto, usuario y base de datos.
+- Captura de la instalación de pgAdmin 4.
+- Captura de la ventana principal de la aplicación iniciada correctamente.
+- Captura donde se visualice la versión instalada.
 
-Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias o ficha de conexión.
+Entrega:
+
+Informe breve (1-3 páginas) describiendo el proceso de instalación e incluyendo las evidencias solicitadas.
+
+---
+!!! warning "Advertencia"
+    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
 
 ## Actividad 4. Instalación de cliente `psql`
 
 Objetivo: 
 
-Utilizar la herramienta de línea de comandos `psql` para conectarse y obtener información del servidor PostgreSQL.
+Instalar y verificar el funcionamiento básico de la herramienta de línea de comandos psql.
 
 Situación: 
 
-Utiliza la máquina Ubuntu MATE de la actividad anterior.
+Se utilizará la misma máquina Ubuntu MATE creada en la actividad anterior.
 
 Tareas:
 
 1. Instalar el cliente de línea de comandos `psql`.
-2. Comprobar la versión instalada con `psql --version`.
-3. Conectarse desde el cliente `plsql`a los dos servidores PostgreSQL -local y cloud-
-4. Probar una conexión remota utilizando el parámetro `-h`.
-5. Ejecutar comandos básicos como `\l`, `\d` y `\conninfo`.
-6. Comprobar que la conexión funciona correctamente y anotar los parámetros necesarios: host, puerto, usuario y base de datos.
+2. Comprobar que la instalación se ha realizado correctamente mediante el comando:  `psql --version`.
+3. Ejecutar el comando `command -v psql` para verificar que el sistema reconoce correctamente el cliente PostgreSQL y localizar su ejecutable.
+4. Registrar la versión instalada y la ruta del programa.
+5. Ejecutar alguno de los comandos básicos dentro del entorno plsql.
 
 Evidencias:
 
+- Captura de la instalación del cliente PostgreSQL.
 - Captura de la comprobación de la versión con `psql --version`.
-- Captura de una conexión local correcta a la base de datos.
-- Captura de una conexión remota utilizando `-h` y `-p`.
-- Captura de la salida de al menos dos comandos internos, como `\l` y `\conninfo`.
+- Captura de la salida del comando which psql.
+- Captura de la salida de al menos dos comandos internos.
 
-Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias (ficha de comandos).
+Entrega:
 
+Informe breve (1-3 páginas) describiendo el proceso de instalación e incluyendo las evidencias solicitadas.
+
+---
+!!! warning "Advertencia"
+    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
 
 # OPCIONAL
 
-## Actividad 5. Administración remota mediante pgAdmin Web (Opcional)
+## Actividad 5. Instalación de pgAdmin 4 en modo Web (Opcional)
 
 Objetivo: 
 
-Instalar y utilizar pgAdmin 4 en modo Web para administrar servidores PostgreSQL desde un navegador y comparar esta solución con la versión de escritorio.
+Instalar y verificar el funcionamiento de pgAdmin 4 en modo Web como alternativa a la versión de escritorio.
 
 Situación: 
+
+Las organizaciones pueden desplegar pgAdmin como una aplicación web accesible desde un navegador. En esta actividad se realizará la instalación y configuración básica de pgAdmin Web, sin necesidad de conectarlo a ningún servidor PostgreSQL.
 
 Utiliza la máquina Ubuntu MATE de la actividad anterior.
 
 Tareas:
 
-1. Instalar pgAdmin 4 en modo web.
-2. Acceder a la aplicación mediante un navegador web remoto.
-3. Registrar una conexión con los servidores PostgreSQL -local y cloud-.
-4. Verificar que ambos servidores aparecen correctamente en el árbol de objetos.
-5. Comparar las características y casos de uso de pgAdmin Web y pgAdmin Desktop.
+1. Instalar pgAdmin 4 en modo Web siguiendo la documentación oficial.
+2. Realizar la configuración inicial de la aplicación.
+3. Acceder a pgAdmin Web mediante un navegador.
+4. Verificar que la aplicación se inicia correctamente y que es posible acceder a la pantalla principal.
+5. Identificar la dirección de acceso (URL) y el puerto utilizado por la aplicación.
+6. Elaborar una breve comparativa entre pgAdmin Desktop y pgAdmin Web indicando sus principales ventajas e inconvenientes.
 
 Evidencias:
 
-- Captura de la instalación.
-- Captura del acceso mediante navegador.
-- Captura de la interfaz principal de pgAdmin Web.
-- Captura de la conexión registrada.
-- Captura del árbol de objetos.
-- Esquema de arquitectura.
-- Tabla comparativa entre las dos modalidades de pgAdmin Destop/Web de las características principales (Instalación, Acceso remot, Dependencias, Administración multiusuario, Facilidad de despliegue, Ventajas, Inconvenientes).
+- Captura de la instalación de pgAdmin Web.
+- Captura de la configuración inicial.
+- Captura del acceso desde el navegador web.
+- Captura de la pantalla principal de pgAdmin Web.
+- Captura donde se visualice la URL o dirección de acceso utilizada.
+- Tabla comparativa entre pgAdmin Desktop y pgAdmin Web.
 
-Entrega: Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
+Entrega: 
 
+Informe breve (2-6 páginas) con la descripción del proceso de instalación y las evidencias 
+
+Nota:
+
+En esta actividad no es necesario registrar conexiones ni conectarse a servidores PostgreSQL. El objetivo es únicamente instalar, configurar y verificar el funcionamiento de pgAdmin Web.
+
+---
+!!! warning "Advertencia"
+    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
