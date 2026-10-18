@@ -100,6 +100,10 @@ Entrega:
 Breve informe técnico (2-6 páginas) describiendo el proceso de implantación en ambos entornos, adjuntando las evidencias solicitadas.
 
 ---
+!!! warning "Advertencia"
+    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
+
+---
 
 ## Actividad 3. Instalación del cliente pgAdmin 4.
 
@@ -130,8 +134,6 @@ Entrega:
 Informe breve (1-3 páginas) describiendo el proceso de instalación e incluyendo las evidencias solicitadas.
 
 ---
-!!! warning "Advertencia"
-    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
 
 ## Actividad 4. Instalación de cliente `psql`
 
@@ -162,9 +164,7 @@ Entrega:
 
 Informe breve (1-3 páginas) describiendo el proceso de instalación e incluyendo las evidencias solicitadas.
 
----
-!!! warning "Advertencia"
-    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
+--- 
 
 # OPCIONAL
 
@@ -205,7 +205,3 @@ Informe breve (2-6 páginas) con la descripción del proceso de instalación y l
 Nota:
 
 En esta actividad no es necesario registrar conexiones ni conectarse a servidores PostgreSQL. El objetivo es únicamente instalar, configurar y verificar el funcionamiento de pgAdmin Web.
-
----
-!!! warning "Advertencia"
-    En esta unidad no es necesario realizar conexiones a servidores PostgreSQL, ni locales ni remotos. La configuración del servidor y las conexiones desde los distintos clientes se abordarán en la siguiente unidad didáctica.
