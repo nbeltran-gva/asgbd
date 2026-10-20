@@ -33,17 +33,17 @@ Por ejemplo:
 
 ```text
 # MAPNAME             SYSTEM-USERNAME    DATABASE-USERNAME
-usuarios_locales     ignac              app_user
+usuarios_locales     pepe              app_user
 ```
 
-Esta entrada indica que el usuario del sistema `ignac` puede autenticarse como el rol PostgreSQL `app_user` cuando se utilice el mapa `usuarios_locales`.
+Esta entrada indica que el usuario del sistema `pepe` puede autenticarse como el rol PostgreSQL `app_user` cuando se utilice el mapa `usuarios_locales`.
 
 Se pueden incluir varias correspondencias bajo el mismo nombre de mapa:
 
 ```text
 # MAPNAME            SYSTEM-USERNAME    DATABASE-USERNAME
-usuarios_locales     ignac              app_user
-usuarios_locales     marta              informes
+usuarios_locales     pepe               app_user
+usuarios_locales     ana                informes
 ```
 
 Las líneas en blanco se ignoran y los comentarios comienzan con `#`.
@@ -56,8 +56,8 @@ Por ejemplo, cuando se emplea autenticación peer, PostgreSQL espera que el nomb
 PostgreSQL:
 
 ```text
-Usuario Linux: ignac
-Rol PostgreSQL: ignac
+Usuario Linux: pepe
+Rol PostgreSQL: pepe
 ```
 
 Configuración:
@@ -73,7 +73,7 @@ En este caso no se necesita ningún mapa.
 Por ejemplo:
 
 ```text
-Usuario Linux: ignac
+Usuario Linux: pepe
 Rol PostgreSQL: app_user
 ```
 
@@ -85,7 +85,7 @@ El siguiente esquema resume el proceso de autenticación:
 
 ```text
 Usuario del sistema
-       ignac
+       pepe
           │
           ▼
 pg_hba.conf
@@ -93,7 +93,7 @@ peer map=usuarios_locales
           │
           ▼
 pg_ident.conf
-ignac → app_user
+pepe → app_user
           │
           ▼
 Rol PostgreSQL
@@ -118,7 +118,7 @@ local    appdb    app_user             peer map=usuarios_locales
 
 ```text
 # pg_ident.conf
-usuarios_locales    ignac    app_user
+usuarios_locales    pepe    app_user
 ```
 
 Si el nombre del mapa no coincide, falta la entrada o la identidad externa no corresponde con el rol solicitado, PostgreSQL rechazará la autenticación. El mapa solo establece esa correspondencia: no crea el rol ni le concede permisos. Para conectarse, el rol debe existir y tener el atributo `LOGIN`; para trabajar con la base de datos y sus objetos, además necesita los privilegios correspondientes.
@@ -140,12 +140,12 @@ Y en `pg_ident.conf`:
 
 ```text
 # MAPNAME             SYSTEM-USERNAME    DATABASE-USERNAME
-usuarios_locales     ignac              app_user
+usuarios_locales     pepe              app_user
 ```
 
-Con ambos archivos configurados, el proceso que se ejecuta como usuario del sistema `ignac` puede conectarse a la base de datos `appdb` solicitando el rol `app_user`. La conexión solo se aceptará si la regla de `pg_hba.conf` coincide y el mapeo autoriza esa combinación.
+Con ambos archivos configurados, el proceso que se ejecuta como usuario del sistema `pepe` puede conectarse a la base de datos `appdb` solicitando el rol `app_user`. La conexión solo se aceptará si la regla de `pg_hba.conf` coincide y el mapeo autoriza esa combinación.
 
-Por ejemplo, la conexión desde la cuenta `ignac`:
+Por ejemplo, la conexión desde la cuenta `pepe`:
 
 ```bash
 psql -U app_user -d appdb
@@ -160,7 +160,7 @@ local    all    all              peer
 ```
 En ese caso, el nombre del usuario del sistema debe coincidir con el del rol de PostgreSQL.
 
-Por ejemplo, la conexión desde la cuenta `ignac` con rol de PostgreSQL `ignac`:
+Por ejemplo, la conexión desde la cuenta `pepe` con rol de PostgreSQL `pepe`:
 
 ```bash
 psql 
