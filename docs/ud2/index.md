@@ -9,16 +9,17 @@ Esta unidad se centra en configurar PostgreSQL después de su instalación, prep
 1. [Configuración inicial del SGBD](01-configuracion-sgbd.md)
 2. [Configuración `postgresql.conf`](02-conf-postgresql.md)
 3. [Configuración `pg_hba.conf`](03-conf-pg_hba.md)
-4. [Puesta en marcha y comprobación](04-puesta-en-marcha.md)
-5. [Actividades de configuración](00-actividades.md)
-6. [Soluciones de las actividades](00-actividades_sol.md)
-
+4. [Configuración `pg_ident.conf`](04-conf-pg_ident.md)
+5. [Puesta en marcha y comprobación](05-puesta-en-marcha.md)
+6. [Configuración de bases de datos](06-conf-bd.md)
+7. [Actividades de configuración](00-actividades.md)
 
 ---
 
 ## Objetivos
 
 - Identificar los archivos principales de configuración de PostgreSQL.
+- Configurar mapas entre usuarios del sistema operativo y roles PostgreSQL.
 - Configurar conexiones locales y remotas de forma controlada.
 - Aplicar y comprobar cambios en el servicio.
 - Verificar el acceso desde clientes.

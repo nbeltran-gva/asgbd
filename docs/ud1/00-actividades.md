@@ -153,16 +153,16 @@ Tareas:
 4. Registrar la versión instalada y la ruta del programa.
 5. Ejecutar alguno de los comandos básicos dentro del entorno plsql.
 
-Evidencias:
+!!! info "Evidencias"
 
-- Captura de la instalación del cliente PostgreSQL.
-- Captura de la comprobación de la versión con `psql --version`.
-- Captura de la salida del comando which psql.
-- Captura de la salida de al menos dos comandos internos.
+    - Captura de la instalación del cliente PostgreSQL.
+    - Captura de la comprobación de la versión con `psql --version`.
+    - Captura de la salida del comando `which psql`.
+    - Captura de la salida de al menos dos comandos internos.
 
-Entrega:
+!!! note "Entrega"
 
-Informe breve (1-3 páginas) describiendo el proceso de instalación e incluyendo las evidencias solicitadas.
+    Informe breve (1-3 páginas) describiendo el proceso de instalación e incluyendo las evidencias solicitadas.
 
 --- 
 

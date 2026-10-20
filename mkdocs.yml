@@ -73,13 +73,14 @@ nav:
       - 4. Instalación de clientes: ud1/04-instalacion-clientes.md
       - Actividades: ud1/00-actividades.md
 
-  # - "UD2: Configuración":
-  #     - Inicio: ud2/index.md
-  #     - 1. Configuración del SGBD: ud2/01-configuracion-sgbd.md
-  #     - 2. postgresql.conf: ud2/02-conf-postgresql.md
-  #     - 3. pg_hba.conf: ud2/03-conf-pg_hba.md
-  #     - 4. Puesta en marcha y comprobación: ud2/04-puesta-en-marcha.md
-  #     - 5. Configuración de bases de datos: ud2/05-conf-bd.md
+  - "UD2: Configuración":
+       - Inicio: ud2/index.md
+       - 1. Configuración del SGBD: ud2/01-configuracion-sgbd.md
+       - 2. postgresql.conf: ud2/02-conf-postgresql.md
+       - 3. pg_hba.conf: ud2/03-conf-pg_hba.md
+       - 4. pg_ident.conf: ud2/04-conf-pg_ident.md
+       - 5. Puesta en marcha y comprobación: ud2/05-puesta-en-marcha.md
+  #     - 6. Configuración de bases de datos: ud2/06-conf-bd.md
   #     - Actividades: ud2/00-actividades.md
       
   # - "UD3: Usuarios y permisos":

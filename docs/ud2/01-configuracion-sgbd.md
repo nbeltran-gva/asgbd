@@ -27,7 +27,7 @@ PostgreSQL utiliza varios archivos para configurar el funcionamiento del servido
 | `pg_hba.conf` | Define cómo se autentican y qué clientes pueden conectarse al servidor. |
 | `pg_ident.conf` | Define mapeos entre usuarios del sistema operativo y roles de PostgreSQL, cuando se utilizan determinados métodos de autenticación (ident/peer). |
 
-En esta unidad nos centraremos principalmente en `postgresql.conf` y `pg_hba.conf`, ya que son los archivos más utilizados en la administración del servidor.
+En esta unidad estudiaremos `postgresql.conf`, `pg_hba.conf` y `pg_ident.conf`, necesarios para configurar el funcionamiento del servidor y controlar la autenticación de sus clientes.
 
 #### Localización
 
@@ -93,16 +93,20 @@ Finalmente, se debe comprobar que el servicio funciona correctamente:
 ```bash
 sudo systemctl status postgresql
 ```
+
+Si el estado es `active (running)` indica que PostgreSQL está en ejecución.
+
+
 ---
 
 ## Buenas prácticas
-
+    
 Al configurar PostgreSQL, es recomendable seguir estas buenas prácticas:
 
 - Modificar pocos parámetros cada vez.
 - Comprobar el funcionamiento después de cada cambio.
 - Mantener un registro de las modificaciones realizadas.
 - Utilizar comentarios para documentar configuraciones especiales.
-- Consultar previamente la ubicación real de los archivos
+- Consultar previamente la ubicación real de los archivos.
 
 ---
