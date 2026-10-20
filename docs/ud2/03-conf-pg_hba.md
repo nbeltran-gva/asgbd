@@ -25,7 +25,7 @@ Cada línea del archivo `pg_hba.conf` define una regla que indica quién puede c
 La estructura general es la siguiente:
 
 ```text
-tipo_conexión   base_de_datos   usuario   dirección_cliente   método_autenticación
+TYPE    DATABASE   USER     ADRESS   METHOD
 ```
 Cada campo especifica:
 
