@@ -80,8 +80,7 @@ nav:
        - 3. pg_hba.conf: ud2/03-conf-pg_hba.md
        - 4. pg_ident.conf: ud2/04-conf-pg_ident.md
        - 5. Puesta en marcha y comprobación: ud2/05-puesta-en-marcha.md
-  #     - 6. Configuración de bases de datos: ud2/06-conf-bd.md
-  #     - Actividades: ud2/00-actividades.md
+       - Actividades: ud2/00-actividades.md
       
   # - "UD3: Usuarios y permisos":
   #    - Inicio: ud3/index.md

@@ -28,7 +28,7 @@ No utilices reglas más amplias de lo necesario si la actividad puede resolverse
 
 ## Actividad 3. Creación y configuración de una base de datos
 
-Crea una base de datos llamada `geo` o utiliza la proporcionada por el profesor. Consulta sus características de codificación y configuración regional:
+Crea una base de datos llamada `geo` proporcionada por el profesor. Consulta sus características de codificación y configuración regional:
 
 ```sql
 SHOW server_encoding;
@@ -77,3 +77,35 @@ Elabora una ficha de configuración que incluya:
 - comandos utilizados para aplicar los cambios;
 - comprobaciones realizadas;
 - incidencias y solución aplicada.
+
+
+Actividad 6. Consulta y exportación de datos
+Obtener información de las poblaciones con una elevación superior a 700 metros y entregar el resultado en un archivo CSV.
+
+Tareas
+
+Consultar los datos. Identifica la información de las poblaciones que supera los 700 metros de elevación.
+Localiza la tabla que contiene las poblaciones y el campo que representa su elevación.
+Prepara una consulta SQL que seleccione las poblaciones cuya elevación sea superior a 700 metros.
+Calcula cuántas poblaciones cumplen esta condición.
+Exportar los resultados. Guarda en un archivo CSV los registros obtenidos con la consulta.
+Utiliza el punto y coma (;) como separador de campos.
+Incluye los campos necesarios para identificar cada población y su elevación.
+Comprobar el archivo. Verifica que el CSV contiene los resultados esperados.
+Comprueba que los campos están separados por punto y coma.
+Confirma que los registros corresponden a la consulta realizada.
+Verifica que el número de registros coincide con el resultado obtenido en PostgreSQL.
+Evidencias
+
+Consulta SQL realizada
+Resultado de la consula con el número de poblaciones que cumple la condición.
+Archivo CSV generado.
+Comprobación de la estructura y de algunos registros exportados.
+Resultado esperado
+
+Has obtenido el número de poblaciones con una elevación superior a 700 metros y has generado un archivo CSV con los registros correspondientes, utilizando el punto y coma como separador.
+
+Entrega
+
+Elabora un documento con los procedimientos realizados, los comandos utilizados, las explicaciones necesarias y las capturas de pantalla que demuestren los resultados.
+
