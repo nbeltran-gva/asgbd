@@ -11,6 +11,7 @@ Esta unidad se centra en configurar PostgreSQL después de su instalación, prep
 3. [Configuración `pg_hba.conf`](03-conf-pg_hba.md)
 4. [Configuración `pg_ident.conf`](04-conf-pg_ident.md)
 5. [Puesta en marcha y comprobación](05-puesta-en-marcha.md)
+6. [Actividades de configuración](00-actividades.md)
 
 ---
 
