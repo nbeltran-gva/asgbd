@@ -80,7 +80,9 @@ Elabora un documento con los procedimientos realizados, los comandos utilizados,
 
 ## Actividad 3. Acceso remoto al servidor cloud
 
-En esta actividad configurarás el acceso remoto a una instancia PostgreSQL desplegada en AWS EC2, aplicando medidas de seguridad tanto a nivel de red como de autenticación para permitir exclusivamente las conexiones autorizadas. El objetivo es permitir la conexión desde el cliente autorizado sin exponer innecesariamente el servidor a otras direcciones IP.
+En esta actividad configurarás el acceso remoto a una instancia PostgreSQL desplegada en AWS EC2. Aplicarás medidas de seguridad tanto en la red de AWS como en la configuración de PostgreSQL para permitir únicamente las conexiones autorizadas.
+
+El objetivo es conectarte desde Ubuntu MATE a la base de datos geo, utilizando el rol geo, y comprobar que el acceso queda restringido a la dirección IP del cliente autorizado.
 
 **Tareas**
 
@@ -88,14 +90,16 @@ En esta actividad configurarás el acceso remoto a una instancia PostgreSQL desp
     - Permite el tráfico TCP al puerto de PostgreSQL.
     - Restringe el origen a la dirección IP pública del cliente autorizado, utilizando una regla de tipo /32 cuando corresponda.
     - Comprueba que no existen reglas más amplias que permitan el acceso desde orígenes no autorizados.
-2. **Configurar PostgreSQL para el acceso remoto.** Revisa la configuración del servidor cloud y sus reglas de autenticación.
-    - Autoriza el acceso a la base de datos `geo` para el rol `geo`.
-    - Limita las conexiones a la dirección IP autorizada.
+2. **Configurar las reglas de autenticación.** Configura el acceso remoto mediante el archivo `pg_hba.conf`. 
+    - Autoriza únicamente el acceso a la base de datos `geo` para el rol `geo`.
+    - Limita el origen a la IP pública de salida del cliente autorizado, utilizando /32.
+    - Utiliza el método de autenticación establecido para la práctica, si el rol dispone de una contraseña compatible.
 3. **Verificar la conexión remota mediante psql.** Comprueba el acceso desde Ubuntu MATE a la instancia PostgreSQL EC2 alojada en AWS.
     - Utiliza la dirección pública o el nombre DNS de la instancia EC2.
     - Conéctate a la base de datos `geo` utilizando el rol `geo`.
-    - Ejecuta una consulta que permita identificar el servidor remoto.
+    - Ejecuta consultas que permitan identificar identificar el usuario, la base de datos, la versión y la dirección del servidor remoto.
     - Comprueba que la conexión funciona y que se aplican las restricciones configuradas.
+    - Si la conexión falla, identifica si el problema está relacionado con la red, la escucha del servidor, las reglas de autenticación o las credenciales.
 
 **Evidencias**
 
