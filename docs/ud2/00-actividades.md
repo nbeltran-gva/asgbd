@@ -50,8 +50,7 @@ En esta actividad habilitarás el acceso remoto a la instancia PostgreSQL instal
 
 **Tareas**
 
-1. **Configurar PostgreSQL para aceptar conexiones remotas (la escucha del servidor).** Modifica la configuración del servidor PostgreSQL para permitir conexiones desde el equipo cliente.
-    - Archivo `postgresql.conf` parámetro `listen_addresses`.
+1. **Configurar PostgreSQL para aceptar conexiones remotas (la escucha del servidor).** Modifica la configuración del servidor PostgreSQL para permitir conexiones desde el equipo cliente mediante el archivo `postgresql.conf`.
     - Revisa los parámetros relacionados con las interfaces de escucha del servidor.
     - Reinicia el servicio si es necesario para aplicar los cambios.
 2. **Configurar las reglas de autenticación.** Adapta la configuración para permitir que el rol `geo` se conecte a la base de datos `geo` desde cualquier IP de la red local.
@@ -59,8 +58,9 @@ En esta actividad habilitarás el acceso remoto a la instancia PostgreSQL instal
     - Limita el origen a las direcciones de la red local.
 3. **Verificar el acceso remoto mediante psql.** Desde el cliente Ubuntu MATE, establece una conexión remota utilizando exclusivamente la herramienta `psql`.
     - Conéctate a la base de datos `geo` utilizando el rol `geo`.
-    - Ejecuta una consulta que permita identificar el servidor al que se ha realizado la conexión.
+    - Ejecuta consultas que permita identificar el servidor al que se ha realizado la conexión.
     - Comprueba que la conexión se realiza correctamente desde el cliente y que el acceso queda limitado a la red local.
+    - Si la conexión falla, identifica si el problema está relacionado con la red, la escucha del servidor, las reglas de autenticación o las credenciales.
 
 **Evidencias**
 
@@ -86,21 +86,22 @@ El objetivo es conectarte desde Ubuntu MATE a la base de datos geo, utilizando e
 
 **Tareas**
 
-1. **Configurar el acceso a nivel de red.** Revisa la configuración de red de la instancia EC2 y comprueba que PostgreSQL puede aceptar conexiones remotas.
+0. **Configurar el acceso a nivel de red.** Revisa la configuración de red de la instancia EC2 en AWS.
     - Identifica la instancia EC2 y su dirección IP o nombre DNS.
-    - Comprueba el valor del parámetro listen_addresses en postgresql.conf.
-    - Comprueba que PostgreSQL escucha en el puerto TCP 5432.
     - Revisa las reglas de entrada del grupo de seguridad asociado a la instancia.
     - Permite el tráfico TCP al puerto 5432 únicamente desde la IP pública de salida del cliente autorizado, utilizando una regla /32 cuando corresponda.
     - Comprueba que no existen reglas más amplias que permitan el acceso desde orígenes no autorizados.
-2. **Configurar las reglas de autenticación.** Configura el acceso remoto mediante el archivo `pg_hba.conf`. 
+1. **Configurar PostgreSQL para aceptar conexiones remotas (la escucha del servidor).** Modifica la configuración del servidor PostgreSQL para permitir conexiones desde el equipo cliente mediante el archivo `postgresql.conf`.
+    - Revisa los parámetros relacionados con las interfaces de escucha del servidor.
+    - Reinicia el servicio si es necesario para aplicar los cambios.
+3. **Configurar las reglas de autenticación.** Configura el acceso remoto mediante el archivo `pg_hba.conf`. 
     - Autoriza únicamente el acceso a la base de datos `geo` para el rol `geo`.
     - Limita el origen a la IP pública de salida del cliente autorizado, utilizando /32.
     - Utiliza el método de autenticación establecido para la práctica, si el rol dispone de una contraseña compatible.
-3. **Verificar la conexión remota mediante psql.** Comprueba el acceso desde Ubuntu MATE a la instancia PostgreSQL EC2 alojada en AWS.
+4. **Verificar la conexión remota mediante psql.** Comprueba el acceso desde Ubuntu MATE a la instancia PostgreSQL EC2 alojada en AWS.
     - Utiliza la dirección pública o el nombre DNS de la instancia EC2.
     - Conéctate a la base de datos `geo` utilizando el rol `geo`.
-    - Ejecuta consultas que permitan identificar identificar el usuario, la base de datos, la versión y la dirección del servidor remoto.
+    - Ejecuta consultas que permitan identificar el usuario, la base de datos, la versión y la dirección del servidor remoto.
     - Comprueba que la conexión funciona y que se aplican las restricciones configuradas.
     - Si la conexión falla, identifica si el problema está relacionado con la red, la escucha del servidor, las reglas de autenticación o las credenciales.
 
@@ -132,6 +133,7 @@ En esta actividad comprobarás el acceso a los servidores local y cloud mediante
     - Establecer correctamente la conexión a cada servidor.
     - Visualizar las tablas de la base de datos `geo`.
     - Ejecutar consultas sencillas sobre los datos importados.
+    - Si la conexión falla, identifica si el problema está relacionado con la red, la escucha del servidor, las reglas de autenticación o las credenciales.
 
 **Evidencias**
 
