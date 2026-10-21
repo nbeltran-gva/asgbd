@@ -86,9 +86,12 @@ El objetivo es conectarte desde Ubuntu MATE a la base de datos geo, utilizando e
 
 **Tareas**
 
-1. **Configurar el acceso a nivel de red.** Revisa las reglas de entrada del grupo de seguridad asociado a la instancia EC2 AWS.
-    - Permite el tráfico TCP al puerto de PostgreSQL.
-    - Restringe el origen a la dirección IP pública del cliente autorizado, utilizando una regla de tipo /32 cuando corresponda.
+1. **Configurar el acceso a nivel de red.** Revisa la configuración de red de la instancia EC2 y comprueba que PostgreSQL puede aceptar conexiones remotas.
+    - Identifica la instancia EC2 y su dirección IP o nombre DNS.
+    - Comprueba el valor del parámetro listen_addresses en postgresql.conf.
+    - Comprueba que PostgreSQL escucha en el puerto TCP 5432.
+    - Revisa las reglas de entrada del grupo de seguridad asociado a la instancia.
+    - Permite el tráfico TCP al puerto 5432 únicamente desde la IP pública de salida del cliente autorizado, utilizando una regla /32 cuando corresponda.
     - Comprueba que no existen reglas más amplias que permitan el acceso desde orígenes no autorizados.
 2. **Configurar las reglas de autenticación.** Configura el acceso remoto mediante el archivo `pg_hba.conf`. 
     - Autoriza únicamente el acceso a la base de datos `geo` para el rol `geo`.
