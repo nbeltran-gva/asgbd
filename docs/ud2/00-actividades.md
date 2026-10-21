@@ -33,6 +33,8 @@ En esta actividad se configurará un entorno de pruebas en los servidores Postgr
 - Identificación de la base de datos y el rol.
 - Inventario de las tablas de ejemplo disponibles.
 - Resultado de una conexión local con el rol `geo`.
+- Comandos psql utilizados en las diferentes tareas.
+
 
 !!! info "Resultado esperado"
 
