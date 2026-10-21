@@ -17,7 +17,7 @@ En esta actividad se configurará un entorno de pruebas en los servidores Postgr
 
 **Tareas**
 
-1. **Descargar el fichero SQL de la práctica.** Descarga el [archivo `dades_geo.sql`](src/dades_geo.sql), que contiene los datos geográficos de `geo` y las instrucciones necesarias para crear el rol `geo`.
+1. **Descargar el fichero SQL de la práctica.** Descarga el archivo `dades_geo.sql`, que contiene los datos geográficos de `geo` y las instrucciones necesarias para crear el rol `geo`.
     - Utiliza el comando `wget https://pastebin.com/raw/UexT4J4w -O dades_geo.sql` 
 2. **Preparar el entorno de pruebas.** Prepara con ese fichero el entorno de prácticas tanto en el servidor PostgreSQL local como en el servidor cloud.
     - Accede a una sesión de `psql`.
