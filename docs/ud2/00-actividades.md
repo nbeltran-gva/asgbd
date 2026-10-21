@@ -11,7 +11,7 @@ Al finalizar cada actividad, recoge las evidencias solicitadas y explica breveme
 ![Esquema de la práctica: clientes Ubuntu MATE, servidor local y servidor PostgreSQL en AWS](img/ud2practica.png)
 
 
-## Actividad 1. Preparación de la base de datos de prácticas en los servidores
+## Actividad 1. Crear un base de datos en los servidores PostgreSQL
 
 En esta actividad se configurará un entorno de pruebas en los servidores PostgreSQL local y cloud. Para ello, se creará la base de datos geográfica `geo` junto con el rol de acceso `geo`, que se utilizarán en las prácticas posteriores.
 
@@ -44,7 +44,7 @@ En esta actividad se configurará un entorno de pruebas en los servidores Postgr
 
 Elabora un documento con los procedimientos realizados, los comandos utilizados, las explicaciones necesarias y las capturas de pantalla que demuestren los resultados.
 
-## Actividad 2. Configuración del acceso remoto al servidor PostgreSQL local
+## Actividad 2. Acceso remoto al servidor PostgreSQL local
 
 En esta actividad habilitarás el acceso remoto a la instancia PostgreSQL instalada en la máquina virtual local. Configurarás el servidor para que el rol `geo` pueda conectarse a la base de datos `geo` desde cualquier equipo de la red local.
 
@@ -78,7 +78,7 @@ En esta actividad habilitarás el acceso remoto a la instancia PostgreSQL instal
 
 Elabora un documento con los procedimientos realizados, los comandos utilizados, las explicaciones necesarias y las capturas de pantalla que demuestren los resultados.
 
-## Actividad 3. Acceso remoto al servidor cloud
+## Actividad 3. Acceso remoto al servidor PostgreSQL cloud
 
 En esta actividad configurarás el acceso remoto a una instancia PostgreSQL desplegada en AWS EC2. Aplicarás medidas de seguridad tanto en la red de AWS como en la configuración de PostgreSQL para permitir únicamente las conexiones autorizadas.
 
@@ -121,7 +121,7 @@ El objetivo es conectarte desde Ubuntu MATE a la base de datos geo, utilizando e
 
 Elabora un documento con los procedimientos realizados, los comandos utilizados, las explicaciones necesarias y las capturas de pantalla que demuestren los resultados.
 
-## Actividad 4. Conexión con herramientas cliente gráficas.
+## Actividad 4. Acceso remoto con herramientas cliente gráficas.
 
 En esta actividad comprobarás el acceso a los servidores local y cloud mediante pgAdmin 4. Utilizarás la base de datos geo y el rol geo preparados en la primera actividad.
 
