@@ -4,17 +4,15 @@ La interfaz gráfica permite crear roles, modificar atributos y configurar privi
 
 Los ejemplos continúan los de los capítulos anteriores: se parte de `geo`, de sus tablas y de los roles `usulector`, `usueditor`, `geo_lectura` y `geo_edicion`. Si ya los creaste, no intentes volver a crearlos; revisa sus propiedades y continúa con la membresía o los privilegios que falten.
 
-## Crear, modificar y eliminar bases de datos
+## Roles y membresías
 
-!!! summary "Vídeo: gestión de bases de datos en pgAdmin"
+!!! summary "Vídeo: creación de roles en pgAdmin"
 
-    En el siguiente vídeo se muestra la creación, modificación y eliminación de bases de datos en pgAdmin:
+    <iframe width="50" style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube-nocookie.com/embed/D57uSCKvCro" title="Creación de roles con pgAdmin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-    <iframe width="400" style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube-nocookie.com/embed/0CeFpgG1op4" title="Crear, modificar y eliminar bases de datos en pgAdmin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    [Ver el vídeo en YouTube](https://youtu.be/D57uSCKvCro)
 
-    [Ver el vídeo en YouTube](https://www.youtube.com/watch?v=0CeFpgG1op4)
-
-## Crear o revisar un rol de usuario
+### Crear o revisar un rol de usuario
 
 1. Abre pgAdmin 4 y conecta con el servidor de prácticas.
 2. En el navegador, localiza **Login/Group Roles**.
@@ -27,7 +25,7 @@ Los ejemplos continúan los de los capítulos anteriores: se parte de `geo`, de 
 
 Los nombres exactos de las pestañas pueden variar según la versión de pgAdmin.
 
-## Crear o revisar un rol de grupo
+### Crear o revisar un rol de grupo
 
 Si `geo_lectura` ya existe, abre sus propiedades y comprueba que no puede iniciar sesión. Si no existe:
 
@@ -37,7 +35,7 @@ Si `geo_lectura` ya existe, abre sus propiedades y comprueba que no puede inicia
 4. Guarda el rol.
 5. Concede privilegios sobre los objetos que corresponden a ese perfil.
 
-## Crear membresía de un rol
+### Crear membresía de un rol
 
 Una membresía permite que un rol sea miembro de otro. Por ejemplo, para hacer que `usulector` pertenezca a `geo_lectura`, ambos roles deben existir y debes conectarte con un rol autorizado para conceder la membresía.
 
@@ -60,9 +58,71 @@ SELECT pg_has_role('usulector', 'geo_lectura', 'MEMBER') AS es_miembro;
 
 El resultado `true` confirma que `usulector` es miembro directo o indirecto de `geo_lectura`, pero no indica por sí solo si hereda sus privilegios.
 
-Vídeo de apoyo: [Creación de roles con pgAdmin](https://youtu.be/D57uSCKvCro).
 
-## Conceder privilegios de objetos
+## Bases de datos y objetos
+
+!!! summary "Vídeo: gestión de bases de datos en pgAdmin"
+
+    En el siguiente vídeo se muestra la creación, modificación y eliminación de bases de datos en pgAdmin:
+
+    <iframe width="200" style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube-nocookie.com/embed/0CeFpgG1op4" title="Crear, modificar y eliminar bases de datos en pgAdmin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    [Ver el vídeo en YouTube](https://www.youtube.com/watch?v=0CeFpgG1op4)
+
+
+### Crear, modificar y eliminar bases de datos
+
+Estas operaciones se hacen desde el navegador de pgAdmin, conectado con un rol que pueda crear bases de datos (`CREATEDB`) o con un superusuario. pgAdmin genera y ejecuta las sentencias `CREATE DATABASE`, `ALTER DATABASE` y `DROP DATABASE` que se explican en [Gestión de bases de datos y objetos](03-basesdatos-objetos.md).
+
+| Operación | Pasos en pgAdmin | Sentencia equivalente |
+|---|---|---|
+| Crear | Clic derecho sobre **Databases** → **Create → Database**. En **General** escribe el nombre y elige el propietario (**Owner**). Pulsa **Save**. | `CREATE DATABASE` |
+| Modificar | Clic derecho sobre la base de datos → **Properties**. Cambia el propietario, el límite de conexiones o los privilegios. Pulsa **Save**. | `ALTER DATABASE` |
+| Cambiar el nombre | Clic derecho sobre la base de datos → **Properties** → **General** → **Name**. Desconéctala antes si está abierta. | `ALTER DATABASE ... RENAME TO` |
+| Eliminar | Clic derecho sobre la base de datos → **Delete**. Confirma la operación. | `DROP DATABASE` |
+
+??? example "Ejemplo: Crear geodb y asignarla a usubd"
+
+    1. Conecta con el servidor y despliega **Databases**.
+    2. Clic derecho sobre **Databases** → **Create → Database**.
+    3. En **General**, escribe `geodb` como nombre y selecciona `usubd` en **Owner**.
+    4. En la pestaña **SQL**, comprueba la sentencia generada y pulsa **Save**.
+    5. Actualiza el navegador (**Refresh**) y comprueba que `geodb` aparece en la lista.
+
+!!! warning "Antes de eliminar"
+
+    `DROP DATABASE` borra la base de datos y todo su contenido. No se puede eliminar una base de datos con conexiones activas: pgAdmin ofrece desconectarla o cerrar las sesiones. Haz antes una copia de seguridad si necesitas conservar los datos.
+
+Los nombres exactos de las opciones pueden variar según la versión de pgAdmin.
+
+### Consultar vistas
+
+Las vistas creadas se muestran en el navegador de pgAdmin.
+
+??? example "Ejemplo: Consultar una vista con pgAdmin"
+
+    Para consultar `public.vista_mas_de_700` de la base de datos `geo`:
+
+    1. Despliega **Databases → geo → Schemas → public → Views**.
+    2. Si la vista no aparece y ya ha sido creada, actualiza **Views** con la opción **Refresh**.
+    3. Haz clic con el botón derecho sobre `vista_mas_de_700` y abre **Properties**. En **Code** puedes consultar la consulta que define la vista; en **SQL** puedes revisar la sentencia correspondiente.
+    4. Para ver sus datos, abre **Query Tool** conectado a `geo` y ejecuta:
+
+        ```sql
+        SELECT * FROM public.vista_mas_de_700;
+        ```
+
+La vista debe existir previamente y el rol conectado necesita los permisos necesarios para acceder a la base de datos, al esquema y a la vista. La creación de este ejemplo se explica en [Gestión de bases de datos y objetos](03-basesdatos-objetos.md).
+
+## Privilegios sobre objetos
+
+!!! summary "Vídeo: conceder y quitar privilegios en pgAdmin"
+
+    <iframe width="200" style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube-nocookie.com/embed/dZz1JMuTe0E" title="Conceder y quitar privilegios con pgAdmin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    [Ver el vídeo en YouTube](https://youtu.be/dZz1JMuTe0E)
+
+### Conceder privilegios de objetos
 
 Para consultar `public.poblacions` en la base de datos `geo`, el rol necesita privilegios en tres niveles:
 
@@ -95,32 +155,18 @@ Los tres resultados deben ser `true` para el acceso directo con los privilegios 
 
 Para retirar un privilegio, modifica la entrada correspondiente en las propiedades y guarda los cambios. Comprueba después los privilegios efectivos, ya que el rol podría recibirlos por otra concesión o membresía.
 
-Vídeo de apoyo: [Conceder y quitar privilegios con pgAdmin](https://youtu.be/dZz1JMuTe0E).
-
-## Consultar vistas
-
-Las vistas creadas se muestran en el navegador de pgAdmin.
-
-??? example "Ejemplo: Consultar una vista con pgAdmin"
-
-    Para consultar `public.vista_mas_de_700` de la base de datos `geo`:
-
-    1. Despliega **Databases → geo → Schemas → public → Views**.
-    2. Si la vista no aparece y ya ha sido creada, actualiza **Views** con la opción **Refresh**.
-    3. Haz clic con el botón derecho sobre `vista_mas_de_700` y abre **Properties**. En **Code** puedes consultar la consulta que define la vista; en **SQL** puedes revisar la sentencia correspondiente.
-    4. Para ver sus datos, abre **Query Tool** conectado a `geo` y ejecuta:
-
-        ```sql
-        SELECT * FROM public.vista_mas_de_700;
-        ```
-
-La vista debe existir previamente y el rol conectado necesita los permisos necesarios para acceder a la base de datos, al esquema y a la vista. La creación de este ejemplo se explica en [Gestión de bases de datos y objetos](03-basesdatos-objetos.md).
-
 ## Copias de seguridad y restauración
+
+!!! summary "Vídeo: copias de seguridad y restauración en pgAdmin"
+
+    <iframe width="200" style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube-nocookie.com/embed/YKCAuic0mD0?list=PLwHSWSKgMO9Xf54oFyxtsdwuXT6T64xDr" title="Copias de seguridad y restauración con pgAdmin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    [Ver el vídeo en YouTube](https://youtu.be/YKCAuic0mD0?list=PLwHSWSKgMO9Xf54oFyxtsdwuXT6T64xDr)
+
 
 pgAdmin permite configurar copias de seguridad y restauraciones mediante una interfaz gráfica. Para ello utiliza las herramientas cliente de PostgreSQL, como `pg_dump` y `pg_restore`, según el formato de la copia.
 
-**Crear una copia de seguridad**
+### Crear una copia de seguridad
 
 1. En el navegador, selecciona la base de datos `geo`.
 2. Haz clic con el botón derecho y selecciona **Backup**.
@@ -128,7 +174,7 @@ pgAdmin permite configurar copias de seguridad y restauraciones mediante una int
 4. Revisa las opciones y pulsa **Backup**.
 5. Comprueba en la ventana de procesos que la operación ha finalizado correctamente.
 
-**Restaurar una copia**
+### Restaurar una copia
 
 1. Crea una base de datos de destino llamada `geo_nueva`, si todavía no existe. Puedes asignar `geo` como propietario para conservar el mismo rol de los objetos originales; la actividad de restauración también utiliza ese nombre.
 2. Haz clic con el botón derecho sobre ella y selecciona **Restore**.
@@ -137,8 +183,6 @@ pgAdmin permite configurar copias de seguridad y restauraciones mediante una int
 5. Actualiza el navegador y verifica que los objetos y datos esperados están disponibles.
 
 La opción **Restore** utiliza `pg_restore` para formatos como **Custom**. Para restaurar una copia SQL de texto plano se utiliza `psql`, como se explica en [Copias de seguridad y restauración](05-copias-restauracion.md).
-
-Vídeo de apoyo: [Copias de seguridad y restauración con pgAdmin](https://www.youtube.com/watch?v=YKCAuic0mD0).
 
 ### Herramientas cliente y compatibilidad
 
@@ -195,12 +239,3 @@ sudo apt -y install postgresql-client-16
 !!! warning "Comprobar la versión"
 
     Comprueba que la versión de las aplicaciones cliente coincide con la versión del servidor PostgreSQL para evitar incompatibilidades entre `pg_dump`, `pg_restore` y el servidor.
-
-## Actividades relacionadas
-
-- [Actividad 1: Creación de usuarios y concesión de permisos](00-actividades.md#actividad-1-creacion-de-usuarios-y-concesion-de-permisos).
-- [Actividad 2: Creación de un grupo y asignación de permisos](00-actividades.md#actividad-2-creacion-de-un-grupo-y-asignacion-de-permisos).
-- [Actividad 8: Copia de seguridad y restauración de la estructura](00-actividades.md#actividad-8-copia-de-seguridad-y-restauracion-de-la-estructura).
-- [Actividad 9: Transferencia de datos entre bases de datos](00-actividades.md#actividad-9-transferencia-de-datos-entre-bases-de-datos).
-
-La actividad 2 utiliza los usuarios creados en la actividad 1; la actividad 9 utiliza la base de datos restaurada en la actividad 8.

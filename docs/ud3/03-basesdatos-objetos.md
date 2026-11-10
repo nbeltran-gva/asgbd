@@ -276,11 +276,11 @@ Solo un **superusuario** puede crear un tablespace; modificarlo o borrarlo, solo
 
 ## Actividades relacionadas
 
-- [Actividad 4: Creación de una base de datos y concesión de permisos](00-actividades.md#actividad-4-creacion-de-una-base-de-datos-y-concesion-de-permisos).
-- [Actividad 5: Creación de un tablespace](00-actividades.md#actividad-5-creacion-de-un-tablespace).
-- [Actividad 6: Creación de una base de datos en un tablespace](00-actividades.md#actividad-6-creacion-de-una-base-de-datos-en-un-tablespace).
-- [Actividad 7: Cambio del propietario de una base de datos](00-actividades.md#actividad-7-cambio-del-propietario-de-una-base-de-datos).
-- [Actividad 11: Creación de vistas y gestión de permisos](00-actividades.md#actividad-11-creacion-de-vistas-y-gestion-de-permisos).
-- [Actividad 12: Consulta de las vistas del esquema](00-actividades.md#actividad-12-consulta-de-las-vistas-del-esquema).
+- [Actividad 4: Creación de una base de datos, un esquema y una tabla](00-actividades.md#actividad-4-creacion-de-una-base-de-datos-un-esquema-y-una-tabla).
+- [Actividad 5: Creación de vistas](00-actividades.md#actividad-5-creacion-de-vistas).
+- [Actividad 6: Consulta de las vistas del esquema](00-actividades.md#actividad-6-consulta-de-las-vistas-del-esquema).
+- [Actividad 7: Creación de un tablespace](00-actividades.md#actividad-7-creacion-de-un-tablespace).
+- [Actividad 8: Creación de una base de datos en un tablespace](00-actividades.md#actividad-8-creacion-de-una-base-de-datos-en-un-tablespace).
+- [Actividad 9: Cambio del propietario de una base de datos](00-actividades.md#actividad-9-cambio-del-propietario-de-una-base-de-datos).
 
 Algunas actividades también requieren los contenidos de roles, privilegios o copias de seguridad de los siguientes apartados.

@@ -38,8 +38,6 @@ Para ello, utilizarás `psql` y la herramienta gráfica `pgAdmin`.
 6. [Administración gráfica con pgAdmin](06-pgadmin.md)
 
 - [Actividades](00-actividades.md)
-- [Ejemplos guiados](ejemplos_guiados.md)
-- [Prácticas de laboratorio](09-practicas-laboratorio.md)
 
 ---
 

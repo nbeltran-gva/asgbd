@@ -1,211 +1,235 @@
 # 5. Copias de seguridad y restauración
 
-La realización de copias de seguridad es una tarea fundamental del DBA. En PostgreSQL es sencilla de automatizar mediante un script que se ejecute periódicamente.
+Hacer copias de seguridad es una tarea fundamental del DBA. En PostgreSQL es fácil automatizarla con un script que se ejecute cada cierto tiempo.
 
-Existen dos enfoques principales para realizar una **copia de seguridad**:
+Hay dos tipos de copia:
 
-- una copia lógica mediante el programa `pg_dump` y `pg_dumpall`;
-- una copia física de los ficheros del servidor, siguiendo un procedimiento adecuado.
+| Tipo | Qué guarda | Herramientas |
+|---|---|---|
+| **Lógica** | Sentencias SQL (`CREATE`, `INSERT`, `COPY`...) que reconstruyen los objetos y los datos. | `pg_dump`, `pg_dumpall` |
+| **Física** | Los ficheros del servidor, copiados con un procedimiento adecuado. | Copia de ficheros, `pg_basebackup` |
 
-También existe la posibilidad de realizar una **recuperación a un momento concreto** (**PITR**, *Point in Time Recovery*). 
+!!! note "Recuperación a un momento concreto (PITR)"
 
-Para recuperar el sistema a un momento determinado, PostgreSQL debe guardar todos los cambios realizados en unos ficheros denominados **WAL** (*Write Ahead Log*), que contienen información sobre las transacciones. _Este tipo de recuperación es avanzado y no se tratará en este curso._
+    PostgreSQL puede recuperar el sistema a un instante determinado si guarda los cambios en los ficheros **WAL** (*Write Ahead Log*). Es un tema avanzado que no se trata en este curso.
+
+Esta página se centra en las **copias lógicas**.
+
+---
+
+## `pg_dump` o `pg_dumpall`
+
+| | `pg_dump` | `pg_dumpall` |
+|---|---|---|
+| **Qué copia** | Una sola base de datos. | Todas las bases de datos del clúster y los objetos globales (roles y tablespaces). |
+| **Copia parcial** | Sí: solo estructura, solo datos, un esquema o ciertas tablas. | Solo los objetos globales o solo la estructura. |
+| **Formato de salida** | Texto SQL o formatos comprimidos. | Solo texto SQL. |
+| **Quién lo ejecuta** | El propietario de la base de datos o un usuario con acceso a todo lo que se copia. | `postgres`, para tener acceso a todo. |
+
+!!! note "Clúster"
+
+    Un **clúster** es el conjunto de bases de datos que gestiona una misma instancia del servidor y que comparten los mismos roles. Las copias lógicas no incluyen los ficheros de configuración ni los WAL.
 
 ---
 
 ## Copia de seguridad con `pg_dump`
 
-`pg_dump` es la utilidad de PostgreSQL para realizar copias de seguridad **lógicas** de una base de datos. 
+`pg_dump` se ejecuta desde la terminal, como cualquier cliente del servidor. Genera un fichero con las instrucciones necesarias para reconstruir la base de datos tal como estaba al hacer la copia.
 
-!!! note "Copia lógica y copia física"
+!!! success "Características principales"
 
-    Una copia lógica contiene sentencias (`CREATE`, `INSERT`, `COPY`...) que reconstruyen los objetos y los datos. Es distinta de la copia física, que consiste en copiar directamente los ficheros del servidor.
+    - **No bloquea a los usuarios**: se puede ejecutar con la base de datos en uso y la copia es una instantánea coherente.
+    - **Copia parcial**: permite guardar solo la estructura, solo los datos, un esquema o determinadas tablas.
+    - **Varios formatos**: texto plano SQL o formatos comprimidos (`custom`, `directory`, `tar`) que se restauran con `pg_restore`.
+    - **Portable**: el fichero se puede restaurar en otro servidor o en otra versión de PostgreSQL.
 
+!!! quote "Sintaxis básica"
 
-Se ejecuta desde la línea de comandos como cliente del servidor y genera un fichero con las instrucciones necesarias para reconstruir la base de datos tal como se encontraba en el momento de realizar la copia.
+    ```bash
+    pg_dump [ -h host ] [ -p puerto ] [ -U usuario ] [ -a | -s ] [ -F formato ] [ -n esquema ] [ -t tabla ] [ -f fichero ] nombre_bd
+    ```
 
-**Sus principales características son:**
+    Si no se indica `-f`, el resultado se muestra por pantalla; por eso se suele redirigir con `> fichero.sql`.
 
-- **Copia consistente**: se puede ejecutar con la base de datos en funcionamiento, sin bloquear a los usuarios que leen o escriben, ya que la copia refleja una instantánea coherente de los datos.
-- **Copia de una sola base de datos**: guarda una base de datos cada vez; para copiar todo el clúster se utiliza `pg_dumpall`.
-- **Copia parcial**: permite guardar solo la estructura, solo los datos, un esquema concreto o determinadas tablas.
-- **Distintos formatos de salida**: texto plano con sentencias SQL, o formatos comprimidos (`custom`, `directory`, `tar`) que se restauran con `pg_restore`.
-- **Portabilidad**: el fichero generado puede restaurarse en otro servidor o incluso en otra versión de PostgreSQL.
+    | Opción | Función |
+    |---|---|
+    | `-a` | Guarda solo los datos. |
+    | `-s` | Guarda solo la estructura. |
+    | `--inserts` | Usa sentencias `INSERT` para los datos (por defecto usa `COPY`). |
+    | `--column-inserts` | Como `--inserts`, pero incluye los nombres de las columnas. |
+    | `-f fichero` | Guarda el resultado en el fichero indicado. |
+    | `-F formato` | Formato de salida: `p` (texto, por defecto), `c` (*custom*), `d` (*directory*) o `t` (*tar*). |
+    | `-n esquema` | Copia solo el esquema indicado. |
+    | `-t tabla` | Copia solo la tabla indicada. |
+    | `-h`, `-p`, `-U`, `-W` | Conexión: host, puerto, usuario y petición de contraseña. |
+    | `--help` | Muestra todas las opciones. |
 
-La herramienta `pg_dump` suele encontrarse en la ruta:
+??? example "Ejemplo: copias con pg_dump"
 
-```text
-/usr/lib/postgresql/16/bin
-```
-
-**Opciones principales**
-
-| Opción | Función |
-|---|---|
-| `-a` | Guarda únicamente los datos. |
-| `-s` | Guarda únicamente la estructura. |
-| `--inserts` | Utiliza sentencias `INSERT` para los datos; si no se indica, puede utilizar `COPY`. |
-| `--column-inserts` | Incluye los nombres de las columnas en las sentencias `INSERT`. |
-| `-f fichero` | Envía el resultado al fichero indicado. |
-| `-F formato` | Indica el formato de salida: `c` (*custom*), `d` (*directory*), `t` (*tar*) o `p` (*plain text*). |
-| `-n nombre_esquema` | Copia únicamente el esquema indicado. |
-| `-t nombre_tabla` | Copia únicamente la tabla indicada. |
-| `--help` o `-?` | Muestra la ayuda con todas las opciones. |
-
-También están disponibles las opciones habituales de conexión:
-
-- `-h`: host;
-- `-p`: puerto;
-- `-U`: usuario;
-- `-W`: solicita la contraseña.
-
-??? example "Ejemplo: Copia de seguridad con pg_dump"
-
-    A continuación se muestran algunos ejemplos de uso de `pg_dump`. En todos ellos el resultado se guarda en el fichero `geo.sql`. Cada comando sobrescribe `geo.sql` si el fichero ya existe.
+    En todos los casos el resultado se guarda en `geo.sql`. Cada comando sobrescribe el fichero si ya existe.
 
     ```bash
     # Copiar la base de datos geo con el usuario geo
     pg_dump -U geo geo > geo.sql
 
-    # Copiar únicamente la estructura de la base de datos geo
+    # Copiar solo la estructura
     pg_dump -s -U geo geo > geo.sql
 
-    # Copiar únicamente los datos utilizando sentencias INSERT
+    # Copiar solo los datos, con sentencias INSERT
     pg_dump -a --inserts -U geo geo > geo.sql
 
-    # Copiar únicamente la estructura de las tablas comarques e instituts
+    # Copiar solo la estructura de las tablas comarques e instituts
     pg_dump -s -t comarques -t instituts -U geo geo > geo.sql
+
+    # Copiar en formato comprimido (se restaura con pg_restore)
+    pg_dump -Fc -U geo -f geo.backup geo
     ```
-
-
-## Copia de seguridad con `pg_dumpall`
-
-`pg_dumpall` realiza una copia de seguridad de todas las bases de datos del sistema. Se debe ejecutar como `postgres` para disponer de acceso a todas las bases de datos.
-
-!!! note "Aclaración sobre el clúster"
-
-    En PostgreSQL, un **clúster** es el conjunto de bases de datos gestionado por una misma instancia del servidor, que comparte los mismos roles. `pg_dumpall` genera una copia lógica de las bases de datos y de los objetos globales, mientras que `pg_dump` copia una única base de datos. No incluye los ficheros de configuración ni los archivos WAL.
-
-Además de las bases de datos, guarda objetos globales que no pertenecen a una base de datos concreta, como los usuarios y los grupos.
-
-Una **desventaja** es que puede solicitar la contraseña del usuario `postgres` tantas veces como bases de datos haya en el sistema.
-
-Para consultar todas las opciones:
-
-```bash
-pg_dumpall --help
-```
-??? example "Ejemplo: Ejecuta estos comandos desde la terminal con un usuario autorizado,..."
-
-    Ejecuta estos comandos desde la terminal con un usuario autorizado, como `postgres`:
-
-    ```bash
-    # Copiar todas las bases de datos y los objetos globales del clúster
-    pg_dumpall -U postgres > cluster.sql
-
-    # Copiar únicamente los objetos globales, como roles y tablespaces
-    pg_dumpall -U postgres --globals-only > globales.sql
-
-    # Copiar únicamente los roles del clúster
-    pg_dumpall -U postgres --roles-only > roles.sql
-
-    # Copiar la estructura de todas las bases de datos, sin sus datos
-    pg_dumpall -U postgres --schema-only > estructura_cluster.sql
-    ```
-
-    Cada comando sobrescribe el fichero de destino si ya existe. Los ficheros que incluyen roles pueden contener información sensible, como los hashes de sus contraseñas; protégelos adecuadamente.
-
-    `pg_dumpall` copia cada base de datos por separado: cada copia es consistente, pero no se garantiza una instantánea simultánea de todo el clúster.
-
-
-!!! note "no es lo mismo"
-
-    - pg_dump copia una base de datos cada vez. Permite copiar toda la base de datos o solo ciertos esquemas, tablas, estructura o datos.
-    - pg_dumpall copia todas las bases de datos del clúster y los objetos globales, como roles y tablespaces. También permite copiar solo estos objetos globales.
-    Por ejemplo:
-
-    Además, pg_dump admite varios formatos de salida; pg_dumpall genera un script SQL de texto.
 
 ---
 
-## Restaurar copias seguridad
+## Copia de seguridad con `pg_dumpall`
 
-### 1. Restaurar un fichero de texto
+`pg_dumpall` copia **todas las bases de datos** del clúster y los **objetos globales** (roles y tablespaces). Se ejecuta como `postgres`.
 
-Si no se ha utilizado la opción `-F`, el fichero de salida contiene sentencias SQL. En ese caso, se puede restaurar con `psql`.
+!!! quote "Sintaxis básica"
 
-Desde fuera de `psql` existen dos formas equivalentes:
+    ```bash
+    pg_dumpall [ -h host ] [ -p puerto ] [ -U usuario ] [ -g | -r | -s ] [ -f fichero ]
+    ```
 
-```bash
-psql nombre_bd < fichero.sql
-```
+    | Opción | Función |
+    |---|---|
+    | `-g` o `--globals-only` | Copia solo los objetos globales (roles y tablespaces). |
+    | `-r` o `--roles-only` | Copia solo los roles. |
+    | `-s` o `--schema-only` | Copia solo la estructura, sin los datos. |
+    | `-f fichero` | Guarda el resultado en el fichero indicado. |
 
-```bash
-psql -f fichero.sql nombre_bd
-```
+    No necesita nombre de base de datos, porque copia todo el clúster. Si no se indica `-f`, el resultado sale por pantalla.
 
-Desde dentro de `psql` también se puede utilizar el comando `\i`:
+!!! warning "Inconvenientes"
 
-```text
-\i fichero.sql
-```
+    - Puede pedir la contraseña de `postgres` una vez por cada base de datos.
+    - Cada base de datos se copia por separado: cada copia es coherente, pero no hay una instantánea simultánea de todo el clúster.
+    - Los ficheros con roles contienen los *hashes* de las contraseñas: protégelos.
 
-Para que la restauración funcione, deben existir la base de datos de destino y los roles que figuran como propietarios en la copia. Por ejemplo, conectado a `postgres` como superusuario, crea `geo_nueva` para restaurar `geo.sql`:
 
-```sql
--- Ejecutar conectado a la base de datos postgres como superusuario
-CREATE DATABASE geo_nueva OWNER geo;
-```
+??? example "Ejemplo: copias con pg_dumpall"
 
-Después, desde la terminal, restaura el fichero:
+    ```bash
+    # Todas las bases de datos y los objetos globales
+    pg_dumpall -U postgres > cluster.sql
 
-```bash
-psql -U geo -d geo_nueva -f geo.sql
-```
+    # Solo los objetos globales (roles y tablespaces)
+    pg_dumpall -U postgres --globals-only > globales.sql
 
-### 2. Restaurar formatos no textuales
+    # Solo los roles
+    pg_dumpall -U postgres --roles-only > roles.sql
 
-Si se ha utilizado la opción `-F`, la restauración se realiza mediante `pg_restore`.
+    # Solo la estructura de todas las bases de datos
+    pg_dumpall -U postgres --schema-only > estructura_cluster.sql
+    ```
 
-Las principales opciones de `pg_restore` son:
+    Cada comando sobrescribe el fichero de destino si ya existe. Para ver todas las opciones: `pg_dumpall --help`.
 
-| Opción | Función |
+---
+
+## Restaurar copias de seguridad
+
+El comando depende del formato de la copia:
+
+| Formato de la copia | Herramienta |
 |---|---|
-| `-a` | Restaura únicamente los datos. |
-| `-s` | Restaura únicamente la estructura. |
-| `-d nombre_bd` | Se conecta a la base de datos indicada y restaura directamente en ella. |
-| `-F formato` | Indica el formato del fichero de entrada. |
-| `-t nombre_tabla` | Restaura únicamente la tabla indicada. |
+| Texto SQL (sin `-F`, o `-Fp`) | `psql` |
+| Comprimido (`-Fc`, `-Fd`, `-Ft`) | `pg_restore` |
 
-También se pueden utilizar las opciones de conexión `-h`, `-p`, `-U` y `-W`.
+### Restaurar un fichero de texto
 
-??? example "Ejemplo: Restaurar una copia con pg_restore"
+Si la copia es un fichero SQL, se restaura con `psql`. Hay tres formas:
 
-    Este formato requiere una copia creada, por ejemplo, con `pg_dump -Fc -U geo -f geo.backup geo`. La base de datos de destino debe existir previamente:
+!!! quote "Sintaxis básica"
+
+    | Forma | Comando |
+    |---|---|
+    |(1) Desde la terminal (redirección < ) | `psql [ -U usuario ] nombre_bd < fichero.sql` |
+    |(2) Desde la terminal (opción `-f`) | `psql [ -U usuario ] -f fichero.sql nombre_bd` |
+    |(3) Desde dentro de `psql` | `\i fichero.sql` |
+
+!!! important "Antes de restaurar"
+
+    Deben existir la **base de datos de destino** y los **roles** que aparecen como propietarios en la copia.
+
+??? example "Ejemplo: restaurar geo.sql en una base de datos nueva"
+
+    Conectado a `postgres` como superusuario, crea la base de datos de destino:
+
+    ```sql
+    CREATE DATABASE geo_nueva OWNER geo;
+    ```
+
+    Después, desde la terminal, restaura el fichero:
+
+    ```bash
+    psql -U geo -d geo_nueva -f geo.sql
+    ```
+
+### Restaurar un formato comprimido
+
+Si se usó la opción `-F` con `c`, `d` o `t`, la restauración se hace con `pg_restore`.
+
+!!! quote "Sintaxis básica"
+
+    ```bash
+    pg_restore [ -h host ] [ -p puerto ] [ -U usuario ] [ -a | -s ] [ -t tabla ] [ -F formato ] -d nombre_bd fichero
+    ```
+
+    | Opción | Función |
+    |---|---|
+    | `-d nombre_bd` | Restaura directamente en la base de datos indicada (debe existir). |
+    | `-a` | Restaura solo los datos. |
+    | `-s` | Restaura solo la estructura. |
+    | `-t tabla` | Restaura solo la tabla indicada. |
+    | `-F formato` | Formato del fichero (normalmente se detecta solo). |
+    | `-h`, `-p`, `-U`, `-W` | Conexión: host, puerto, usuario y petición de contraseña. |
+
+??? example "Ejemplo: restaurar con pg_restore"
+
+    La copia se creó con `pg_dump -Fc -U geo -f geo.backup geo` y la base de datos de destino ya existe:
 
     ```bash
     pg_restore -U geo -d geo_nueva geo.backup
     ```
 
+## Transferir datos entre bases de datos
 
-### 3. Transferir información entre bases de datos
+Se puede enlazar `pg_dump` con `psql` para copiar una base de datos en otra sin crear ningún fichero:
 
-Se puede combinar `pg_dump` con `psql` para transferir la información de una base de datos a otra:
+!!! quote "Sintaxis básica"
 
-```bash
-pg_dump bd1 | psql bd2
-```
+    | Destino | Comando |
+    |---|---|
+    | Mismo servidor | `pg_dump [ -U usuario ] bd_origen \| psql [ -U usuario ] bd_destino` |
+    | Otro servidor | `pg_dump [ -U usuario ] bd_origen \| psql -h host [ -U usuario ] bd_destino` |
 
-También se puede transferir la información a una base de datos situada en otro servidor:
+La base de datos de destino debe existir antes de ejecutar el comando.
 
-```bash
-pg_dump bd1 | psql -h host bd2
-```
+??? example "Ejemplo: copiar geo en geo_copia"
+
+    ```bash
+    # Crear la base de datos de destino (como postgres)
+    createdb -U postgres -O geo geo_copia
+
+    # Copiar geo en geo_copia sin crear ningún fichero
+    pg_dump -U geo geo | psql -U geo geo_copia
+
+    # Copiar solo la estructura
+    pg_dump -s -U geo geo | psql -U geo geo_copia
+
+    # Copiar a una base de datos de otro servidor
+    pg_dump -U geo geo | psql -h 192.168.1.20 -U geo geo_copia
+    ```
 
 ## Actividades relacionadas
 
-- [Actividad 8: Copia de seguridad y restauración de la estructura](00-actividades.md#actividad-8-copia-de-seguridad-y-restauracion-de-la-estructura).
-- [Actividad 9: Transferencia de datos entre bases de datos](00-actividades.md#actividad-9-transferencia-de-datos-entre-bases-de-datos).
-- [Actividad 10: Copia de una base de datos desde la línea de comandos](00-actividades.md#actividad-10-copia-de-una-base-de-datos-desde-la-linea-de-comandos).
-
-Las actividades 8 y 9 utilizan pgAdmin; la actividad 9 parte de la base de datos restaurada en la actividad 8.
+- [Actividad 15: Copia de seguridad y restauración de la estructura](00-actividades.md#actividad-15-copia-de-seguridad-y-restauracion-de-la-estructura).
+- [Actividad 16: Transferencia de datos entre bases de datos](00-actividades.md#actividad-16-transferencia-de-datos-entre-bases-de-datos).
+- [Actividad 17: Copia de una base de datos desde la línea de comandos](00-actividades.md#actividad-17-copia-de-una-base-de-datos-desde-la-linea-de-comandos).
