@@ -109,7 +109,7 @@ En PostgreSQL, los usuarios se implementan mediante roles con permiso de inicio 
 Se puede utilizar:
 
 - `all`: cualquier usuario;
-- un nombre concreto, como `postgres`, `app_user` o `pepe`;
+- un nombre concreto, como `postgres`, `app_user` o `usueditor`;
 - una lista de usuarios separada por comas.
 
 *Por ejemplo:*

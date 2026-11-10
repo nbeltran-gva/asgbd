@@ -64,18 +64,20 @@ problema tendremos que editar el fichero “/etc/postgresql/16/main/pg_hba.conf�
 
 sudo nano /etc/postgresql/16/main/pg_hba.conf
 
-
 La línea siguiente que se encuentra en este fichero:
 local all postgres peer
+
 La cambiaremos por:
 local all postgres scram-sha-256
 local geo geo scram-sha-256
+
 Por otro lado, ya que hemos cambiado también el método de autenticación del usuario “postgres”
+
 vamos a ponerle una contraseña. Para ello entraremos en postgresql con psql:
 sudo -u postgres psql
-12
-IES El Caminàs ASGBD
+
 Y ejecutaremos la sentencia sql:
 ALTER USER postgres PASSWORD ‘postgres’;
+
 Reiniciaremos el servicio para que se apliquen los cambios:
 sudo service postgresql restart

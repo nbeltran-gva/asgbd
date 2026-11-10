@@ -1,4 +1,4 @@
-# Actividad práctica: configuración y conexiones de PostgreSQL
+# Actividad: Configuración y conexiones remotas de PostgreSQL
 
 En estas actividades trabajarás con las máquinas virtuales preparadas en la unidad anterior. Desde un equipo cliente con Ubuntu MATE, configurarás y comprobarás la conexión a dos servidores PostgreSQL: uno instalado en una máquina virtual local y otro desplegado en una instancia de AWS EC2.
 

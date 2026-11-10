@@ -56,8 +56,8 @@ Por ejemplo, cuando se emplea autenticación peer, PostgreSQL espera que el nomb
 PostgreSQL:
 
 ```text
-Usuario Linux: pepe
-Rol PostgreSQL: pepe
+Usuario Linux: usueditor
+Rol PostgreSQL: usueditor
 ```
 
 Configuración:
