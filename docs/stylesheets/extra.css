@@ -1,3 +1,7 @@
+.md-grid {
+  max-width: 100%;
+}
+
 .md-sidebar--primary,
 .md-sidebar--primary .md-sidebar__scrollwrap,
 .md-sidebar--secondary,
@@ -37,13 +41,26 @@
   visibility: visible;
 }
 
-.md-typeset :is(h1, h2, h3) {
+.md-typeset :is(h1, h2, h3, h4, h5, h6) {
   color: #0c5a51;
 }
 
 .md-typeset h2 {
   border-bottom: 2px solid #80cbc4;
   padding-bottom: 0.2rem;
+}
+
+.md-typeset .language-sql :is(.c, .c1, .cm, .cs) {
+  color: #626262;
+  font-style: italic;
+}
+
+.md-typeset .language-sql .role-attribute {
+  color: var(--md-code-hl-keyword-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .language-sql :is(.c, .c1, .cm, .cs) {
+  color: #b0b0b0;
 }
 
 @media screen and (min-width: 76.25em) {
