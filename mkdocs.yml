@@ -95,28 +95,12 @@ nav:
       - 1. Control de acceso y organización lógica: ud3/01-control-acceso-organizacion.md
       - 2. Roles y membresías de roles: ud3/02-roles-membresias.md
       - 3. Gestión de bases de datos y objetos: ud3/03-basesdatos-objetos.md
-      - 4. Privilegios sobre objetos: ud3/04-privilegios-objetos.md
-      - 5. Copias de seguridad y restauración: ud3/05-copias-restauracion.md
-      - 6. Administración gráfica con pgAdmin: ud3/06-pgadmin.md
-      - Actividades: ud3/00-actividades.md
-      - Ejemplos guiados: ud3/ejemplos_guiados.md
-      - Prácticas de laboratorio: ud3/09-practicas-laboratorio.md
-
-  - "UD3: gpt-v2":
-      - Inicio: ud3_2/index.md
-      - 1. Conceptos básicos del control de acceso: ud3_2/01-conceptos-basicos.md
-      - 2. Gestión de roles de usuario: ud3_2/02-gestion-roles.md
-      - 3. Roles de grupo y pertenencia: ud3_2/03-roles-grupo.md
-      - 4. Privilegios sobre bases de datos, esquemas y objetos: ud3_2/04-privilegios-objetos.md
-      - "5. Conceder y revocar permisos: GRANT y REVOKE": ud3_2/05-grant-revoke.md
-      - 6. Vistas personalizadas y control de acceso a los datos: ud3_2/06-vistas-control-datos.md
-      - 7. Administración gráfica con pgAdmin 4: ud3_2/07-administracion-pgadmin.md
-      - 8. Verificación y diagnóstico de permisos: ud3_2/08-verificacion-diagnostico.md
-      - 9. Prácticas de laboratorio: ud3_2/09-practicas-laboratorio.md
-      - 10. Tabla de correspondencia con el RA 3: ud3_2/10-correspondencia-ra3.md
-      - 11. Instrumento de evaluación: ud3_2/11-instrumento-evaluacion.md
-      - 12. Referencias y material complementario: ud3_2/12-referencias.md
-      - 13. Recomendaciones para el profesorado: ud3_2/13-recomendaciones-profesorado.md
+      #- 4. Privilegios sobre objetos: ud3/04-privilegios-objetos.md
+      #- 5. Copias de seguridad y restauración: ud3/05-copias-restauracion.md
+      #- 6. Administración gráfica con pgAdmin: ud3/06-pgadmin.md
+      #- Actividades: ud3/00-actividades.md
+      #- Ejemplos guiados: ud3/ejemplos_guiados.md
+      #- Prácticas de laboratorio: ud3/09-practicas-laboratorio.md
 
 # 2º evaluación
 
