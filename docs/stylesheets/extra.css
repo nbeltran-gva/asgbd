@@ -26,21 +26,6 @@
   background-color: #183b3b;
 }
 
-.md-sidebar--primary .md-nav__item--section > .md-nav__toggle ~ .md-nav {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-.md-sidebar--primary .md-nav__item--section > .md-nav__toggle:checked ~ .md-nav,
-.md-sidebar--primary .md-nav__item--section > .md-nav__toggle.md-toggle--indeterminate ~ .md-nav {
-  max-height: 100rem;
-  opacity: 1;
-  overflow: visible;
-  visibility: visible;
-}
-
 .md-typeset :is(h1, h2, h3, h4, h5, h6) {
   color: #0c5a51;
 }

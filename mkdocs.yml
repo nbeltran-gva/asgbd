@@ -28,8 +28,6 @@ theme:
         name: Cambiar al modo día
   features:
     - navigation.footer
-    - navigation.expand
-    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
@@ -57,25 +55,25 @@ nav:
 
   - Entorno de trabajo:
     - Inicio: ud_entorno_trabajo/index.md
-    - CLOUD:        
-        - Introducción a AWS Academy: ud_entorno_trabajo/aws/01-intro-aws.md
-        - Servidor Linux: ud_entorno_trabajo/aws/02-servidor-linux.md
-        - IP Elástica: ud_entorno_trabajo/aws/03-ip-elastica.md
-    - MÁQUINAS VIRTUALES:
-        - Introducción a VirtualBox: ud_entorno_trabajo/virtualbox/01-intro-virtualbox.md
-        - Instalación de VirtualBox: ud_entorno_trabajo/virtualbox/02-instalacion-virtualbox.md
-        - Creación de VM: ud_entorno_trabajo/virtualbox/03-creacion-vm.md
-        - Configuración de Red: ud_entorno_trabajo/virtualbox/04-configuracion-red.md
-        - Conexión SSH: ud_entorno_trabajo/virtualbox/05-conexion-ssh.md
-        - Comandos Básicos: ud_entorno_trabajo/virtualbox/06-comandos-basicos.md
-        - Conceder Acceso: ud_entorno_trabajo/virtualbox/07-conceder-acceso.md
-    - CONTENEDORES:
-        - Introducción a Docker: ud_entorno_trabajo/docker/01-intro-docker.md
-        - Instalación de Docker: ud_entorno_trabajo/docker/02-instalacion-docker.md
-        - Creación de Contenedores: ud_entorno_trabajo/docker/03-creacion-contenedores.md
-        - Configuración de Red: ud_entorno_trabajo/docker/04-configuracion-red.md
-        - Comandos Básicos: ud_entorno_trabajo/docker/05-comandos-basicos.md
-        - Conceder Acceso: ud_entorno_trabajo/docker/06-conceder-acceso.md
+    - 🌐 AWS Academy:
+        - 1. Introducción a AWS Academy: ud_entorno_trabajo/aws/01-intro-aws.md
+        - 2. Servidor Linux: ud_entorno_trabajo/aws/02-servidor-linux.md
+        - 3. IP Elástica: ud_entorno_trabajo/aws/03-ip-elastica.md
+    - 💻 Virtual Box:
+        - 1. Introducción a VirtualBox: ud_entorno_trabajo/virtualbox/01-intro-virtualbox.md
+        - 2. Instalación de VirtualBox: ud_entorno_trabajo/virtualbox/02-instalacion-virtualbox.md
+        - 3. Creación de VM: ud_entorno_trabajo/virtualbox/03-creacion-vm.md
+        - 4. Configuración de Red: ud_entorno_trabajo/virtualbox/04-configuracion-red.md
+        - 5. Conexión SSH: ud_entorno_trabajo/virtualbox/05-conexion-ssh.md
+        - 6. Comandos Básicos: ud_entorno_trabajo/virtualbox/06-comandos-basicos.md
+        - 7. Conceder Acceso: ud_entorno_trabajo/virtualbox/07-conceder-acceso.md
+    - 🐳 Docker:
+        - 1. Introducción a Docker: ud_entorno_trabajo/docker/01-intro-docker.md
+        - 2. Instalación de Docker: ud_entorno_trabajo/docker/02-instalacion-docker.md
+        - 3. Creación de Contenedores: ud_entorno_trabajo/docker/03-creacion-contenedores.md
+        - 4. Configuración de Red: ud_entorno_trabajo/docker/04-configuracion-red.md
+        - 5. Comandos Básicos: ud_entorno_trabajo/docker/05-comandos-basicos.md
+        - 6. Conceder Acceso: ud_entorno_trabajo/docker/06-conceder-acceso.md
 
   - "UD0: Introducción":
       - Inicio: ud0/index.md
