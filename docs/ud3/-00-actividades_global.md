@@ -85,3 +85,20 @@ Todos los privilegios se conceden sobre `geo`, con la misma secuencia de tres ni
 5. **`geo2`:** crearla en `prueba` y cambiar su propietario (8-9).
 6. **Privilegios:** conceder a `usu1` y a `grupo1`, comprobarlos y retirarlos (10-13), y dar acceso a las vistas (14).
 7. **Copias:** restaurar la estructura, traspasar datos y copiar por línea de comandos (15-17).
+
+## Esquema de roles, privilegios y objetos
+
+```text
+Roles                          Privilegios                    Objetos de geo
+
+usu1 ─┐
+      ├── miembro de ──> grupo1 ── CONNECT ────────────────> Base de datos geo
+usu2 ─┘                         └── USAGE ──────────────────> Esquema public
+                                  ├── SELECT ───────────────> instituts
+                                  ├── SELECT ───────────────> poblacions
+                                  └── SELECT + GRANT OPTION > comarques
+
+usu1 ─────────────────────────── SELECT ────────────────────> Vistas
+
+usu3 ─────────────────────────── sin privilegios sobre geo
+```

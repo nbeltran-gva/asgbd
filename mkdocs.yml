@@ -1,4 +1,4 @@
-site_name: ASGBD
+site_name: ASGBD - PostgreSQL
 
 exclude_docs: |
   *copy*.md
@@ -28,13 +28,13 @@ theme:
         name: Cambiar al modo día
   features:
     - navigation.footer
+    - navigation.expand
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
     - search.highlight
     - content.code.copy
-
 extra_css:
   - stylesheets/extra.css
 
@@ -55,19 +55,27 @@ markdown_extensions:
 nav:
   - Inicio: index.md
 
-  - "AWS Academy":
-      - Introducción a AWS Academy: ud0_aws/01-intro-aws.md
-        #    - ¿Qué es AWS Academy?
-        #    - ¿Cómo crearemos nuestras máquinas virtuales en AWS Academy?
-       #     - ¿Cómo nos conectaremos por SSH a nuestras máquinas virtuales en AWS Academy?
-       #     - ¿Cómo usa AWS el cifrado asimétrico?
-      - Servidor Linux en AWS Academy: ud0_aws/02-servidor-linux.md
-      - IP Elástica: ud0_aws/03-ip-elastica.md
-
-    # - Servidor Windows Server en AWS Academy: ud0_aws/04-servidor-windows.md
-
-         #    P0.3. Conceder acceso a un segundo administrador : ud0_aws/05-conceder-acceso.md
-         #    P0.4. Comandos básicos Linux : ud0_aws/06-comandos-basicos.md
+  - Entorno de trabajo:
+    - Inicio: ud_entorno_trabajo/index.md
+    - CLOUD:        
+        - Introducción a AWS Academy: ud_entorno_trabajo/aws/01-intro-aws.md
+        - Servidor Linux: ud_entorno_trabajo/aws/02-servidor-linux.md
+        - IP Elástica: ud_entorno_trabajo/aws/03-ip-elastica.md
+    - MÁQUINAS VIRTUALES:
+        - Introducción a VirtualBox: ud_entorno_trabajo/virtualbox/01-intro-virtualbox.md
+        - Instalación de VirtualBox: ud_entorno_trabajo/virtualbox/02-instalacion-virtualbox.md
+        - Creación de VM: ud_entorno_trabajo/virtualbox/03-creacion-vm.md
+        - Configuración de Red: ud_entorno_trabajo/virtualbox/04-configuracion-red.md
+        - Conexión SSH: ud_entorno_trabajo/virtualbox/05-conexion-ssh.md
+        - Comandos Básicos: ud_entorno_trabajo/virtualbox/06-comandos-basicos.md
+        - Conceder Acceso: ud_entorno_trabajo/virtualbox/07-conceder-acceso.md
+    - CONTENEDORES:
+        - Introducción a Docker: ud_entorno_trabajo/docker/01-intro-docker.md
+        - Instalación de Docker: ud_entorno_trabajo/docker/02-instalacion-docker.md
+        - Creación de Contenedores: ud_entorno_trabajo/docker/03-creacion-contenedores.md
+        - Configuración de Red: ud_entorno_trabajo/docker/04-configuracion-red.md
+        - Comandos Básicos: ud_entorno_trabajo/docker/05-comandos-basicos.md
+        - Conceder Acceso: ud_entorno_trabajo/docker/06-conceder-acceso.md
 
   - "UD0: Introducción":
       - Inicio: ud0/index.md
@@ -87,13 +95,13 @@ nav:
       - Actividades: ud1/00-actividades.md
 
   - "UD2: Configuración":
-       - Inicio: ud2/index.md
-       - 1. Configuración del SGBD: ud2/01-configuracion-sgbd.md
-       - 2. postgresql.conf: ud2/02-conf-postgresql.md
-       - 3. pg_hba.conf: ud2/03-conf-pg_hba.md
-       - 4. pg_ident.conf: ud2/04-conf-pg_ident.md
-       - 5. Puesta en marcha y comprobación: ud2/05-puesta-en-marcha.md
-       - Actividades: ud2/00-actividades.md
+      - Inicio: ud2/index.md
+      - 1. Configuración del SGBD: ud2/01-configuracion-sgbd.md
+      - 2. postgresql.conf: ud2/02-conf-postgresql.md
+      - 3. pg_hba.conf: ud2/03-conf-pg_hba.md
+      - 4. pg_ident.conf: ud2/04-conf-pg_ident.md
+      - 5. Puesta en marcha y comprobación: ud2/05-puesta-en-marcha.md
+      - Actividades: ud2/00-actividades.md
       
   - "UD3: Control de acceso":
       - Inicio: ud3/index.md
@@ -104,7 +112,8 @@ nav:
       - 5. Copias de seguridad y restauración: ud3/05-copias-restauracion.md
       - 6. Administración gráfica con pgAdmin: ud3/06-pgadmin.md
       - Actividades: ud3/00-actividades.md
-      #- Ejemplos guiados: ud3/ejemplos_guiados.md
+      - Anexo 1. Ejemplos guiados: ud3/07-ejemplos_guiados.md
+      - Anexo 2. PostgreSQL con Docker: ud3/08-anexo-postgresql-docker.md
       #- Prácticas de laboratorio: ud3/09-practicas-laboratorio.md
 
 # 2º evaluación

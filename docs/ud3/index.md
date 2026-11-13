@@ -36,8 +36,9 @@ Para ello, utilizarás `psql` y la herramienta gráfica `pgAdmin`.
 4. [Privilegios sobre objetos](04-privilegios-objetos.md)
 5. [Copias de seguridad y restauración](05-copias-restauracion.md)
 6. [Administración gráfica con pgAdmin](06-pgadmin.md)
-
 - [Actividades](00-actividades.md)
+- [Anexo 1: Ejemplos guiados del tema](07-ejemplos_guiados.md)
+- [Anexo 2: Servidor PostgreSQL con Docker](08-anexo-postgresql-docker.md)
 
 ---
 

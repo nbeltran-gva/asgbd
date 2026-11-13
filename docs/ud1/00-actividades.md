@@ -73,10 +73,10 @@ Tareas:
 
 1. Preparación del entorno:
     1. Servidor Local: Crear máquina virtual importada desde la plantilla OVA proporcionada en AULES (**Ubuntu Server 22.04**).
-    2. Servidor Cloud: Crear una Instancia EC2 con **Ubuntu Server 24.04 LTS**. ( Configurar el Security Group permitiendo conectarse mediante SSH (22)). Consulta la guía [Servidor Linux](../ud0_aws/02-servidor-linux.md) para más detalles.
+    2. Servidor Cloud: Crear una Instancia EC2 con **Ubuntu Server 24.04 LTS**. ( Configurar el Security Group permitiendo conectarse mediante SSH (22)). Consulta la guía [Servidor Linux](../ud_entorno_trabajo/aws/02-servidor-linux.md) para más detalles.
 2. Configurar de red:
     1. Servidor Local: Configurar la dirección IP estática mediante **Netplan**.
-    2. Servidor Cloud: Identificar la dirección IP privada asignada por la VPC y asociar, si es necesario, una **Elastic IP** para disponer de una dirección pública permanente. Consulta la guía [IP elástica](../ud0_aws/03-ip-elastica.md) para más detalles.
+    2. Servidor Cloud: Identificar la dirección IP privada asignada por la VPC y asociar, si es necesario, una **Elastic IP** para disponer de una dirección pública permanente. Consulta la guía [IP elástica](../ud_entorno_trabajo/aws/03-ip-elastica.md) para más detalles.
 3. Instalación de PostgreSQL. 
 4. Comprobar el estado del servicio.
 5. Comprobar la versión instalada.

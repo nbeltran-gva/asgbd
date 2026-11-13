@@ -44,9 +44,9 @@ Por eso, retirar una concesión no garantiza que el privilegio desaparezca si se
 
     | Operación | Sintaxis | Opciones |
     |---|---|---|
-    | Conceder | `GRANT { privilegio [, ...] \| ALL [ PRIVILEGES ] }`<br>`ON { DATABASE \| SCHEMA \| TABLE \| ALL TABLES IN SCHEMA } objeto [, ...]`<br>`TO { rol \| PUBLIC } [, ...]`<br>`[ WITH GRANT OPTION ];` | `WITH GRANT OPTION`: permite al destinatario conceder a otros el privilegio recibido.<br>No lo convierte en propietario del objeto.<br>`ALL PRIVILEGES`: todos los privilegios aplicables al objeto.<br>`ALL TABLES IN SCHEMA`: todas las tablas existentes del esquema, no las futuras.<br>`PUBLIC`: todos los roles. |
-    | Retirar | `REVOKE { privilegio [, ...] \| ALL [ PRIVILEGES ] }`<br>`ON { DATABASE \| SCHEMA \| TABLE \| ALL TABLES IN SCHEMA } objeto [, ...]`<br>`FROM { rol \| PUBLIC } [, ...];` | Retira una concesión concreta.<br>El rol puede conservar el privilegio si lo recibe por otra vía (`PUBLIC`, membresía o propiedad). |
-    | Retirar solo la opción de conceder | `REVOKE GRANT OPTION FOR { privilegio [, ...] \| ALL [ PRIVILEGES ] }`<br>`ON { DATABASE \| SCHEMA \| TABLE \| ALL TABLES IN SCHEMA } objeto [, ...]`<br>`FROM { rol \| PUBLIC } [, ...]`<br>`[ CASCADE \| RESTRICT ];` | Mantiene el privilegio y retira solo la capacidad de delegarlo.<br>`RESTRICT` (por defecto): falla si existen concesiones dependientes.<br>`CASCADE`: retira también las concesiones dependientes. |
+    | Conceder<br>(No lo convierte en propietario del objeto) | `GRANT { privilegio [, ...] \| ALL [ PRIVILEGES ] }`<br>`ON { DATABASE \| SCHEMA \| TABLE \| ALL TABLES IN SCHEMA } objeto [, ...]`<br>`TO { rol \| PUBLIC } [, ...]`<br>`[ WITH GRANT OPTION ];` | `ALL PRIVILEGES`: todos los privilegios aplicables al objeto.<br>`ALL TABLES IN SCHEMA`: todas las tablas existentes del esquema, no las futuras.<br>`PUBLIC`: todos los roles.<br>`WITH GRANT OPTION`: permite al destinatario conceder a otros el privilegio recibido. |
+    | Retira una concesión concreta | `REVOKE { privilegio [, ...] \| ALL [ PRIVILEGES ] }`<br>`ON { DATABASE \| SCHEMA \| TABLE \| ALL TABLES IN SCHEMA } objeto [, ...]`<br>`FROM { rol \| PUBLIC } [, ...];` | El rol puede conservar el privilegio si lo recibe por otra vía (`PUBLIC`, membresía o propiedad). |
+    | Retirar solo la opción de conceder (Mantiene el privilegio y retira solo la capacidad de delegarlo).| `REVOKE GRANT OPTION FOR { privilegio [, ...] \| ALL [ PRIVILEGES ] }`<br>`ON { DATABASE \| SCHEMA \| TABLE \| ALL TABLES IN SCHEMA } objeto [, ...]`<br>`FROM { rol \| PUBLIC } [, ...]`<br>`[ CASCADE \| RESTRICT ];` | `RESTRICT` (por defecto): falla si existen concesiones dependientes.<br>`CASCADE`: retira también las concesiones dependientes. |
 
     Las vistas se tratan como tablas (`TABLE`).
 
@@ -97,22 +97,24 @@ En una vista, `INSERT`, `UPDATE` y `DELETE` solo funcionan si la vista es modifi
 
 ### Concesiones amplias
 
-Permiten conceder varios privilegios u objetos a la vez con `ALL PRIVILEGES` y `ALL TABLES IN SCHEMA`, o conceder a todos los roles con `PUBLIC`.
+Estas opciones permiten conceder privilegios de forma amplia:
 
-??? example "Ejemplo: Concesiones amplias (alternativas independientes)"
+- `ALL PRIVILEGES` concede todos los privilegios aplicables al objeto indicado.
+- `ALL TABLES IN SCHEMA` no es un privilegio, sino que indica que la concesión se aplica a todas las tablas existentes en el esquema; no incluye las que se creen después.
+- `PUBLIC` representa a todos los roles. Concederle acceso puede ampliar mucho la exposición de la información, por lo que conviene valorar si es necesario. Para acceder a la tabla también se necesitan `CONNECT` sobre la base de datos y `USAGE` sobre el esquema.
+
+??? example "Ejemplo: Concesiones amplias"
 
     ```sql
-    -- Todos los privilegios de tabla sobre comarques (incluye DELETE)
+    -- Todos los privilegios aplicables a la tabla comarques
     GRANT ALL PRIVILEGES ON TABLE public.comarques TO geo_edicion;
 
-    -- Consulta sobre todas las tablas existentes del esquema
+    -- SELECT sobre todas las tablas existentes del esquema
     GRANT SELECT ON ALL TABLES IN SCHEMA public TO geo_lectura;
 
-    -- Consulta sobre poblacions para todos los roles (PUBLIC)
-    GRANT SELECT ON TABLE public.poblacions TO PUBLIC;
+    -- SELECT para todos los roles mediante PUBLIC
+    GRANT SELECT ON TABLE avisos TO PUBLIC;
     ```
-
-    Con `PUBLIC` siguen siendo necesarios `CONNECT` y `USAGE`.
 
 ### Delegar y retirar la delegación
 
@@ -127,7 +129,7 @@ Con `REVOKE GRANT OPTION FOR` retira esa capacidad sin quitarle el privilegio.
     TO usulector 
     WITH GRANT OPTION;
 
-    -- Conectado como usulector: concede el privilegio a otro rol
+    -- Conectado como usulector: concede el privilegio a otro rol (delegar)
     GRANT SELECT ON TABLE public.poblacions 
     TO usueditor;
 
@@ -254,4 +256,3 @@ Quien crea una base de datos tiene todos sus privilegios por defecto. Para que o
 - [Actividad 12: Consulta de privilegios efectivos](00-actividades.md#actividad-12-consulta-de-privilegios-efectivos).
 - [Actividad 13: Retirada de privilegios](00-actividades.md#actividad-13-retirada-de-privilegios).
 - [Actividad 14: Privilegios sobre vistas](00-actividades.md#actividad-14-privilegios-sobre-vistas).
-

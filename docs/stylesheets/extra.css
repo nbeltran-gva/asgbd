@@ -55,6 +55,26 @@
   font-style: italic;
 }
 
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote th:first-child,
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote td:first-child {
+  width: 18%;
+}
+
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote th:nth-child(2),
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote td:nth-child(2) {
+  width: 47%;
+}
+
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote th:nth-child(3),
+.md-typeset h2#conceder-y-retirar-privilegios + p + .admonition.quote td:nth-child(3) {
+  width: 35%;
+}
+
 .md-typeset .language-sql .role-attribute {
   color: var(--md-code-hl-keyword-color);
 }

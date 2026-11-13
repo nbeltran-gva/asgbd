@@ -72,7 +72,9 @@ El resultado `true` confirma que `usulector` es miembro directo o indirecto de `
 
 ### Crear, modificar y eliminar bases de datos
 
-Estas operaciones se hacen desde el navegador de pgAdmin, conectado con un rol que pueda crear bases de datos (`CREATEDB`) o con un superusuario. pgAdmin genera y ejecuta las sentencias `CREATE DATABASE`, `ALTER DATABASE` y `DROP DATABASE` que se explican en [Gestión de bases de datos y objetos](03-basesdatos-objetos.md).
+Estas operaciones se hacen desde el navegador de pgAdmin, conectado con un rol que pueda crear bases de datos (`CREATEDB`) o con un superusuario. 
+
+pgAdmin genera y ejecuta las sentencias `CREATE DATABASE`, `ALTER DATABASE` y `DROP DATABASE` que se explican en [Gestión de bases de datos y objetos](03-basesdatos-objetos.md).
 
 | Operación | Pasos en pgAdmin | Sentencia equivalente |
 |---|---|---|
@@ -141,7 +143,9 @@ Para consultar `public.poblacions` en la base de datos `geo`, el rol necesita pr
     3. En `geo`, abre las propiedades de **Schemas → public**. En **Security → Privileges**, añade `geo_lectura`, marca `USAGE` y guarda.
     4. En **Schemas → public → Tables**, abre las propiedades de `poblacions`. En **Security → Privileges**, añade `geo_lectura`, marca `SELECT` y guarda.
 
-Si ya existe una entrada para el rol, modifica los privilegios de esa entrada en lugar de añadir otra. Revisa las concesiones existentes antes de cambiarlas, incluidas las de `PUBLIC`. Los nombres de las opciones pueden variar según la versión de pgAdmin.
+- Si ya existe una entrada para el rol, modifica los privilegios de esa entrada en lugar de añadir otra. 
+- Revisa las concesiones existentes antes de cambiarlas, incluidas las de `PUBLIC`. 
+- Los nombres de las opciones pueden variar según la versión de pgAdmin.
 
 Para comprobar los privilegios efectivos de `usulector`, abre **Query Tool** conectado a `geo` y ejecuta:
 
@@ -151,7 +155,10 @@ SELECT has_database_privilege('usulector', 'geo', 'CONNECT') AS puede_conectar,
        has_table_privilege('usulector', 'public.poblacions', 'SELECT') AS puede_consultar;
 ```
 
-Los tres resultados deben ser `true` para el acceso directo con los privilegios efectivos de `usulector`. Comprueba también la conexión y la consulta como `usulector`: la membresía debe permitirle heredar los privilegios del grupo, salvo que los reciba por otra vía. La autenticación y las reglas de conexión del servidor también deben permitir el acceso.
+Los tres resultados deben ser `true` para el acceso directo con los privilegios efectivos de `usulector`. 
+
+Comprueba también la conexión y la consulta como `usulector`: la membresía debe permitirle heredar los privilegios del grupo, salvo que los reciba por otra vía. 
+La autenticación y las reglas de conexión del servidor también deben permitir el acceso.
 
 Para retirar un privilegio, modifica la entrada correspondiente en las propiedades y guarda los cambios. Comprueba después los privilegios efectivos, ya que el rol podría recibirlos por otra concesión o membresía.
 
@@ -164,7 +171,7 @@ Para retirar un privilegio, modifica la entrada correspondiente en las propiedad
     [Ver el vídeo en YouTube](https://youtu.be/YKCAuic0mD0?list=PLwHSWSKgMO9Xf54oFyxtsdwuXT6T64xDr)
 
 
-pgAdmin permite configurar copias de seguridad y restauraciones mediante una interfaz gráfica. Para ello utiliza las herramientas cliente de PostgreSQL, como `pg_dump` y `pg_restore`, según el formato de la copia.
+pgAdmin permite configurar copias de seguridad y restauraciones mediante una interfaz gráfica. Para ello utiliza las herramientas cliente de PostgreSQL, como `pg_dump` o `pg_dumpall` y `pg_restore`, según el formato de la copia.
 
 ### Crear una copia de seguridad
 
@@ -182,7 +189,11 @@ pgAdmin permite configurar copias de seguridad y restauraciones mediante una int
 4. Pulsa **Restore** y comprueba en la ventana de procesos que la operación ha finalizado correctamente.
 5. Actualiza el navegador y verifica que los objetos y datos esperados están disponibles.
 
-La opción **Restore** utiliza `pg_restore` para formatos como **Custom**. Para restaurar una copia SQL de texto plano se utiliza `psql`, como se explica en [Copias de seguridad y restauración](05-copias-restauracion.md).
+La opción **Restore** utiliza `pg_restore` para formatos como **Custom**. 
+
+!!! warning "Cuidado"
+
+    Para restaurar una copia SQL de texto plano se utiliza `psql`, como se explica en [Copias de seguridad y restauración](05-copias-restauracion.md).
 
 ### Herramientas cliente y compatibilidad
 
