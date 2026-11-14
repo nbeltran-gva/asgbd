@@ -1,8 +1,6 @@
 ---
-title: Introducción a Docker
+title: Introducción a Docker y Docker Compose
 ---
-
-Para una configuración completa con **pgAdmin** o **DBeaver**, consulta el [Anexo de PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md).
 
 ## ¿Qué es Docker?
 
@@ -15,6 +13,12 @@ Docker permite empaquetar y ejecutar aplicaciones en **contenedores**. Un conten
 | Registro | Servicio que almacena y distribuye imágenes. |
 | Volumen | Almacenamiento persistente gestionado por Docker. |
 | Red | Permite la comunicación entre contenedores y, si se configura, con el anfitrión. |
+
+## ¿Qué es Docker Compose?
+
+Docker Compose es la herramienta de Docker para definir y ejecutar aplicaciones formadas por uno o varios servicios. La configuración se escribe en `compose.yaml`: puede declarar imágenes, variables, puertos, redes y volúmenes. Así, el entorno se puede iniciar y administrar con comandos como `docker compose up -d` y `docker compose down`.
+
+En las prácticas de PostgreSQL usarás Compose para describir el servidor y sus recursos. Docker crea y ejecuta los contenedores; Compose aplica la configuración del archivo. Consulta el [anexo de PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md) para descargar el archivo y ver la configuración completa.
 
 Un contenedor es adecuado para preparar entornos repetibles de prácticas, pero no sustituye a las copias de seguridad ni a la administración de los datos.
 

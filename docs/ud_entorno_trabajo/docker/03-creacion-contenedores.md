@@ -1,51 +1,56 @@
 ---
-title: Creación de contenedores
+title: Creación de contenedores con Docker Compose
 ---
 
-Para una configuración completa con **pgAdmin** o **DBeaver**, consulta el [Anexo de PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md).
+## Preparar el proyecto
 
-
-## Crear un contenedor de PostgreSQL
-
-Este ejemplo prepara PostgreSQL para una práctica local. Para una configuración con Compose, pgAdmin o DBeaver, sigue el [anexo de PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md).
-
-Define una contraseña temporal para la práctica y ejecuta el comando desde una terminal. Sustituye `CAMBIAR_POR_UNA_CLAVE_DE_PRACTICAS` por una clave propia y no guardes una clave real en este documento:
+Docker Compose lee la configuración de `compose.yaml` desde la carpeta del proyecto. Para las prácticas de ASGBD, crea la carpeta `asgbd-postgres-ud3` y descarga en ella el [`compose.yaml` del anexo de la UD3](../../ud3/src/compose.yaml).
 
 ```console
-docker run --name asgbd-postgres -e POSTGRES_PASSWORD=CAMBIAR_POR_UNA_CLAVE_DE_PRACTICAS -p 127.0.0.1:5433:5432 -v asgbd-postgres-data:/var/lib/postgresql/data -d postgres:17
+mkdir asgbd-postgres-ud3
+cd asgbd-postgres-ud3
 ```
 
-El puerto se publica solo en la interfaz local del anfitrión (`127.0.0.1`). El volumen `asgbd-postgres-data` conserva los datos aunque se elimine el contenedor.
+El archivo define PostgreSQL 17, el puerto local `5433`, un volumen persistente para las bases de datos, una carpeta compartida para scripts y otra para copias. La guía de [PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md) explica cada parámetro y cómo colocar `dades_geo.sql` en `scripts`.
 
-## Comprobar y conectarse
+## Iniciar y comprobar el servicio
+
+Desde la carpeta que contiene `compose.yaml`, ejecuta:
 
 ```console
-docker ps
-docker logs asgbd-postgres
-docker exec -it asgbd-postgres psql -U postgres
+docker compose up -d
+docker compose ps
+docker compose logs postgres
 ```
 
-Cuando aparezca el indicador de `psql`, ejecuta:
+`docker compose up -d` crea e inicia los recursos definidos en el archivo. `ps` muestra el estado del servicio y `logs` permite comprobar que PostgreSQL está preparado para aceptar conexiones.
+
+Abre `psql` dentro del contenedor para comprobar la conexión:
+
+```console
+docker compose exec postgres psql -U postgres -d postgres
+```
+
+Dentro de `psql`, ejecuta las consultas y sal con `\q`:
 
 ```sql
 SELECT version();
-SELECT current_user;
-\q
+SELECT current_user, current_database();
 ```
 
-Para conectarte desde un cliente instalado en el mismo anfitrión, utiliza `localhost`, el puerto `5433`, el usuario `postgres` y la contraseña que definiste.
+Desde un cliente instalado en el ordenador, conéctate a `localhost`, puerto `5433`, base `postgres` y usuario `postgres`. La contraseña inicial indicada en el archivo es `postgres`; solo se aplica cuando PostgreSQL inicializa un volumen vacío.
 
-## Detener y eliminar
+## Detener y reanudar
 
 ```console
-docker stop asgbd-postgres
-docker start asgbd-postgres
+docker compose stop
+docker compose start
 ```
 
-Para eliminar el contenedor al terminar una práctica:
+Para eliminar el contenedor y la red del proyecto sin borrar los datos:
 
 ```console
-docker rm -f asgbd-postgres
+docker compose down
 ```
 
-Eliminar el contenedor no elimina el volumen. **No borres `asgbd-postgres-data` si necesitas conservar la base de datos.** Si quieres reiniciar desde cero, confirma primero que tienes permiso para borrar todos los datos del volumen.
+Los volúmenes persisten al detener o eliminar el contenedor. No añadas `-v` a `docker compose down` si necesitas conservar las bases de datos o los tablespaces.

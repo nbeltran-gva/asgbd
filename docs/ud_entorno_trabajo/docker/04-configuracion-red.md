@@ -4,7 +4,11 @@ title: Configuración de red en Docker
 
 ## Red bridge
 
-Docker crea redes de tipo *bridge* para comunicar contenedores. Una red definida por el usuario permite que los contenedores se encuentren por nombre:
+Docker crea redes de tipo *bridge* para comunicar contenedores. Docker Compose crea automáticamente una red para los servicios definidos en el mismo proyecto; por eso, un servicio puede localizar a otro usando el nombre del servicio.
+
+En el proyecto PostgreSQL de ASGBD, otro servicio de la misma red Compose se conecta a PostgreSQL con el host `postgres` y el puerto interno `5432`. Dentro de un contenedor, `localhost` se refiere a ese mismo contenedor, no al anfitrión ni a otro servicio.
+
+También puedes crear una red manualmente con Docker:
 
 ```console
 docker network create asgbd-red
@@ -18,11 +22,13 @@ docker network connect asgbd-red asgbd-postgres
 docker network inspect asgbd-red
 ```
 
-Otros contenedores conectados a `asgbd-red` pueden utilizar `asgbd-postgres` como nombre de host y el puerto interno `5432`. Dentro de un contenedor, `localhost` se refiere a ese mismo contenedor, no al anfitrión ni a otro contenedor.
+Los contenedores conectados a `asgbd-red` pueden comunicarse usando el nombre del contenedor y el puerto interno `5432`.
 
 ## Publicar un puerto al anfitrión
 
-La opción `-p` publica un puerto del contenedor en el anfitrión. Para limitar el acceso al propio equipo:
+La opción `-p` de `docker run` publica un puerto del contenedor en el anfitrión. En Compose, la misma configuración se expresa con `ports`. Para limitar el acceso al propio equipo, Compose usa, por ejemplo, `"127.0.0.1:5433:5432"`: el anfitrión conecta a `localhost:5433` y otros servicios de la misma red Compose usan `postgres:5432`.
+
+Este ejemplo muestra la sintaxis equivalente con `docker run`:
 
 ```console
 docker run --name web-local -p 127.0.0.1:8080:80 -d nginx

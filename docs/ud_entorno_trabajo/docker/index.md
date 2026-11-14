@@ -1,21 +1,21 @@
 ---
-title: Local con Contenedores Docker
+title: Docker y Docker Compose
 nav: inline
 ---
 
-En este bloque ejecutarás aplicaciones en **contenedores Docker**. Utilizarás Docker para crear un servidor PostgreSQL reproducible sin instalar el servidor directamente en tu equipo.
+En este bloque aprenderás a ejecutar y administrar aplicaciones en **contenedores Docker**. Usarás los comandos de Docker para conocer sus recursos y Docker Compose para definir y poner en marcha el servidor PostgreSQL de las prácticas desde un archivo `compose.yaml`.
 
 ## Contenidos
 
-- [Introducción a Docker](01-intro-docker.md): Conceptos básicos, imágenes, contenedores y ciclo de vida.
-- [Instalación de Docker](02-instalacion-docker.md): Docker Desktop o Docker Engine según tu sistema operativo.
-- [Creación de contenedores](03-creacion-contenedores.md): Ejecutar una imagen de PostgreSQL, comprobar estado y conectarse.
-- [Configuración de red](04-configuracion-red.md): Redes bridge, publicación de puertos, diagnóstico.
-- [P0.1. Comandos básicos Docker](05-comandos-basicos.md): Gestión de contenedores, imágenes y volúmenes.
+- [Introducción a Docker y Docker Compose](01-intro-docker.md): Imágenes, contenedores y definición de servicios con Compose.
+- [Instalación de Docker](02-instalacion-docker.md): Docker Desktop o Docker Engine y verificación de Compose.
+- [Creación de contenedores](03-creacion-contenedores.md): Puesta en marcha de PostgreSQL con `compose.yaml`.
+- [Configuración de red](04-configuracion-red.md): Redes Docker, puertos publicados y comunicación entre servicios Compose.
+- [P0.1. Comandos básicos Docker y Compose](05-comandos-basicos.md): Gestión de contenedores, servicios, imágenes y volúmenes.
 - [P0.2. Conceder acceso a otro administrador](06-conceder-acceso.md): Permisos en Linux, grupo `docker` y retirada de acceso.
 
 ## Entorno de prácticas
 
 Los ejemplos están diseñados para uso local. No publiques puertos ni credenciales en redes compartidas y no reutilices contraseñas de prácticas en sistemas reales.
 
-Para una configuración completa con pgAdmin o DBeaver, consulta el [Anexo de PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md).
+El [Anexo de PostgreSQL con Docker](../../ud3/08-anexo-postgresql-docker.md) contiene el `compose.yaml` completo de las prácticas, la importación de `dades_geo.sql` y el uso de las carpetas compartidas `scripts` y `backups`.

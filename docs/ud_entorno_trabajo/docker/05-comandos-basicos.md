@@ -1,5 +1,5 @@
 ---
-title: Comandos básicos de Docker
+title: Comandos básicos de Docker y Docker Compose
 ---
 
 ## Contenedores
@@ -16,6 +16,36 @@ docker exec -it NOMBRE sh
 ```
 
 `docker ps` muestra los contenedores en ejecución; `docker ps -a` incluye los detenidos. `docker logs -f` sigue los registros en tiempo real; pulsa `Ctrl+C` para dejar de seguirlos. `docker exec` abre una shell si la imagen la incluye.
+
+## Servicios definidos con Docker Compose
+
+Ejecuta estos comandos desde la carpeta del proyecto que contiene `compose.yaml`:
+
+```console
+docker compose up -d
+docker compose ps
+docker compose logs -f postgres
+```
+
+Compose usa el archivo para iniciar servicios y administrar los recursos del proyecto. `logs -f` sigue los registros en tiempo real; pulsa `Ctrl+C` para dejar de seguirlos.
+
+Para abrir `psql` dentro del servicio `postgres`:
+
+```console
+docker compose exec postgres psql -U postgres -d postgres
+```
+
+`exec` ejecuta un comando dentro del servicio. Cuando termines de usar `psql`, escribe `\q` para salir.
+
+Para detener, reanudar o eliminar los contenedores del proyecto:
+
+```console
+docker compose stop
+docker compose start
+docker compose down
+```
+
+`down` elimina los contenedores y la red del proyecto, pero conserva los volúmenes nombrados. `docker compose down -v` también elimina esos volúmenes y sus datos.
 
 ## Imágenes y volúmenes
 

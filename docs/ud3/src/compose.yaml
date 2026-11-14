@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: asgbd-postgres
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+    ports:
+      - "127.0.0.1:5433:5432"
+
+    volumes:
+      - datos_postgresql:/var/lib/postgresql/data
+      - ./scripts:/scripts
+      - ./backups:/backups
+      - datos_tablespaces:/tablespaces
+
+volumes:
+  datos_postgresql:
+  datos_tablespaces:
