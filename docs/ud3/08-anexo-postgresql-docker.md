@@ -236,7 +236,7 @@ El servidor recién creado contiene **solo** la base administrativa `postgres`, 
 
 Para seguir los [ejemplos guiados](07-ejemplos_guiados.md), importa `dades_geo.sql` con los pasos anteriores o crea la base de datos y los objetos manualmente. El montaje de `scripts` comparte archivos, pero no los ejecuta automáticamente al arrancar PostgreSQL.
 
- ### 🔧 Herramientas de línea de comandos
+### 🔧 Herramientas de línea de comandos
 
 Los comandos `psql`, `createdb`, `pg_dump` y `pg_restore` pueden ejecutarse de dos formas:
 
