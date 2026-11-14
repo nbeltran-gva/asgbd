@@ -27,8 +27,6 @@ El primer comando debe mostrar información de **Client** y **Server**. Si no pu
 mkdir asgbd-postgres-ud3
 cd asgbd-postgres-ud3
 ```
-### compose.yaml
-
 3. Descarga el archivo [`compose.yaml`](src/compose.yaml) en la carpeta `asgbd-postgres-ud3` que has creado. También puedes abrirlo y copiar su contenido en un archivo con ese nombre:
 
 ??? exemple "Entender el archivo Compose"
